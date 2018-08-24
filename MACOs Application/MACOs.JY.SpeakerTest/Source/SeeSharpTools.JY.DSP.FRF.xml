@@ -1,0 +1,350 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SeeSharpTools.JY.DSP.FRF</name>
+    </assembly>
+    <members>
+        <member name="T:SeeSharpTools.JY.DSP.FRF.WhiteNoiseFRF">
+            <summary>
+            White Noise Analysis FRF Class
+            </summary>
+        </member>
+        <member name="T:SeeSharpTools.JY.DSP.FRF.WhiteNoiseFRF.AverageMode">
+            <summary>
+            Average Mode
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JY.DSP.FRF.WhiteNoiseFRF.AverageMode.non">
+            <summary>
+            Do not use Average Mode
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JY.DSP.FRF.WhiteNoiseFRF.AverageMode.RMS">
+            <summary>
+            Set Average Mode to RMS
+            </summary>
+        </member>
+        <member name="M:SeeSharpTools.JY.DSP.FRF.WhiteNoiseFRF.InitStatus">
+            <summary>
+            Initialize all status
+            </summary>
+        </member>
+        <member name="M:SeeSharpTools.JY.DSP.FRF.WhiteNoiseFRF.SetAveraging(SeeSharpTools.JY.DSP.FRF.WhiteNoiseFRF.AverageMode,System.Int32,System.Boolean)">
+            <summary>
+            Set Averaging
+            </summary>
+            <param name="averageMode">AverageMode(non/RMS)</param>
+            <param name="numOfAverages">Number of averges</param>
+            <param name="resetAveraging"></param>
+        </member>
+        <member name="M:SeeSharpTools.JY.DSP.FRF.WhiteNoiseFRF.AveragingDone">
+            <summary>
+            Averaging Done
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SeeSharpTools.JY.DSP.FRF.WhiteNoiseFRF.SetInput(System.Double[])">
+            <summary>
+            Set Input
+            </summary>
+            <param name="inputWaveform">Input Waveform</param>
+        </member>
+        <member name="M:SeeSharpTools.JY.DSP.FRF.WhiteNoiseFRF.SetOutput(System.Double[])">
+            <summary>
+            Set Output
+            </summary>
+            <param name="outputWaveform">Output Waveform</param>
+        </member>
+        <member name="M:SeeSharpTools.JY.DSP.FRF.WhiteNoiseFRF.GetMagenitude(System.Boolean)">
+            <summary>
+            Get Magenitude
+            </summary>
+            <param name="inDB">Return value in DB or not</param>
+            <returns></returns>
+        </member>
+        <member name="M:SeeSharpTools.JY.DSP.FRF.WhiteNoiseFRF.GetPhase(System.Boolean)">
+            <summary>
+            Get Phase
+            </summary>
+            <param name="inDegree">Return value in Degree or Radian</param>
+            <returns></returns>
+        </member>
+        <member name="M:SeeSharpTools.JY.DSP.FRF.WhiteNoiseFRF.Analysis">
+            <summary>
+            Anaysis
+            </summary>
+        </member>
+        <member name="T:SeeSharpTools.JY.DSP.FRF.StepSineFRF">
+            <summary>
+            Step-Sine frequency response fuction
+            </summary>
+        </member>
+        <member name="T:SeeSharpTools.JY.DSP.FRF.StepSineFRF.FrequencyStepMode">
+            <summary>
+            Frequency step mode
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JY.DSP.FRF.StepSineFRF.FrequencyStepMode.Linear">
+            <summary>
+            Linear
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JY.DSP.FRF.StepSineFRF.FrequencyStepMode.Log">
+            <summary>
+            Logarithm
+            </summary>
+        </member>
+        <member name="T:SeeSharpTools.JY.DSP.FRF.StepSineFRF.StepLengthMode">
+            <summary>
+            Step length mode
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JY.DSP.FRF.StepSineFRF.StepLengthMode.ConstTime">
+            <summary>
+            Const time of each step.
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JY.DSP.FRF.StepSineFRF.StepLengthMode.ConstCycle">
+            <summary>
+            Const cycles of each step.
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JY.DSP.FRF.StepSineFRF.StartF">
+            <summary>
+            Start frequency
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JY.DSP.FRF.StepSineFRF.StopF">
+            <summary>
+            Stop frequency
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JY.DSP.FRF.StepSineFRF.GuardTime">
+            <summary>
+            Guard time
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JY.DSP.FRF.StepSineFRF.NumOfFreq">
+            <summary>
+            Number of frequencies
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JY.DSP.FRF.StepSineFRF.FStepMode">
+            <summary>
+            Frequncy step mode :
+            Linear/Log
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JY.DSP.FRF.StepSineFRF.LengthMode">
+            <summary>
+            Length mode:
+            ConstTime/ConstCycle
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JY.DSP.FRF.StepSineFRF.MinCycles">
+            <summary>
+            Minimum cycles
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JY.DSP.FRF.StepSineFRF.TotalTime">
+            <summary>
+            Expect total time of Step-Sine
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JY.DSP.FRF.StepSineFRF.ActualTotalTime">
+            <summary>
+            Actual total time of Step-Sine
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JY.DSP.FRF.StepSineFRF.SampleRate">
+            <summary>
+            Sample rate
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JY.DSP.FRF.StepSineFRF.StepLengthSamples">
+            <summary>
+            Step length samples
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JY.DSP.FRF.StepSineFRF.Frequencies">
+            <summary>
+            Frequencies
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JY.DSP.FRF.StepSineFRF.Sin">
+            <summary>
+            Sin
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JY.DSP.FRF.StepSineFRF.Cos">
+            <summary>
+            Cos
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JY.DSP.FRF.StepSineFRF.Response">
+            <summary>
+            Response waveform
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JY.DSP.FRF.StepSineFRF.Excitation">
+            <summary>
+            Excitation waveform
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JY.DSP.FRF.StepSineFRF.Amplitudes">
+            <summary>
+            Amplitudes
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JY.DSP.FRF.StepSineFRF.Phases">
+            <summary>
+            Phases
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JY.DSP.FRF.StepSineFRF.THDsDB">
+            <summary>
+            THDs in DB
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JY.DSP.FRF.StepSineFRF.PhasesDeg">
+            <summary>
+            PhasesDeg
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JY.DSP.FRF.StepSineFRF.AmplitudesDB">
+            <summary>
+            Amplitude response in DB
+            </summary>
+        </member>
+        <member name="M:SeeSharpTools.JY.DSP.FRF.StepSineFRF.Generation">
+            <summary>
+            Step-Sine generation
+            </summary>
+        </member>
+        <member name="M:SeeSharpTools.JY.DSP.FRF.StepSineFRF.Analysis">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SeeSharpTools.JY.DSP.FRF.Resample">
+            JX Instrumentation copyright reserved
+            Resample array in array out
+            2016-1208 developed by SH
+        </member>
+        <member name="T:SeeSharpTools.JY.DSP.FRF.SpeakAudioTest">
+            <summary>
+            JX Instrumentation copyright reserved
+            Chirp frequency response and THD analysis
+            2016-1208 developed by SH and JY Tek TYS
+            </summary>
+        </member>
+        <member name="T:SeeSharpTools.JY.DSP.FRF.SpeakAudioTest.WaveType">
+            <summary>
+            Wave type
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JY.DSP.FRF.SpeakAudioTest.WaveType.Square">
+            <summary>
+            Square wave
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JY.DSP.FRF.SpeakAudioTest.WaveType.Saw">
+            <summary>
+            Saw wave
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JY.DSP.FRF.SpeakAudioTest.WaveType.Sine">
+            <summary>
+            Sine wave
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JY.DSP.FRF.SpeakAudioTest.WaveType.Harmonics_3_order">
+            <summary>
+            3-order Harmonics
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JY.DSP.FRF.SpeakAudioTest.HighestHarmonic">
+            <summary>
+            Highest harmonic
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JY.DSP.FRF.SpeakAudioTest.AnalysisFStart">
+            <summary>
+            Analysis start frequency
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JY.DSP.FRF.SpeakAudioTest.AnalysisFStop">
+            <summary>
+            Analysis stop frequency
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JY.DSP.FRF.SpeakAudioTest.ResponseWaveform">
+            <summary>
+            Response waveform
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JY.DSP.FRF.SpeakAudioTest.SampleRate">
+            <summary>
+            SampleRate
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JY.DSP.FRF.SpeakAudioTest.TimeWaveform">
+            <summary>
+            Time-domain waveform
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JY.DSP.FRF.SpeakAudioTest.NumberOfFrequencies">
+            <summary>
+            Number of frequencies
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JY.DSP.FRF.SpeakAudioTest.Frequencies">
+            <summary>
+            Frequencies array
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JY.DSP.FRF.SpeakAudioTest.LevelOfFrequencies">
+            <summary>
+            Level of frequencies
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JY.DSP.FRF.SpeakAudioTest.THDofFrequencies">
+            <summary>
+            THD of frequencies
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JY.DSP.FRF.SpeakAudioTest.WaveformScale">
+            <summary>
+            Waveform scale
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JY.DSP.FRF.SpeakAudioTest.AnalysisMethod">
+            <summary>
+            Analysis method
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JY.DSP.FRF.SpeakAudioTest.Version">
+            <summary>
+            Version
+            </summary>
+        </member>
+        <member name="M:SeeSharpTools.JY.DSP.FRF.SpeakAudioTest.AnalysisChirp">
+            <summary>
+            Analysis chirp
+            </summary>
+        </member>
+        <member name="M:SeeSharpTools.JY.DSP.FRF.SpeakAudioTest.InitChirpParameters(System.Int32,SeeSharpTools.JY.DSP.FRF.SpeakAudioTest.WaveType)">
+            <summary>
+            Initial chirp parameters
+            </summary>
+            <param name="TestTime">Test time</param>
+            <param name="waveType">Wave type</param>
+        </member>
+        <member name="M:SeeSharpTools.JY.DSP.FRF.SpeakAudioTest.GetChirpWaveform(SeeSharpTools.JY.DSP.FRF.SpeakAudioTest.WaveType)">
+            <summary>
+            根据选择信号类型不同，进行生成Chirp信号
+            </summary>
+            <param name="waveType"></param>
+        </member>
+    </members>
+</doc>

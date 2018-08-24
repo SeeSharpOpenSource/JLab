@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SeeSharpTools.JY.DSP.Utility.ToneAnalysis</name>
+    </assembly>
+    <members>
+        <member name="T:SeeSharpTools.JY.DSP.Utility.ToneAnalysis.HarmonicAnalysis">
+            <summary>
+            HarmonicAnalysis Class
+            </summary>
+        </member>
+        <member name="M:SeeSharpTools.JY.DSP.Utility.ToneAnalysis.HarmonicAnalysis.ToneAnalysis(System.Double[],System.Double,System.Int32,System.Boolean)">
+            <summary>
+            Tone Analysis
+            </summary>
+            <param name="timewaveform">Waveform in time space</param>
+            <param name="dt"> Interval time of waveform </param>
+            <param name="highestHarmonic">HighestHamonic level</param>
+            <param name="resultInDB">If return result in DB</param>
+            <returns></returns>
+        </member>
+        <member name="T:SeeSharpTools.JY.DSP.Utility.ToneAnalysis.ToneAnalysisResult">
+            <summary>
+            Tone Analysis Result
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JY.DSP.Utility.ToneAnalysis.ToneAnalysisResult.THD">
+            <summary>
+            THD
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JY.DSP.Utility.ToneAnalysis.ToneAnalysisResult.THDplusN">
+            <summary>
+            THD + Noise
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JY.DSP.Utility.ToneAnalysis.ToneAnalysisResult.SINAD">
+            <summary>
+            SINAD
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JY.DSP.Utility.ToneAnalysis.ToneAnalysisResult.SNR">
+            <summary>
+            SNR
+            </summary>
+        </member>
+    </members>
+</doc>

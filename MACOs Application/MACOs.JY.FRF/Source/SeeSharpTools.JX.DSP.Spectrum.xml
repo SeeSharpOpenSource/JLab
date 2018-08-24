@@ -1,0 +1,1034 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SeeSharpTools.JX.DSP.Spectrum</name>
+    </assembly>
+    <members>
+        <member name="T:SeeSharpTools.JX.DSP.Spectrum.JXDSPInnerException">
+            <summary>
+            JX DSP Inner Exception
+            </summary>
+        </member>
+        <member name="T:SeeSharpTools.JX.DSP.Spectrum.JXDSPUserBufferException">
+            <summary>
+            JX DSP User Buffer Exception
+            </summary>
+        </member>
+        <member name="T:SeeSharpTools.JX.DSP.Spectrum.JXDSPParamException">
+            <summary>
+            JX DSP Param Exception
+            </summary>
+        </member>
+        <member name="T:SeeSharpTools.JX.DSP.Spectrum.CBLASNative">
+            CBLAS native declarations 
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.CBLASNative.cblas_dcopy(System.Int32,System.Double[],System.Int32,System.Double[],System.Int32)">
+            CBLAS native LAPACKE_zgesv declaration 
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.DFTI.PRECISION">
+            Constants for DFTI, file "mkl_dfti.h" 
+            DFTI configuration parameters 
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.DFTI.SINGLE">
+            DFTI configuration values 
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.DFTI.NO_ERROR">
+            DFTI predefined error classes 
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.DFTI.DftiCreateDescriptor(System.IntPtr@,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            DFTI DftiCreateDescriptor wrapper
+            </summary>
+            <param name="desc">return desc handle</param>
+            <param name="precision">precision</param>
+            <param name="domain">domain</param>
+            <param name="dimention">dimention</param>
+            <param name="length">length</param>
+            <returns></returns>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.DFTI.DftiFreeDescriptor(System.IntPtr@)">
+            <summary>
+            DFTI DftiFreeDescriptor wrapper
+            </summary>
+            <param name="desc">desc handle</param>
+            <returns></returns>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.DFTI.DftiSetValue(System.IntPtr,System.Int32,System.Int32)">
+            <summary>
+            DFTI DftiSetValue wrapper
+            </summary>
+            <param name="desc">desc handle</param>
+            <param name="configParam">config_param</param>
+            <param name="configVal">config_val</param>
+            <returns></returns>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.DFTI.DftiSetValue(System.IntPtr,System.Int32,System.Double)">
+            <summary>
+            DFTI DftiSetValue wrapper
+            </summary>
+            <param name="desc">desc handle</param>
+            <param name="configParam">config_param</param>
+            <param name="configVal">config_val</param>
+            <returns></returns>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.DFTI.DftiGetValue(System.IntPtr,System.Int32,System.Double@)">
+            <summary>
+            DFTI DftiGetValue wrapper 
+            </summary>
+            <param name="desc">desc handle</param>
+            <param name="configParam">config_param</param>
+            <param name="configVal">config_val</param>
+            <returns></returns>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.DFTI.DftiCommitDescriptor(System.IntPtr)">
+            <summary>
+            DFTI DftiCommitDescriptor wrapper
+            </summary>
+            <param name="desc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.DFTI.DftiComputeForward(System.IntPtr,System.Double[],System.Double[])">
+            <summary>
+            DFTI DftiComputeForward wrapper
+            </summary>
+            <param name="desc"></param>
+            <param name="x_in"></param>
+            <param name="x_out"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.DFTI.DftiComputeForward(System.IntPtr,System.IntPtr,System.IntPtr)">
+            <summary>
+            DFTI DftiComputeForward wrapper
+            </summary>
+            <param name="desc"></param>
+            <param name="x_in"></param>
+            <param name="x_out"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.DFTI.DftiComputeForward(System.IntPtr,System.Double[],System.IntPtr)">
+            <summary>
+            DFTI DftiComputeForward wrapper
+            </summary>
+            <param name="desc"></param>
+            <param name="x_in"></param>
+            <param name="x_out"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.DFTI.DftiComputeForward(System.IntPtr,System.IntPtr,System.Double[])">
+            <summary>
+            DFTI DftiComputeForward wrapper
+            </summary>
+            <param name="desc"></param>
+            <param name="x_in"></param>
+            <param name="x_out"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.DFTI.DftiComputeBackward(System.IntPtr,System.Double[],System.Double[])">
+            <summary>
+            DFTI DftiComputeBackward wrapper
+            </summary>
+            <param name="desc"></param>
+            <param name="x_in"></param>
+            <param name="x_out"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.DFTI.DftiComputeBackward(System.IntPtr,System.IntPtr,System.IntPtr)">
+            <summary>
+            DFTI DftiComputeBackward wrapper
+            </summary>
+            <param name="desc"></param>
+            <param name="x_in"></param>
+            <param name="x_out"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.DFTI.DftiComputeBackward(System.IntPtr,System.Double[],System.IntPtr)">
+            <summary>
+            DFTI DftiComputeBackward wrapper
+            </summary>
+            <param name="desc"></param>
+            <param name="x_in"></param>
+            <param name="x_out"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.DFTI.DftiComputeBackward(System.IntPtr,System.IntPtr,System.Double[])">
+            <summary>
+            DFTI DftiComputeBackward wrapper
+            </summary>
+            <param name="desc"></param>
+            <param name="x_in"></param>
+            <param name="x_out"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SeeSharpTools.JX.DSP.Spectrum.DFTINative">
+            <summary>
+            DFTI native declarations
+            </summary>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.DFTINative.DftiCreateDescriptor(System.IntPtr@,System.Int32,System.Int32,System.Int32,System.Int32)">
+            DFTI native DftiCreateDescriptor declaration 
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.DFTINative.DftiCommitDescriptor(System.IntPtr)">
+            DFTI native DftiCommitDescriptor declaration 
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.DFTINative.DftiFreeDescriptor(System.IntPtr@)">
+            DFTI native DftiFreeDescriptor declaration 
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.DFTINative.DftiSetValue(System.IntPtr,System.Int32,System.Int32)">
+            DFTI native DftiSetValue declaration 
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.DFTINative.DftiSetValue(System.IntPtr,System.Int32,System.Double)">
+            DFTI native DftiSetValue declaration 
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.DFTINative.DftiGetValue(System.IntPtr,System.Int32,System.Double@)">
+            DFTI native DftiGetValue declaration 
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.DFTINative.DftiComputeForward(System.IntPtr,System.Double[],System.Double[])">
+            DFTI native DftiComputeForward declaration 
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.DFTINative.DftiComputeForward(System.IntPtr,System.IntPtr,System.IntPtr)">
+            DFTI native DftiComputeForward declaration 
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.DFTINative.DftiComputeForward(System.IntPtr,System.Double[],System.IntPtr)">
+            DFTI native DftiComputeForward declaration 
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.DFTINative.DftiComputeForward(System.IntPtr,System.IntPtr,System.Double[])">
+            DFTI native DftiComputeForward declaration 
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.DFTINative.DftiComputeBackward(System.IntPtr,System.Double[],System.Double[])">
+            DFTI native DftiComputeBackward declaration 
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.DFTINative.DftiComputeBackward(System.IntPtr,System.IntPtr,System.IntPtr)">
+            DFTI native DftiComputeBackward declaration 
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.DFTINative.DftiComputeBackward(System.IntPtr,System.Double[],System.IntPtr)">
+            DFTI native DftiComputeBackward declaration 
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.DFTINative.DftiComputeBackward(System.IntPtr,System.IntPtr,System.Double[])">
+            DFTI native DftiComputeBackward declaration 
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.VMLNative.vdMul(System.Int32,System.Double[],System.Double[],System.Double[])">
+            CBLAS native LAPACKE_zgesv declaration 
+        </member>
+        <member name="T:SeeSharpTools.JX.DSP.Spectrum.Spectrum">
+            <summary>
+            <para>Computes spectrum of a time-domain signal.</para>
+            <para>Chinese Simplified: 计算信号的频谱。</para>
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.Spectrum.MaxSpectralLine">
+            <summary>
+            Maximiun Spectral Line Count
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.Spectrum.Sqrt2">
+            <summary>
+            Sqrt 2
+            </summary>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.Spectrum.PowerSpectrum(System.Double[],System.Double,System.Double[]@,System.Double@,SeeSharpTools.JX.DSP.Spectrum.SpectrumOutputUnit,SeeSharpTools.JX.DSP.Spectrum.FFTWindowType,System.Double,System.Boolean)">
+            <summary>
+            <para>Computes the power spectrum of input time-domain signal.</para>
+            <para>Chinese Simplified: 计算输入信号的功率频谱。</para>
+            </summary>
+            <param name="x">
+            <para>input time-domain signal.</para>
+            <para>Chinese Simplified: 输入的时域波形。</para>
+            </param>
+            <param name="samplingRate">
+            <para>sampling rate of the input time-domain signal, in samples per second.</para>
+            <para>Chinese Simplified: 输入信号的采样率，以S/s为单位。</para>
+            </param>
+            <param name="spectrum">
+            <para>output sequence containing the power spectrum.</para>
+            <para>Chinese Simplified: 输出功率谱。</para>
+            </param>
+            <param name="df">
+            <para>the frequency resolution of the spectrum,  in hertz.</para>
+            <para>Chinese Simplified: 功率谱的频谱间隔，以Hz为单位。</para>
+            </param>
+            <param name="unit">
+            <para>unit of the output power spectrum</para>
+            <para>Chinese Simplified: 设置功率谱的单位。</para>
+            </param>
+            <param name="windowType">
+            <para>the time-domain window to apply to the time signal.</para>
+            <para>Chinese Simplified: 窗类型。</para>
+            </param>
+            <param name="windowPara">
+            <para>parameter for a Kaiser/Gaussian/Dolph-Chebyshev window, If window is any other window, this parameter is ignored</para>
+            <para>Chinese Simplified: 窗调整系数，仅用于Kaiser/Gaussian/Dolph-Chebyshev窗。</para>
+            </param>
+            <param name="PSD">
+            <para>specifies whether the output power spectrum is converted to power spectral density.</para>
+            <para>Chinese Simplified: 输出的频谱是否为功率谱密度。</para>
+            </param>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.Spectrum.PowerSpectrum(System.Double[],System.Double,System.Double[]@,System.Double@,SeeSharpTools.JX.DSP.Spectrum.UnitConvSetting,SeeSharpTools.JX.DSP.Spectrum.FFTWindowType,System.Double)">
+            <summary>
+            <para>Computes the power spectrum of input time-domain signal.</para>
+            <para>Chinese Simplified: 计算输入信号的功率频谱。</para>
+            </summary>
+            <param name="x">
+            <para>input time-domain signal.</para>
+            <para>Chinese Simplified: 输入的时域波形。</para>
+            </param>
+            <param name="samplingRate">
+            <para>sampling rate of the input time-domain signal, in samples per second.</para>
+            <para>Chinese Simplified: 输入信号的采样率，以S/s为单位。</para>
+            </param>
+            <param name="spectrum">
+            <para>output sequence containing the power spectrum.</para>
+            <para>Chinese Simplified: 输出功率谱。</para>
+            </param>
+            <param name="df">
+            <para>the frequency resolution of the spectrum,  in hertz.</para>
+            <para>Chinese Simplified: 功率谱的频谱间隔，以Hz为单位。</para>
+            </param>
+            <param name="unitSettings">
+            <para>unit settings of the output power spectrum</para>
+            <para>Chinese Simplified: 设置功率谱的单位。</para>
+            </param>
+            <param name="windowType">
+            <para>the time-domain window to apply to the time signal.</para>
+            <para>Chinese Simplified: 窗类型。</para>
+            </param>
+            <param name="windowPara">
+            <para>parameter for a Kaiser/Gaussian/Dolph-Chebyshev window, If window is any other window, this parameter is ignored</para>
+            <para>Chinese Simplified: 窗调整系数，仅用于Kaiser/Gaussian/Dolph-Chebyshev窗。</para>
+            </param>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.Spectrum.PeakSpectrumAnalysis(System.Double[],System.Double,System.Double@,System.Double@)">
+            <summary>
+            Get the fundamental frequency and array of harmonic power.
+            </summary>
+            <param name="timewaveform">the waveform of input signal assuming in voltage</param>
+            <param name="dt">sampling interval of timewaveform (s)</param>
+            <param name="peakFreq">the calculated peak tone frequency</param>
+            <param name="peakAmp">the calculated peak tone voltage peak amplitude, which is 1.414*RMS</param>
+            i.e. peakSignal=peakAmp*sin(2*pi*peakFreq*t)
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.Spectrum.UnitConversion(System.Double[],System.Double,SeeSharpTools.JX.DSP.Spectrum.SpectrumType,SeeSharpTools.JX.DSP.Spectrum.UnitConvSetting,System.Double)">
+            <summary>
+            频谱单位转换函数
+            </summary>
+            <param name="spectrum">输入频谱，单位转换后返回的序列也保存在里面</param>
+            <param name="spectrumType">输入频谱类型，功率谱或者幅度谱</param>
+            <param name="df">频谱间隔</param>
+            <param name="unitSetting">单位转换设置</param>
+            <param name="equivalentNoiseBw">计算频谱时，加窗所用窗函数的等效噪声带宽</param>
+            <returns></returns>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.Spectrum.AdvanceRealFFT(System.Double[],System.Int32,SeeSharpTools.JX.DSP.Spectrum.FFTWindowType,System.Double[],SeeSharpTools.JX.DSP.Spectrum.SpectralInfo@)">
+            <summary>
+            Advance Real FFT
+            </summary>
+            <param name="xIn">time domain data</param>
+            <param name="spectralLines">spectralLines</param>
+            <param name="windowType">window type</param>
+            <param name="xOut">spectral out data</param>
+            <param name="spectralInfo">spectral info</param>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.BasicFFT.DftiDescMgr">
+            <summary>
+            DFT的描述符管理器
+            </summary>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.BasicFFT.RealFFT(System.Double[],System.Numerics.Complex[]@)">
+            <summary>
+            Real FFT
+            </summary>
+            <param name="xIn">time domain datas</param>
+            <param name="xOut">complex frequency datas as array of Complex64</param>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.BasicFFT.RealFFT(System.Double[],System.Double[]@)">
+            <summary>
+            Real FFT
+            </summary>
+            <param name="xIn">time domain datas</param>
+            <param name="xOut">complex frequency datas as array of double, re0 im0 re1 im1...</param>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.BasicFFT.RealIFFT(System.Double[],System.Double[]@)">
+            <summary>
+            Real FFT
+            </summary>
+            <param name="xIn">complex frequency domain datas as array of double, re0 im0 re1 im1...</param>
+            <param name="xOut">time domain datas</param>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.BasicFFT.RealIFFT(System.Numerics.Complex[],System.Double[]@)">
+            <summary>
+            Real FFT
+            </summary>
+            <param name="xIn">complex frequency domain datas as array of double, re0 im0 re1 im1...</param>
+            <param name="xOut">time domain datas</param>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.BasicFFT.ComplexFFT(System.Double[],System.Numerics.Complex[]@)">
+            <summary>
+            Complex FFT
+            </summary>
+            <param name="xIn">time domain complex datas, x0.re x0.im x1.re x1.im...</param>
+            <param name="xOut">complex frequency datas as array of Complex64</param>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.BasicFFT.ComplexFFT(System.Double[],System.Double[]@)">
+            <summary>
+            Complex FFT
+            </summary>
+            <param name="xIn">time domain complex datas, x0.re x0.im x1.re x1.im...</param>
+            <param name="xOut">complex frequency datas, y[0].re y[0].im y[1].re y[1].im...</param>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.BasicFFT.ComplexFFT(System.Numerics.Complex[],System.Numerics.Complex[]@)">
+            <summary>
+            Complex FFT
+            </summary>
+            <param name="xIn">time domain complex datas, x0.re x0.im x1.re x1.im...</param>
+            <param name="xOut">complex frequency datas, y[0].re y[0].im y[1].re y[1].im...</param>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.BasicFFT.ComplexIFFT(System.Numerics.Complex[],System.Numerics.Complex[]@)">
+            <summary>
+            Complex IFFT
+            </summary>
+            <param name="xIn">frequency domain complex datas</param>
+            <param name="xOut">complex time domain datas</param>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.BasicFFT.ComplexIFFT(System.Double[],System.Double[]@)">
+            <summary>
+            Complex IFFT
+            </summary>
+            <param name="xIn">frequency domain complex datas, x0.re x0.im x1.re x1.im...</param>
+            <param name="xOut">complex time domain datas, y0.re y0.im y1.re y1.im.../</param>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.BasicFFT.ComplexIFFT(System.Numerics.Complex[],System.Double[]@)">
+            <summary>
+            Complex IFFT
+            </summary>
+            <param name="xIn">frequency domain complex datas...</param>
+            <param name="xOut">complex time domain datas, y0.re y0.im y1.re y1.im.../</param>
+        </member>
+        <member name="T:SeeSharpTools.JX.DSP.Spectrum.FFTWindowType">
+            <summary>
+            <para>window type</para>
+            <para>Chinese Simplified: 窗类型</para>
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.FFTWindowType.None">
+            <summary>
+            <para>Rectangle</para>
+            <para>Chinese Simplified: 矩形窗</para>
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.FFTWindowType.Hanning">
+            <summary>
+            <para>Hanning</para>
+            <para>Chinese Simplified: 汉宁窗</para>
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.FFTWindowType.Hamming">
+            <summary>
+            <para>Hamming</para>
+            <para>Chinese Simplified: 海明窗</para>
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.FFTWindowType.Blackman_Harris">
+            <summary>
+            <para>Blackman Harris</para>
+            <para>Chinese Simplified: 布莱克曼-哈里斯窗</para>
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.FFTWindowType.Exact_Blackman">
+            <summary>
+            <para>Exact Blackman</para>
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.FFTWindowType.Blackman">
+            <summary>
+            <para>Blackman</para>
+            <para>Chinese Simplified: 布莱克曼窗</para>
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.FFTWindowType.Flat_Top">
+            <summary>
+            <para>Flat Top</para>
+            <para>Chinese Simplified: 平顶窗</para>	
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.FFTWindowType.Four_Term_B_Harris">
+            <summary>
+            <para>4 Term B-Harris</para>
+            </summary>																																						
+        </member>
+        <member name="T:SeeSharpTools.JX.DSP.Spectrum.SpectrumOutputUnit">
+            <summary>
+            <para>unit of power spectrum</para>
+            <para>Chinese Simplified: 频谱的单位</para>
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.SpectrumOutputUnit.V">
+            <summary>
+            Voltage
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.SpectrumOutputUnit.V2">
+            <summary>
+            V^2
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.SpectrumOutputUnit.W">
+            <summary>
+            Watt
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.SpectrumOutputUnit.dBm">
+            <summary>
+            dBm
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.SpectrumOutputUnit.dBW">
+            <summary>
+            dBW
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.SpectrumOutputUnit.dBV">
+            <summary>
+            dBV
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.SpectrumOutputUnit.dBmV">
+            <summary>
+            dBmV
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.SpectrumOutputUnit.dBuV">
+            <summary>
+            dBuV
+            </summary>
+        </member>
+        <member name="T:SeeSharpTools.JX.DSP.Spectrum.SpectrumType">
+            <summary>
+            <para>spectrum type</para>
+            <para>Chinese Simplified: 频谱类型</para>
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.SpectrumType.Amplitude">
+            <summary>
+            <para>amplitude spectrum</para>
+            <para>Chinese Simplified: 幅度谱</para>
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.SpectrumType.Power">
+            <summary>
+            <para>power spectrum</para>
+            <para>Chinese Simplified: 功率谱</para>
+            </summary>
+        </member>
+        <member name="T:SeeSharpTools.JX.DSP.Spectrum.PeakScaling">
+            <summary>
+            Spectrum peak scaling
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.PeakScaling.Rms">
+            <summary>
+            Rms
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.PeakScaling.Peak">
+            <summary>
+            Peak
+            </summary>
+        </member>
+        <member name="T:SeeSharpTools.JX.DSP.Spectrum.UnitConvSetting">
+            <summary>
+            <para>spectrum unit convertion settings</para>
+            <para>Chinese Simplified: 单位转换定义结构体</para>
+            </summary>
+        </member>
+        <member name="T:SeeSharpTools.JX.DSP.Spectrum.SpectralInfo">
+            <summary>
+            <para>spectral information.</para>
+            <para>Chinese Simplified: 谱信息结构</para>
+            </summary>
+        </member>
+        <member name="T:SeeSharpTools.JX.DSP.Spectrum.InputDataType">
+            <summary>
+            <para>Data type of input signal.</para>
+            <para>Chinese Simplified: 输入信号的类型。</para>
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.InputDataType.Real">
+            <summary>
+            实信号
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.InputDataType.Complex">
+            <summary>
+            复信号
+            </summary>
+        </member>
+        <member name="T:SeeSharpTools.JX.DSP.Spectrum.SpectrumOutputType">
+            <summary>
+            定义如何确定频谱线数，默认为ByNumberOfLines
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.SpectrumOutputType.ByNumberOfLines">
+            <summary>
+            用户通过NumberOfLines属性来设置所需的频谱线数，Commit()后可以获取实际频谱分辨率。
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.SpectrumOutputType.ByRBW">
+            <summary>
+            用户通过RBW属性来设置所需的频谱分辨率，Commit()之后可以获取实际的频谱线数。
+            </summary>
+        </member>
+        <member name="T:SeeSharpTools.JX.DSP.Spectrum.SpectrumAverageMode">
+            <summary>
+            频谱平均方式定义
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.SpectrumAverageMode.NoAveraging">
+            <summary>
+            无平均
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.SpectrumAverageMode.RMSAveraging">
+            <summary>
+            RMS平均
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.SpectrumAverageMode.PeakHold">
+            <summary>
+            峰值保持
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.SpectrumAverageMode.VectorAveraging">
+            <summary>
+            矢量平均
+            </summary>
+        </member>
+        <member name="T:SeeSharpTools.JX.DSP.Spectrum.SpectrumWeightingType">
+            <summary>
+            当平均方式为RMSAverage时，设定平均的加权方式
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.SpectrumWeightingType.LinearMoving">
+            <summary>
+            线性滑动
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.SpectrumWeightingType.LinearContinuous">
+            <summary>
+            线性连续
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.SpectrumWeightingType.Exponential">
+            <summary>
+            指数平均
+            </summary>
+        </member>
+        <member name="T:SeeSharpTools.JX.DSP.Spectrum.SpectrumUnitInfo">
+            <summary>
+            频谱单位信息
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JX.DSP.Spectrum.SpectrumUnitInfo.Type">
+            <summary>
+            单位类型
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JX.DSP.Spectrum.SpectrumUnitInfo.Impedance">
+            <summary>
+            阻抗
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JX.DSP.Spectrum.SpectrumUnitInfo.IsPSD">
+            <summary>
+            幅度或功率谱是否归一化为密度谱(Power Spectral Density)，默认为false。
+            </summary>
+        </member>
+        <member name="T:SeeSharpTools.JX.DSP.Spectrum.SpectrumOutput">
+            <summary>
+            输出参数
+            </summary>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.SpectrumOutput.#ctor">
+            <summary>
+            默认构造函数
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JX.DSP.Spectrum.SpectrumOutput.Type">
+            <summary>
+            确定频谱线数的方式
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JX.DSP.Spectrum.SpectrumOutput.NumberOfLines">
+            <summary>
+            谱线数
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JX.DSP.Spectrum.SpectrumOutput.RBW">
+            <summary>
+            频谱分辨率, 暂不可用
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JX.DSP.Spectrum.SpectrumOutput.CenterFrequency">
+            <summary>
+            频谱的中心频率，默认为-1，暂不可用
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JX.DSP.Spectrum.SpectrumOutput.Bandwidth">
+            <summary>
+            频谱的带宽，默认为-1，暂不可用
+            </summary>
+        </member>
+        <member name="T:SeeSharpTools.JX.DSP.Spectrum.SpectrumAverage">
+            <summary>
+            频谱平均配置
+            </summary>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.SpectrumAverage.#ctor">
+            <summary>
+            默认构造函数
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JX.DSP.Spectrum.SpectrumAverage.Mode">
+            <summary>
+            平均方式
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JX.DSP.Spectrum.SpectrumAverage.WeightingType">
+            <summary>
+            平均加权方式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:SeeSharpTools.JX.DSP.Spectrum.SpectrumAverage.Size">
+            <summary>
+            当平均方式为RMSAverage时，对于LinearMoving加权设定平均次数，对于Exponential加权设定指数衰减系数
+            </summary>
+        </member>
+        <member name="T:SeeSharpTools.JX.DSP.Spectrum.SpectralInformation">
+            <summary>
+            频谱计算相关信息
+            </summary>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.SpectralInformation.#ctor">
+            <summary>
+            默认构造函数
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JX.DSP.Spectrum.SpectralInformation.FreqStart">
+            <summary>
+            频谱起始频率f0
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JX.DSP.Spectrum.SpectralInformation.FreqDelta">
+            <summary>
+            频谱谱线的频率间隔df
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JX.DSP.Spectrum.SpectralInformation.FFTSize">
+            <summary>
+            每次计算FFT时的长度，即每次应输入的时域波形长度。
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JX.DSP.Spectrum.SpectralInformation.FFTCount">
+            <summary>
+            当前已计算FFT的次数，该值会被Reset()方法清零。
+            </summary>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.DFTIDescMgr.GetInstance">
+            <summary>
+            获取DFTIDescMgr的实体
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.DFTIDescMgr._dftDescDict">
+            <summary>
+            DFT desc Dictionary
+            </summary>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.DFTIDescMgr.GetDFTDesc(System.Int32,SeeSharpTools.JX.DSP.Spectrum.DFTType)">
+            <summary>
+            Get DFTKey
+            </summary>
+            <param name="fftSampleCount">fft运算的点数</param>
+            <param name="type">fft类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.DFTIDescMgr.Contains(System.UInt32,SeeSharpTools.JX.DSP.Spectrum.DFTType,System.UInt64@)">
+            <summary>
+            Contains DFTKey
+            </summary>
+            <param name="fftSampleCount">fft运算的点数</param>
+            <param name="type">fft类型</param>
+            <param name="keyId">返回的keyId</param>
+            <returns></returns>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.DFTIDescMgr.Contains(System.UInt32,SeeSharpTools.JX.DSP.Spectrum.DFTType)">
+            <summary>
+            Contains DFTKey
+            </summary>
+            <param name="fftSampleCount">fft运算的点数</param>
+            <param name="type">fft类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.DFTIDescMgr.AddDFTDesc(System.UInt32,SeeSharpTools.JX.DSP.Spectrum.DFTType,System.IntPtr)">
+            <summary>
+            添加DFT Desc
+            </summary>
+            <param name="fftSampleCount"></param>
+            <param name="type"></param>
+            <param name="desc"></param>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.DFTIDescMgr.AddDFTDesc(System.UInt64,System.IntPtr)">
+            <summary>
+            添加DFT Desc
+            </summary>
+            <param name="keyId">keyId, 由Contains返回</param>
+            <param name="desc">描述符</param>
+        </member>
+        <member name="T:SeeSharpTools.JX.DSP.Spectrum.DFTKey">
+            <summary>
+            DFT Desc's Key
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JX.DSP.Spectrum.DFTKey.FFTSampleCount">
+            <summary>
+            FFT点数
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JX.DSP.Spectrum.DFTKey.Type">
+            <summary>
+            FFT类型
+            </summary>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.DFTKey.GetKeyNum">
+            <summary>
+            获取Key的值
+            [7][6][5][4]  [3][2][1][0]
+            fftThreadID(4bytes) FFT SampleCount(28bit) FFT Type 4bit
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SeeSharpTools.JX.DSP.Spectrum.DFTType">
+            <summary>
+            DFT Type
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.DFTType.Double1DRealInComplexOut">
+            <summary>
+            双精度类型的实数输入复数输出的FFT,或IFFT
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.DFTType.Double1DComplexInComplexOut">
+            <summary>
+            //双精度类型的复数输入复数输出的FFT,或IFFT
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.DFTType.Single1DRealInComplexOut">
+            <summary>
+            双精度类型的实数输入复数输出的FFT,或IFFT
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.DFTType.Single1DComplexInComplexOut">
+            <summary>
+            //双精度类型的复数输入复数输出的FFT,或IFFT
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.SpectrumAverageAux._averagedSpectrum">
+            <summary>
+            用于缓存平均后的频谱
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.SpectrumAverageAux._averageCount">
+            <summary>
+            已平均的次数
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.SpectrumAverageAux._spectrumList">
+            <summary>
+            频谱链表，用于存储平均的多个频谱
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.SpectrumAverageAux._averagingMode">
+            <summary>
+            平均模式
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.SpectrumAverageAux._averagingSize">
+            <summary>
+            平均的最大次数
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.SpectrumAverageAux._weightingType">
+            <summary>
+            平均的加权方式
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.SpectrumAverageAux._linearAveragingMode">
+            <summary>
+            线性平均的方式
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.SpectrumAverageAux._dataUnit">
+            <summary>
+            数据的单位
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JX.DSP.Spectrum.SpectrumAverageAux.Mode">
+            <summary>
+            频谱平均模式，无平均/矢量/RMS/PeakHold
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JX.DSP.Spectrum.SpectrumAverageAux.Size">
+            <summary>
+            平均次数
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JX.DSP.Spectrum.SpectrumAverageAux.WeightingType">
+            <summary>
+            加权类型
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JX.DSP.Spectrum.SpectrumAverageAux.DataUnit">
+            <summary>
+            the spectral data is linear or logarithm.
+            </summary>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.SpectrumAverageAux.Reset">
+            <summary>
+            Reset the spectrum averaging, set the average count to zero.
+            </summary>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.SpectrumAverageAux.AverageSpectrum(System.Double[],System.Int32@)">
+            <summary>
+            频谱平均
+            </summary>
+            <param name="averagedSpectrum">平均后的频谱</param>
+            <param name="averageCount">已平均的次数</param>
+            <param name="newSpectrum">新输入的频谱</param>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.SpectrumAverageAux.AverageSpectrum(System.Double[])">
+            <summary>
+            频谱平均
+            </summary>
+            <param name="newSpectrum"></param>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.Window.WindowCGFactor">
+            <summary>
+            内部使用，以WindowType为索引的调整系数Coherent Gain
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.Window.WindowENBWFactor">
+            <summary>
+            以WindowType为索引的ENBW值
+            </summary>
+        </member>
+        <member name="T:SeeSharpTools.JX.DSP.Spectrum.SpectrumTask">
+            <summary>
+            <para>Computes spectrum of a time-domain signal.</para>
+            <para>Chinese Simplified: 计算信号的频谱。</para>
+            </summary>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.SpectrumTask.#ctor(SeeSharpTools.JX.DSP.Spectrum.InputDataType,System.Double)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="dataType">输入数据类型</param>
+            <param name="sampleRate">采样率</param>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.SpectrumTask.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.SpectrumTask.Committed">
+            <summary>
+            任务是否已经提交
+            </summary>
+        </member>
+        <member name="F:SeeSharpTools.JX.DSP.Spectrum.SpectrumTask.Sqrt2">
+            <summary>
+            Sqrt 2
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JX.DSP.Spectrum.SpectrumTask.InputDataType">
+            <summary>
+            输入数据类型
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JX.DSP.Spectrum.SpectrumTask.SampleRate">
+            <summary>
+            采样率
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JX.DSP.Spectrum.SpectrumTask.WindowType">
+            <summary>
+            频谱加窗类型
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JX.DSP.Spectrum.SpectrumTask.WindowPara">
+            <summary>
+            对于特定的窗类型(如Kaiser、Gaussian等)，可设定窗系数，暂不可用
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JX.DSP.Spectrum.SpectrumTask.Output">
+            <summary>
+            频谱输出参数
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JX.DSP.Spectrum.SpectrumTask.Unit">
+            <summary>
+            频谱单位参数
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JX.DSP.Spectrum.SpectrumTask.Average">
+            <summary>
+            频谱平均参数
+            </summary>
+        </member>
+        <member name="P:SeeSharpTools.JX.DSP.Spectrum.SpectrumTask.SpectralInfomation">
+            <summary>
+            频谱输出信息(只读)
+            </summary>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.SpectrumTask.Commit">
+            <summary>
+            <para>提交已设置的公共属性。</para>
+            <para>根据设置的频谱参数，计算出实际的RBW/NumberOfLines、FFTSize、f0、df数值并更新至相应属性。</para>
+            </summary>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.SpectrumTask.Reset">
+            <summary>
+            重置FFTCount属性值，若配置了频谱平均，则频谱平均历史也会被清空，即重新开始平均。
+            </summary>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.SpectrumTask.GetSpectrum(System.Double[],System.Double[]@)">
+            <summary>
+            输入时域波形并获取频谱
+            </summary>
+            <param name="data">时域数据（实信号）</param>
+            <param name="spectrum">输出的频谱存放数组</param>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.SpectrumTask.GetSpectrum(System.Numerics.Complex[],System.Double[]@)">
+            <summary>
+            输入时域波形并获取频谱
+            </summary>
+            <param name="data">时域数据（复信号）</param>
+            <param name="spectrum">输出的频谱存放数组</param>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.SpectrumTask.GetSpectrum(System.Double[],System.Double[]@,System.Double[]@)">
+            <summary>
+            输入时域波形并获取频谱
+            </summary>
+            <param name="data">时域数据（实信号）</param>
+            <param name="amplitude">输出的幅度谱存放数组</param>
+            <param name="phase">输出的相位谱存放数组</param>
+        </member>
+        <member name="M:SeeSharpTools.JX.DSP.Spectrum.SpectrumTask.GetSpectrum(System.Numerics.Complex[],System.Double[]@,System.Double[]@)">
+            <summary>
+            输入时域波形并获取频谱
+            </summary>
+            <param name="data">时域数据（复信号）</param>
+            <param name="amplitude">输出的幅度谱存放数组</param>
+            <param name="phase">输出的相位谱存放数组</param>
+        </member>
+    </members>
+</doc>

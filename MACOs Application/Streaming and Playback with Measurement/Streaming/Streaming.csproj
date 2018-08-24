@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A19BD618-149D-4589-8DF9-FD1F89E5375F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MACOs.JY.Streaming</RootNamespace>
+    <AssemblyName>MACOs.JY.Streaming</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\MACOs.JY.Streaming.XML</DocumentationFile>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="JYPCIE69814, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\SeeSharp\JYTEK\Hardware\Digitizer\JYPCIE69814\Bin\JYPCIE69814.dll</HintPath>
+    </Reference>
+    <Reference Include="JYPCIE69834">
+      <HintPath>..\..\..\..\..\SeeSharp\JYTEK\Hardware\Digitizer\JYPCIE69834\Bin\JYPCIE69834.dll</HintPath>
+    </Reference>
+    <Reference Include="JYPCIE69852">
+      <HintPath>..\..\..\..\..\SeeSharp\JYTEK\Hardware\Digitizer\JYPCIE69852\Bin\JYPCIE69852.dll</HintPath>
+    </Reference>
+    <Reference Include="JYPXI62204">
+      <HintPath>..\..\..\..\..\SeeSharp\JYTEK\Hardware\DAQ\JYPXI62204\Bin\JYPXI62204.dll</HintPath>
+    </Reference>
+    <Reference Include="JYPXI69816H, Version=1.0.0.0, Culture=neutral, PublicKeyToken=550d67be840eec5b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\SeeSharp\JYTEK\Hardware\Digitizer\JYPXI69816H\Bin\JYPXI69816H.dll</HintPath>
+    </Reference>
+    <Reference Include="JYPXI69846D, Version=1.0.0.0, Culture=neutral, PublicKeyToken=92c60f7512a3367d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\SeeSharp\JYTEK\Hardware\Digitizer\JYPXI69846D\Bin\JYPXI69846D.dll</HintPath>
+    </Reference>
+    <Reference Include="JYPXIE69529, Version=1.0.3.0, Culture=neutral, PublicKeyToken=baf6f065ce4627cc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\SeeSharp\JYTEK\Hardware\DSA\JYPXIE69529\Bin\JYPXIE69529.dll</HintPath>
+    </Reference>
+    <Reference Include="JYPXIE69848H, Version=1.0.0.0, Culture=neutral, PublicKeyToken=92c60f7512a3367d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\SeeSharp\JYTEK\Hardware\Digitizer\JYPXIE69848H\JYPXIE69848H.dll</HintPath>
+    </Reference>
+    <Reference Include="JYPXIE69852, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\SeeSharp\JYTEK\Hardware\Digitizer\JYPXIE69852\Bin\JYPXIE69852.dll</HintPath>
+    </Reference>
+    <Reference Include="JYUSB61902, Version=1.0.5.0, Culture=neutral, PublicKeyToken=baf6f065ce4627cc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\SeeSharp\JYTEK\Hardware\DAQ\JYUSB61902\Bin\JYUSB61902.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="JYCommon.cs" />
+    <Compile Include="JYPCIE69834.cs" />
+    <Compile Include="JYPXI69816H.cs" />
+    <Compile Include="JYPXI69846D.cs" />
+    <Compile Include="JYPCIE69852.cs" />
+    <Compile Include="JYPCIE69814.cs" />
+    <Compile Include="JYPXI62204.cs" />
+    <Compile Include="JYPXIE69529.cs" />
+    <Compile Include="JYPXIE69848H.cs" />
+    <Compile Include="Streaming.cs" />
+    <Compile Include="JYPXIE69852.cs" />
+    <Compile Include="JYUSB61902.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TaskCreater.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

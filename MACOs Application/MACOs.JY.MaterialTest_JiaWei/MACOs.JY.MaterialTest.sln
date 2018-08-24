@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{4B198826-EB02-4873-BDDB-7EC87404B2F8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MACOs", "MACOs", "{DDAB503A-ABCC-4D5B-8628-CC71CE7CB94E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MACOs.JYPCI69524", "MACOs.JYPCI69524\MACOs.JYPCI69524.csproj", "{CA79B974-EB3D-46E9-A474-FF94ECD8271E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MACOs MaterialTestSystem", "MACOs MaterialTestSystem\MACOs MaterialTestSystem.csproj", "{A39F6D8F-C652-491F-9CB8-3BBF0BA2BB77}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA79B974-EB3D-46E9-A474-FF94ECD8271E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA79B974-EB3D-46E9-A474-FF94ECD8271E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA79B974-EB3D-46E9-A474-FF94ECD8271E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA79B974-EB3D-46E9-A474-FF94ECD8271E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A39F6D8F-C652-491F-9CB8-3BBF0BA2BB77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A39F6D8F-C652-491F-9CB8-3BBF0BA2BB77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A39F6D8F-C652-491F-9CB8-3BBF0BA2BB77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A39F6D8F-C652-491F-9CB8-3BBF0BA2BB77}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CA79B974-EB3D-46E9-A474-FF94ECD8271E} = {DDAB503A-ABCC-4D5B-8628-CC71CE7CB94E}
+		{A39F6D8F-C652-491F-9CB8-3BBF0BA2BB77} = {4B198826-EB02-4873-BDDB-7EC87404B2F8}
+	EndGlobalSection
+EndGlobal
