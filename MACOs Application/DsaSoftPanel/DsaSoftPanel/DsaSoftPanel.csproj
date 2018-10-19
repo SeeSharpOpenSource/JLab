@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{44982AFC-FAA9-424D-B71F-974AF91D8115}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DsaSoftPanel</RootNamespace>
+    <AssemblyName>DsaSoftPanel</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>JYTek.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="JYPCI69527">
+      <HintPath>..\Reference\JYPCI69527.dll</HintPath>
+    </Reference>
+    <Reference Include="JYPXI69527">
+      <HintPath>..\Reference\JYPXI69527.dll</HintPath>
+    </Reference>
+    <Reference Include="JYPXIe69529">
+      <HintPath>..\Reference\JYPXIe69529.dll</HintPath>
+    </Reference>
+    <Reference Include="JYUSB62405">
+      <HintPath>..\Reference\JYUSB62405.dll</HintPath>
+    </Reference>
+    <Reference Include="MathNet.Filtering">
+      <HintPath>C:\SeeSharp\JYTEK\SeeSharpTools\Bin\MathNet.Filtering.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ModernUI.1.3.0.0\lib\net20\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="SeeSharpTools.JY.ArrayUtility">
+      <HintPath>..\Reference\SeeSharpTools.JY.ArrayUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="SeeSharpTools.JY.DSP.Fundamental">
+      <HintPath>C:\SeeSharp\JYTEK\SeeSharpTools\Bin\SeeSharpTools.JY.DSP.Fundamental.dll</HintPath>
+    </Reference>
+    <Reference Include="SeeSharpTools.JY.DSP.SoundVibration">
+      <HintPath>C:\SeeSharp\JYTEK\SeeSharpTools\Bin\SeeSharpTools.JY.DSP.SoundVibration.dll</HintPath>
+    </Reference>
+    <Reference Include="SeeSharpTools.JY.DSP.Utility">
+      <HintPath>C:\SeeSharp\JYTEK\SeeSharpTools\Bin\SeeSharpTools.JY.DSP.Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="SeeSharpTools.JY.GUI, Version=1.3.2.291, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Reference\SeeSharpTools.JY.GUI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TX.Framework.WindowUI">
+      <HintPath>..\Reference\TX.Framework.WindowUI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AITask\AITask.cs" />
+    <Compile Include="AITask\ITriggerable.cs" />
+    <Compile Include="AITask\JYPCI69527AITaskImpl.cs" />
+    <Compile Include="AITask\JYPXI69527AITaskImpl.cs" />
+    <Compile Include="AITask\JYUSB62405AITaskImpl.cs" />
+    <Compile Include="AITask\PXIe69529AITaskImpl.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="DsaBoardConnectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DsaBoardConnectForm.Designer.cs">
+      <DependentUpon>DsaBoardConnectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Enumeration\BoardType.cs" />
+    <Compile Include="Enumeration\Coupling.cs" />
+    <Compile Include="Enumeration\FunctionType.cs" />
+    <Compile Include="Enumeration\MeasureType.cs" />
+    <Compile Include="Enumeration\Probe.cs" />
+    <Compile Include="Enumeration\TaskStatus.cs" />
+    <Compile Include="Enumeration\TriggerCondition.cs" />
+    <Compile Include="Enumeration\UnitType.cs" />
+    <Compile Include="FunctionUtility\FilterFunction.cs" />
+    <Compile Include="FunctionUtility\FunctionConfigView\HarmonicConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FunctionUtility\FunctionConfigView\HarmonicConfigForm.Designer.cs">
+      <DependentUpon>HarmonicConfigForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FunctionUtility\FunctionConfigView\SquareAnalyzeConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FunctionUtility\FunctionConfigView\SquareAnalyzeConfigForm.Designer.cs">
+      <DependentUpon>SquareAnalyzeConfigForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FunctionUtility\FunctionConfigView\PhaseShiftConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FunctionUtility\FunctionConfigView\PhaseShiftConfigForm.Designer.cs">
+      <DependentUpon>PhaseShiftConfigForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FunctionUtility\FunctionConfigView\FilterConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FunctionUtility\FunctionConfigView\FilterConfigForm.Designer.cs">
+      <DependentUpon>FilterConfigForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FunctionUtility\FunctionConfigView\SpectrumConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FunctionUtility\FunctionConfigView\SpectrumConfigForm.Designer.cs">
+      <DependentUpon>SpectrumConfigForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FunctionUtility\HarmonicFunction.cs" />
+    <Compile Include="FunctionUtility\FunctionBase.cs" />
+    <Compile Include="FunctionUtility\PhaseShiftFunction.cs" />
+    <Compile Include="FunctionUtility\SpectrumFunction.cs" />
+    <Compile Include="FunctionUtility\SquareAnalyzeFunction.cs" />
+    <Compile Include="FunctionUtility\ToneAnalyzeFunction.cs" />
+    <Compile Include="OscilloscopeAboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OscilloscopeAboutBox.Designer.cs">
+      <DependentUpon>OscilloscopeAboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SoftPanelGlobalInfo.cs" />
+    <Compile Include="DsaSoftPanelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DsaSoftPanelForm.Designer.cs">
+      <DependentUpon>DsaSoftPanelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TaskComponents\ChannelConfig.cs" />
+    <Compile Include="TaskComponents\FunctionStatus.cs" />
+    <Compile Include="TaskComponents\FunctionTask.cs" />
+    <Compile Include="TaskComponents\MeasureHandler.cs" />
+    <Compile Include="TaskComponents\OscilloscopeTask.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScopeComponents\CommonViewManager.cs" />
+    <Compile Include="ThemeMaintain\IThemePainter.cs" />
+    <Compile Include="ScopeComponents\ChannelViewManager.cs" />
+    <Compile Include="TriggerConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TriggerConfigForm.Designer.cs">
+      <DependentUpon>TriggerConfigForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewComponents\StatisticPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewComponents\StatisticPanel.Designer.cs">
+      <DependentUpon>StatisticPanel.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="DsaBoardConnectForm.resx">
+      <DependentUpon>DsaBoardConnectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FunctionUtility\FunctionConfigView\HarmonicConfigForm.resx">
+      <DependentUpon>HarmonicConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FunctionUtility\FunctionConfigView\SquareAnalyzeConfigForm.resx">
+      <DependentUpon>SquareAnalyzeConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FunctionUtility\FunctionConfigView\PhaseShiftConfigForm.resx">
+      <DependentUpon>PhaseShiftConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FunctionUtility\FunctionConfigView\FilterConfigForm.resx">
+      <DependentUpon>FilterConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FunctionUtility\FunctionConfigView\SpectrumConfigForm.resx">
+      <DependentUpon>SpectrumConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OscilloscopeAboutBox.resx">
+      <DependentUpon>OscilloscopeAboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DsaSoftPanelForm.resx">
+      <DependentUpon>DsaSoftPanelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="TriggerConfigForm.resx">
+      <DependentUpon>TriggerConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewComponents\StatisticPanel.resx">
+      <DependentUpon>StatisticPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="JYTek.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
