@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D7FA4E74-D563-4551-9B04-6A3AD87F59F1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PipeValveControl</RootNamespace>
+    <AssemblyName>PipeValveControl</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CrossPipe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CrossPipe.Designer.cs">
+      <DependentUpon>CrossPipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DownNodePipe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DownNodePipe.Designer.cs">
+      <DependentUpon>DownNodePipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DownPipeCap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DownPipeCap.Designer.cs">
+      <DependentUpon>DownPipeCap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DownsideTPipe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DownsideTPipe.Designer.cs">
+      <DependentUpon>DownsideTPipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DownToLeftPipe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DownToLeftPipe.Designer.cs">
+      <DependentUpon>DownToLeftPipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DownToRightPipe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DownToRightPipe.Designer.cs">
+      <DependentUpon>DownToRightPipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HorizentalPipe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HorizentalPipe.Designer.cs">
+      <DependentUpon>HorizentalPipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HorizentalValve.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HorizentalValve.Designer.cs">
+      <DependentUpon>HorizentalValve.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LeftNodePipe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LeftNodePipe.Designer.cs">
+      <DependentUpon>LeftNodePipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LeftPipeCap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LeftPipeCap.Designer.cs">
+      <DependentUpon>LeftPipeCap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LeftsideTPipe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LeftsideTPipe.Designer.cs">
+      <DependentUpon>LeftsideTPipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HorizentalGage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HorizentalGage.Designer.cs">
+      <DependentUpon>HorizentalGage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VerticalGage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VerticalGage.Designer.cs">
+      <DependentUpon>VerticalGage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PipeControlBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PipeControlBase.Designer.cs">
+      <DependentUpon>PipeControlBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RightNodePipe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RightNodePipe.Designer.cs">
+      <DependentUpon>RightNodePipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RightPipeCap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RightPipeCap.Designer.cs">
+      <DependentUpon>RightPipeCap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RightsideTPipe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RightsideTPipe.Designer.cs">
+      <DependentUpon>RightsideTPipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpNodePipe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UpNodePipe.Designer.cs">
+      <DependentUpon>UpNodePipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpPipeCap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UpPipeCap.Designer.cs">
+      <DependentUpon>UpPipeCap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpsideTPipe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UpsideTPipe.Designer.cs">
+      <DependentUpon>UpsideTPipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpToLeftPipe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UpToLeftPipe.Designer.cs">
+      <DependentUpon>UpToLeftPipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpToRightPipe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UpToRightPipe.Designer.cs">
+      <DependentUpon>UpToRightPipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VerticalPipe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VerticalPipe.Designer.cs">
+      <DependentUpon>VerticalPipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VerticalValve.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VerticalValve.Designer.cs">
+      <DependentUpon>VerticalValve.cs</DependentUpon>
+    </Compile>
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CrossPipe.resx">
+      <DependentUpon>CrossPipe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DownNodePipe.resx">
+      <DependentUpon>DownNodePipe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DownPipeCap.resx">
+      <DependentUpon>DownPipeCap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DownsideTPipe.resx">
+      <DependentUpon>DownsideTPipe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DownToLeftPipe.resx">
+      <DependentUpon>DownToLeftPipe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DownToRightPipe.resx">
+      <DependentUpon>DownToRightPipe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HorizentalPipe.resx">
+      <DependentUpon>HorizentalPipe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HorizentalValve.resx">
+      <DependentUpon>HorizentalValve.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LeftNodePipe.resx">
+      <DependentUpon>LeftNodePipe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LeftPipeCap.resx">
+      <DependentUpon>LeftPipeCap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LeftsideTPipe.resx">
+      <DependentUpon>LeftsideTPipe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HorizentalGage.resx">
+      <DependentUpon>HorizentalGage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerticalGage.resx">
+      <DependentUpon>VerticalGage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PipeControlBase.resx">
+      <DependentUpon>PipeControlBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RightNodePipe.resx">
+      <DependentUpon>RightNodePipe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RightPipeCap.resx">
+      <DependentUpon>RightPipeCap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RightsideTPipe.resx">
+      <DependentUpon>RightsideTPipe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpNodePipe.resx">
+      <DependentUpon>UpNodePipe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpPipeCap.resx">
+      <DependentUpon>UpPipeCap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpsideTPipe.resx">
+      <DependentUpon>UpsideTPipe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpToLeftPipe.resx">
+      <DependentUpon>UpToLeftPipe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpToRightPipe.resx">
+      <DependentUpon>UpToRightPipe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerticalPipe.resx">
+      <DependentUpon>VerticalPipe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerticalValve.resx">
+      <DependentUpon>VerticalValve.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
