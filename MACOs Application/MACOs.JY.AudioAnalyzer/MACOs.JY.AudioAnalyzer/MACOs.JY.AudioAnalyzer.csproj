@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{70A9F53A-A90F-448B-8355-97F55EF7A983}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MACOs.JY.AudioAnalyzer</RootNamespace>
+    <AssemblyName>MACOs.JY.AudioAnalyzer</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="JYPCI69527, Version=1.0.1.0, Culture=neutral, PublicKeyToken=550d67be840eec5b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Reference\JYPCI69527\Bin\JYPCI69527.dll</HintPath>
+    </Reference>
+    <Reference Include="JYPXI69527, Version=1.0.3.0, Culture=neutral, PublicKeyToken=550d67be840eec5b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Reference\JYPXI69527\Bin\JYPXI69527.dll</HintPath>
+    </Reference>
+    <Reference Include="JYUSB61902">
+      <HintPath>..\Reference\JYUSB61902\Bin\JYUSB61902.dll</HintPath>
+    </Reference>
+    <Reference Include="SeeSharpTools.JY.ArrayUtility">
+      <HintPath>C:\SeeSharp\JYTEK\SeeSharpTools\Bin\SeeSharpTools.JY.ArrayUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="SeeSharpTools.JY.Audio, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Reference\SeeSharpTools.JY.Audio.dll</HintPath>
+    </Reference>
+    <Reference Include="SeeSharpTools.JY.DSP.Fundamental">
+      <HintPath>C:\SeeSharp\JYTEK\SeeSharpTools\Bin\SeeSharpTools.JY.DSP.Fundamental.dll</HintPath>
+    </Reference>
+    <Reference Include="SeeSharpTools.JY.GUI">
+      <HintPath>..\Reference\SeeSharpTools.JY.GUI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AITask\AITask.cs" />
+    <Compile Include="AITask\JYPXI69527AITaskImpl.cs" />
+    <Compile Include="AITask\JYPCI69527AITaskImpl.cs" />
+    <Compile Include="AITask\JYUSB61902AITaskImpl.cs" />
+    <Compile Include="AnalyzePanels\AnalyzePanelBase.cs" />
+    <Compile Include="AnalyzePanels\AnalyzePanelImpl\MultiToneAnalyze.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnalyzePanels\AnalyzePanelImpl\MultiToneAnalyze.Designer.cs">
+      <DependentUpon>MultiToneAnalyze.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AnalyzePanels\AnalyzePanelImpl\TimeDomainEstimateAnalyze.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnalyzePanels\AnalyzePanelImpl\TimeDomainEstimateAnalyze.Designer.cs">
+      <DependentUpon>TimeDomainEstimateAnalyze.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AnalyzePanels\AnalyzePanelImpl\SteppedLevelSineAnalyze.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnalyzePanels\AnalyzePanelImpl\SteppedLevelSineAnalyze.Designer.cs">
+      <DependentUpon>SteppedLevelSineAnalyze.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AnalyzePanels\AnalyzePanelImpl\LogChripAnalyze.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnalyzePanels\AnalyzePanelImpl\LogChripAnalyze.Designer.cs">
+      <DependentUpon>LogChripAnalyze.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AnalyzePanels\AnalyzePanelImpl\DualToneAnalyze.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnalyzePanels\AnalyzePanelImpl\DualToneAnalyze.Designer.cs">
+      <DependentUpon>DualToneAnalyze.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AnalyzePanels\AnalyzePanelImpl\MismatchAnalyze.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnalyzePanels\AnalyzePanelImpl\MismatchAnalyze.Designer.cs">
+      <DependentUpon>MismatchAnalyze.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AnalyzePanels\AnalyzePanelImpl\SingleToneAnalyze.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnalyzePanels\AnalyzePanelImpl\SingleToneAnalyze.Designer.cs">
+      <DependentUpon>SingleToneAnalyze.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AnalyzePanels\AnalyzePanelImpl\SteppedSineWaveCrossTalkAnalyze.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnalyzePanels\AnalyzePanelImpl\SteppedSineWaveCrossTalkAnalyze.Designer.cs">
+      <DependentUpon>SteppedSineWaveCrossTalkAnalyze.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AnalyzePanels\AnalyzerPanelFactory.cs" />
+    <Compile Include="AOTask\AOTask.cs" />
+    <Compile Include="AOTask\JYPXI69527AOTaskImpl.cs" />
+    <Compile Include="AOTask\JYPCI69527AOTaskImpl.cs" />
+    <Compile Include="AOTask\JYUSB61902AOTaskImpl.cs" />
+    <Compile Include="AudioAnalyzerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AudioAnalyzerForm.Designer.cs">
+      <DependentUpon>AudioAnalyzerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigBoardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfigBoardForm.Designer.cs">
+      <DependentUpon>ConfigBoardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Enumerations\AnalyzeStatus.cs" />
+    <Compile Include="Enumerations\TriggerCondition.cs" />
+    <Compile Include="Enumerations\TriggerSource.cs" />
+    <Compile Include="Enumerations\TriggerType.cs" />
+    <Compile Include="GeneratorPanel\Equilizer\EquilizerImpl\SteppedSineEquilizer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeneratorPanel\Equilizer\EquilizerImpl\SteppedSineEquilizer.Designer.cs">
+      <DependentUpon>SteppedSineEquilizer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeneratorPanel\Equilizer\IEquilizer.cs" />
+    <Compile Include="GeneratorPanel\GeneratorImpl\MultiToneWaveForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeneratorPanel\GeneratorImpl\MultiToneWaveForm.Designer.cs">
+      <DependentUpon>MultiToneWaveForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeneratorPanel\GeneratorImpl\LogChripWaveForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeneratorPanel\GeneratorImpl\LogChripWaveForm.Designer.cs">
+      <DependentUpon>LogChripWaveForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeneratorPanel\GeneratorImpl\DualToneWaveForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeneratorPanel\GeneratorImpl\DualToneWaveForm.Designer.cs">
+      <DependentUpon>DualToneWaveForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeneratorPanel\GeneratorImpl\SingleToneWaveForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeneratorPanel\GeneratorImpl\SingleToneWaveForm.Designer.cs">
+      <DependentUpon>SingleToneWaveForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeneratorPanel\GeneratorImpl\SteppedLevelSineWaveform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeneratorPanel\GeneratorImpl\SteppedLevelSineWaveform.Designer.cs">
+      <DependentUpon>SteppedLevelSineWaveform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeneratorPanel\GeneratorImpl\SteppedSineWave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeneratorPanel\GeneratorImpl\SteppedSineWave.Designer.cs">
+      <DependentUpon>SteppedSineWave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeneratorPanel\GeneratorPanelFactory.cs" />
+    <Compile Include="GeneratorPanel\Generator.cs" />
+    <Compile Include="GeneratorPanel\GeneratorType.cs" />
+    <Compile Include="GlobalInfo.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Enumerations\BoardStatus.cs" />
+    <Compile Include="StateMachine\AppStateMachine.cs" />
+    <Compile Include="Enumerations\BoardType.cs" />
+    <Compile Include="TriggerConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TriggerConfigForm.Designer.cs">
+      <DependentUpon>TriggerConfigForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AnalyzePanels\AnalyzePanelImpl\MultiToneAnalyze.resx">
+      <DependentUpon>MultiToneAnalyze.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AnalyzePanels\AnalyzePanelImpl\TimeDomainEstimateAnalyze.resx">
+      <DependentUpon>TimeDomainEstimateAnalyze.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AnalyzePanels\AnalyzePanelImpl\SteppedLevelSineAnalyze.resx">
+      <DependentUpon>SteppedLevelSineAnalyze.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AnalyzePanels\AnalyzePanelImpl\LogChripAnalyze.resx">
+      <DependentUpon>LogChripAnalyze.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AnalyzePanels\AnalyzePanelImpl\DualToneAnalyze.resx">
+      <DependentUpon>DualToneAnalyze.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AnalyzePanels\AnalyzePanelImpl\MismatchAnalyze.resx">
+      <DependentUpon>MismatchAnalyze.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AnalyzePanels\AnalyzePanelImpl\SingleToneAnalyze.resx">
+      <DependentUpon>SingleToneAnalyze.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AnalyzePanels\AnalyzePanelImpl\SteppedSineWaveCrossTalkAnalyze.resx">
+      <DependentUpon>SteppedSineWaveCrossTalkAnalyze.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AudioAnalyzerForm.resx">
+      <DependentUpon>AudioAnalyzerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfigBoardForm.resx">
+      <DependentUpon>ConfigBoardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeneratorPanel\Equilizer\EquilizerImpl\SteppedSineEquilizer.resx">
+      <DependentUpon>SteppedSineEquilizer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeneratorPanel\GeneratorImpl\MultiToneWaveForm.resx">
+      <DependentUpon>MultiToneWaveForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeneratorPanel\GeneratorImpl\LogChripWaveForm.resx">
+      <DependentUpon>LogChripWaveForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeneratorPanel\GeneratorImpl\DualToneWaveForm.resx">
+      <DependentUpon>DualToneWaveForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeneratorPanel\GeneratorImpl\SingleToneWaveForm.resx">
+      <DependentUpon>SingleToneWaveForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeneratorPanel\GeneratorImpl\SteppedLevelSineWaveform.resx">
+      <DependentUpon>SteppedLevelSineWaveform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeneratorPanel\GeneratorImpl\SteppedSineWave.resx">
+      <DependentUpon>SteppedSineWave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="TriggerConfigForm.resx">
+      <DependentUpon>TriggerConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
