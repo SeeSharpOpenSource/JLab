@@ -80,7 +80,7 @@ namespace DsaSoftPanel
         {
             _xIncrement = 1000/_globalInfo.AITask.GetSampleRate();
             _samplesPerView = _globalInfo.SamplesPerView;
-            _xStart = _xIncrement*_samplesPerView/-2;
+            _xStart = 0;
             _channelCount = _globalInfo.EnableChannelCount;
             if (null == _aiData || _aiData.GetLength(0) != _samplesPerView || _aiData.GetLength(1) != _channelCount)
             {
