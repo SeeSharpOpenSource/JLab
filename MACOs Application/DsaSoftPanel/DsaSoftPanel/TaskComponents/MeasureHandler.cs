@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using DsaSoftPanel.Enumeration;
 using SeeSharpTools.JY.ArrayUtility;
+using SeeSharpTools.JY.DSP.Fundamental;
 using SeeSharpTools.JY.DSP.Utility;
 
 namespace DsaSoftPanel.TaskComponents
@@ -79,7 +80,7 @@ namespace DsaSoftPanel.TaskComponents
                 case MeasureType.PeakFreq:
                     double dt = 1.0/_oscilloscopeGlobalInfo.SampleRate;
                     double peakFreq, peakAmp;
-                    PeakSpectrum.PeakSpectrumAnalysis(data, dt, out peakFreq, out peakAmp);
+                    Spectrum.PeakSpectrumAnalysis(data, dt, out peakFreq, out peakAmp);
                     value = (type == MeasureType.PeakFreq) ? peakFreq.ToString() : peakAmp.ToString();
                     break;
                 default:
