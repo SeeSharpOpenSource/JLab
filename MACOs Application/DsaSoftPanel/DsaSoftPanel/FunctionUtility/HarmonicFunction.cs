@@ -39,9 +39,9 @@ namespace DsaSoftPanel.FunctionUtility
                 return;
             }
             int harmonicLevel = _configForm.GetHarmonicLevel();
-            if (_harmonicLevel?.Length != harmonicLevel)
+            if (_harmonicLevel?.Length != harmonicLevel + 1)
             {
-                _harmonicLevel = new double[harmonicLevel];
+                _harmonicLevel = new double[harmonicLevel + 1];
             }
             double[] waveform = DataBuf.GetRange(samplesPerView*index, samplesPerView).ToArray();
             HarmonicAnalyzer.ToneAnalysis(waveform, dt, out fundmentalFrequency, out thd, ref _harmonicLevel,
