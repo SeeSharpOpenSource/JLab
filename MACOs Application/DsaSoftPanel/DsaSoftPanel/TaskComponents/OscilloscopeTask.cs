@@ -174,7 +174,7 @@ namespace DsaSoftPanel
                 }
             }
 
-            if (_globalInfo.RunStatus)
+            if (_globalInfo.IsRunning)
             {
                 if (_globalInfo.EnableChannelCount == 1)
                 {
@@ -183,20 +183,18 @@ namespace DsaSoftPanel
                 getLock = false;
                 try
                 {
-                    _globalInfo.DispBufLock.Enter(ref getLock);
-                    TransposeWithFunc();
+                    _globalInfo.BufferLock.Enter(ref getLock);
+                    FillDataCache();
                     _globalInfo.SamplesInChart = _samplesPerView;
                 }
                 finally
                 {
                     if (getLock)
                     {
-                        _globalInfo.DispBufLock.Exit();
+                        _globalInfo.BufferLock.Exit();
                     }
                 }
-                _parentForm.Invoke(_globalInfo.ChartViewPlot, _globalInfo.DispBuf.GetRange(0, _plotSize), 
-                    _xStart, _xIncrement, _globalInfo.SamplesInChart);
-                
+                _parentForm.Invoke(_globalInfo.WaveformPlot, this._aiData, _xStart, _xIncrement, _globalInfo.SamplesInChart);
             }
             if (viewChanged)
             {
@@ -204,7 +202,7 @@ namespace DsaSoftPanel
             }
         }
 
-        private void TransposeWithFunc()
+        private void FillDataCache()
         {
             int dataGain;
             int pointIndex = 0;

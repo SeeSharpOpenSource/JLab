@@ -24,7 +24,7 @@ namespace DsaSoftPanel.FunctionUtility
 
         private readonly FilterConfigForm _configForm = new FilterConfigForm();
 
-        public FilterFunction(List<double> dataBuf) : base(dataBuf)
+        public FilterFunction(List<double[]> dataBuf) : base(dataBuf)
         {
             _filteredDatas = new List<double>(Constants.DefaultDisplayBufSize);
         }
@@ -40,7 +40,7 @@ namespace DsaSoftPanel.FunctionUtility
             OnlineFirFilter filter = _configForm.Filter;
             for (int i = 0; i < GlobalInfo.EnableChannelCount; i++)
             {
-                double[] showData = DataBuf.GetRange(i*samplesPerView, samplesPerView).ToArray();
+                double[] showData = this.DataBuf[i];
                 _filteredDatas.AddRange(filter.ProcessSamples(showData));
             }
         }

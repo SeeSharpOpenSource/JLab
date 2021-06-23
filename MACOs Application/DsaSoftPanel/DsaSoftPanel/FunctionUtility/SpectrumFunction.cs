@@ -22,37 +22,37 @@ namespace DsaSoftPanel.FunctionUtility
 
         public override string[] DetailValues { get; protected set; }
 
-        private List<double> _spectrumDatas;
+        private readonly List<double> _spectrumCollection;
         private double[] _spectrum;
         private double _df;
 
-        public SpectrumFunction(List<double> dataBuf) : base(dataBuf)
+        public SpectrumFunction(List<double[]> dataBuf) : base(dataBuf)
         {
             int spectrumLength = (int)(GlobalInfo.SampleRate / (2 * Constants.SpectrumResolution));
-            _spectrumDatas = new List<double>(spectrumLength * 4);
+            this._spectrumCollection = new List<double>(spectrumLength * 4);
             _spectrum = new double[spectrumLength];
         }
 
         protected override void Execute()
         {
-            _spectrumDatas.Clear();
+            this._spectrumCollection.Clear();
             int dataStartIndex = 0;
             int samplesPerView = this.GlobalInfo.SamplesPerView;
             for (int i = 0; i < GlobalInfo.EnableChannelCount; i++)
             {
-                double[] showData = DataBuf.GetRange(dataStartIndex, samplesPerView).ToArray();
+                double[] showData = this.DataBuf[i];
                 double para = this._configForm.WindowPara;
                 Spectrum.PowerSpectrum(showData, GlobalInfo.SampleRate, ref _spectrum, out _df, 
                     SpectrumUnits.dBV, _configForm.Window, para);
                 bool any = showData.Any(item => item > 1 || item < -1);
-                _spectrumDatas.AddRange(_spectrum);
+                this._spectrumCollection.AddRange(_spectrum);
                 dataStartIndex += samplesPerView;
             }
         }
 
         protected override void PlotData()
         {
-            GlobalInfo.FunctionPlot.Invoke(_spectrumDatas, 0, _df, _spectrum.Length);
+            GlobalInfo.FunctionPlot.Invoke(this._spectrumCollection, 0, _df, _spectrum.Length);
         }
 
         public override void RefreshConfigForm()

@@ -13,7 +13,6 @@ namespace DsaSoftPanel
         {
             AITask = null;
             SamplesPerView = 1000;
-            EnableChannelCount = 1;
             BoardConnected = false;
             _runStatus = 1;
             EnableRange = true;
@@ -22,7 +21,8 @@ namespace DsaSoftPanel
         }
 
         public delegate void PlotDataMethod(IList<double> data, double start, double increment, int sampleSize);
-        public PlotDataMethod ChartViewPlot;
+        public delegate void WaveformPlotMethod(double[,] data, double start, double increment, int sampleSize);
+        public WaveformPlotMethod WaveformPlot;
         public PlotDataMethod FunctionPlot;
         public Action<double[], double[]> ShowRange;
 
@@ -30,26 +30,16 @@ namespace DsaSoftPanel
 
         public static SoftPanelGlobalInfo GetInstance()
         {
-            if (null == _instance)
-            {
-                _instance = new SoftPanelGlobalInfo();
-            }
-            return _instance;
+            return _instance ?? (_instance = new SoftPanelGlobalInfo());
         }
 
         public AITask.AITask AITask { get; set; }
 
         public int SamplesPerView { get; set; }
 
-        public int SampleRate
-        {
-            get
-            {
-                return (int)(AITask?.GetSampleRate() ?? 0);
-            }
-        }
+        public int SampleRate => (int)(AITask?.GetSampleRate() ?? 0);
 
-        public int EnableChannelCount { get; set; }
+        public int EnableChannelCount => AITask.GetChannelCount();
 
         public bool BoardConnected { get; set; }
 
@@ -60,14 +50,14 @@ namespace DsaSoftPanel
         private int _samplesInChart = 0;
         public int SamplesInChart
         {
-            get {return _samplesInChart;}
+            get { return this._samplesInChart;}
             set
             {
                 if (value == _samplesInChart)
                 {
                     return;
                 }
-                Interlocked.Exchange(ref _samplesInChart, value);
+                Thread.VolatileWrite(ref _samplesInChart, value);
             }
         }
 
@@ -75,14 +65,14 @@ namespace DsaSoftPanel
 
         public DsaSoftPanelForm MainForm { get; set; }
 
-        public SpinLock DispBufLock = new SpinLock(false);
+        public ReaderWriterLockSlim BufferLock = new ReaderWriterLockSlim();
 
         public List<ChannelConfig> Channels = new List<ChannelConfig>(Constants.MaxChannelCount);
 
         private int _status = (int) TaskStatus.Idle;
         public TaskStatus Status
         {
-            get { return (TaskStatus) _status; }
+            get { return (TaskStatus) _status;}
             set
             {
                 int statusValue = (int) value;
@@ -95,28 +85,14 @@ namespace DsaSoftPanel
         }
 
         private List<double> _dispBuf;
-        public List<double> DispBuf
-        {
-            get
-            {
-                return _dispBuf;
-            }
-            set
-            {
-                _dispBuf = value;
-            }
-        }
 
         public Action ApplyConfigInRunTime { get; set; }
 
         // 0时暂停，1时运行
         private int _runStatus;
-        public bool RunStatus 
+        public bool IsRunning
         {
-            get
-            {
-                return _runStatus == 1;
-            }
+            get { return _runStatus == 1;}
             set
             {
                 Thread.VolatileWrite(ref _runStatus, value ? 1 : 0);
@@ -139,6 +115,5 @@ namespace DsaSoftPanel
                 _dispBuf.AddRange(new double[bufCount - _dispBuf.Count]);
             }
         }
-
     }
 }

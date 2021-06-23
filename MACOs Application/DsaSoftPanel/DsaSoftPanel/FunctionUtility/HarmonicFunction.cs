@@ -21,7 +21,7 @@ namespace DsaSoftPanel.FunctionUtility
         private double[] _harmonicLevel;
         private readonly HarmonicConfigForm _configForm;
 
-        public HarmonicFunction(List<double> dataBuf) : base(dataBuf)
+        public HarmonicFunction(List<double[]> dataBuf) : base(dataBuf)
         {
             DetailValues = new string[DetailParameters.Length];
             _configForm = new HarmonicConfigForm();
@@ -29,7 +29,6 @@ namespace DsaSoftPanel.FunctionUtility
 
         protected override void Execute()
         {
-            int samplesPerView = GlobalInfo.SamplesInChart;
             double dt = 1.0/GlobalInfo.SampleRate;
             double fundmentalFrequency = 0, thd = 0;
             int index;
@@ -43,12 +42,12 @@ namespace DsaSoftPanel.FunctionUtility
             {
                 _harmonicLevel = new double[harmonicLevel + 1];
             }
-            double[] waveform = DataBuf.GetRange(samplesPerView*index, samplesPerView).ToArray();
+            double[] waveform = this.DataBuf[index];
             HarmonicAnalyzer.ToneAnalysis(waveform, dt, out fundmentalFrequency, out thd, ref _harmonicLevel,
                 harmonicLevel);
 
-            DetailValues[0] = thd.ToString();
-            DetailValues[1] = fundmentalFrequency.ToString();
+            DetailValues[0] = GetShowValue(thd);
+            DetailValues[1] = GetShowValue(fundmentalFrequency);
         }
 
         protected override void PlotData()

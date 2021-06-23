@@ -50,5 +50,10 @@ namespace DsaSoftPanel
         public const int HarmonicLevel = 10;
 
         public const string NotAvailable = "N/A";
+
+        public const string NumericFormat = "0.######";
+
+        public const int BufferReadTimeout = 500;
+        public const int BufferWriteTimeout = 100;
     }
 }

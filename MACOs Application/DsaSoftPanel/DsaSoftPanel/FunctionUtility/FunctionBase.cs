@@ -28,9 +28,9 @@ namespace DsaSoftPanel.FunctionUtility
         public abstract void RefreshConfigForm();
 
         protected readonly SoftPanelGlobalInfo GlobalInfo;
-        protected readonly List<double> DataBuf;
+        protected readonly List<double[]> DataBuf;
 
-        public static FunctionBase CreateFunction(FunctionType type, List<double> dataBuf)
+        public static FunctionBase CreateFunction(FunctionType type, List<double[]> dataBuf)
         {
             switch (type)
             {
@@ -84,16 +84,16 @@ namespace DsaSoftPanel.FunctionUtility
             }
         }
 
-        protected FunctionBase(List<double> dataBuf)
+        protected FunctionBase(List<double[]> dataBuf)
         {
-            GlobalInfo = SoftPanelGlobalInfo.GetInstance();
-            DataBuf = dataBuf;
+            this.GlobalInfo = SoftPanelGlobalInfo.GetInstance();
+            this.DataBuf = dataBuf;
         }
 
         public void ExecuteAndShow()
         {
             this.Execute();
-            GlobalInfo.MainForm.Invoke(new Action(() =>
+            this.GlobalInfo.MainForm.Invoke(new Action(() =>
             {
                 if (HasPlotData)
                 {
@@ -101,11 +101,17 @@ namespace DsaSoftPanel.FunctionUtility
                 }
                 if (HasDetailedData)
                 {
-                    GlobalInfo.MainForm.RefreshFunctionDetailResult(this);
+                    this.GlobalInfo.MainForm.RefreshFunctionDetailResult(this);
                 }
             }));
         }
 
         public abstract void ConfigChart(EasyChartX chart);
+
+
+        protected static string GetShowValue(double value)
+        {
+            return !double.IsNaN(value) ? value.ToString(Constants.NumericFormat) : Constants.NotAvailable;
+        }
     }
 }

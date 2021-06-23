@@ -50,6 +50,9 @@ namespace DsaSoftPanel
                     case BoardType.JYPCI69527:
                         _globalInfo.AITask = new JYPCI69527AITaskImpl(boardId);
                         break;
+                    case BoardType.JYPCI69527L:
+                        _globalInfo.AITask = new JYPCI69527LAITaskImpl(boardId);
+                        break;
                     case BoardType.JYPXI69527:
                         _globalInfo.AITask = new JYPXI69527AITaskImpl(boardId);
                         break;

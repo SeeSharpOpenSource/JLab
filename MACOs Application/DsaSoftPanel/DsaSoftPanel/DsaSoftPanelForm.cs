@@ -108,18 +108,27 @@ namespace DsaSoftPanel
 
         private readonly SoftPanelGlobalInfo _globalInfo;
         private OscilloscopeTask _scopeTask;
-        private FunctionTask _funcTask;
+        private FunctionTask _functionTask;
+        private MeasureTask _measureTask;
         private ChannelViewManager _channelViewManager;
 
         private void OscilloscopeSoftPanelForm_Load(object sender, EventArgs e)
         {
             _globalInfo.MainForm = this;
-            _channelViewManager = new ChannelViewManager(this, label__ch1, label_ch2, label_ch3, label_ch4);
-            _globalInfo.ChartViewPlot = easyChartX_data.Plot;
+            _channelViewManager = new ChannelViewManager(this, this.label_ch1, label_ch2, label_ch3, label_ch4);
+            _globalInfo.WaveformPlot = PlotWaveformData;
             _globalInfo.FunctionPlot = easyChartX_function.Plot;
             _globalInfo.ApplyConfigInRunTime = ApplyConfigInRunTime;
             _scopeTask = new OscilloscopeTask(this);
-            _funcTask = new FunctionTask(this);
+            this._functionTask = new FunctionTask(this);
+            this._measureTask = new MeasureTask(this);
+        }
+
+        private void PlotWaveformData(double[,] data, double start, double increment, int sampleSize)
+        {
+            this.easyChartX_data.AxisX.Minimum = start;
+            this.easyChartX_data.AxisX.Maximum = start + increment * sampleSize;
+            easyChartX_data.Plot(data, start, increment, MajorOrder.Column);
         }
 
         private string GetSampleRateLabel()
@@ -159,7 +168,8 @@ namespace DsaSoftPanel
             else
             {
                 _scopeTask.Stop();
-                _funcTask.Stop();
+                this._functionTask.Stop();
+                this._measureTask.Stop();
             }
         }
 
@@ -178,7 +188,7 @@ namespace DsaSoftPanel
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                ShowErrorMsg(ex.Message);
                 buttonSwitch_Switch.Value = false;
             }
         }
@@ -217,7 +227,8 @@ namespace DsaSoftPanel
         private void OscilloscopeSoftPanelForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             _scopeTask?.Stop();
-            _funcTask?.Stop();
+            this._functionTask?.Stop();
+            this._measureTask?.Stop();
             _globalInfo.AITask.Stop();
         }
 
@@ -229,14 +240,16 @@ namespace DsaSoftPanel
             {
                 _scopeTask.Stop();
                 Clear();
-                _funcTask.Stop();
+                this._functionTask.Stop();
+                this._measureTask?.Stop();
             }
             else
             {
                 if (isNeedRestartTask || !_scopeTask.TaskRunning)
                 {
                     _scopeTask.Stop();
-                    _funcTask.Stop();
+                    this._functionTask.Stop();
+                    this._measureTask.Stop();
                     Clear();
                     Thread.Sleep(100);
                     _globalInfo.AITask.ClearChannels();
@@ -244,7 +257,8 @@ namespace DsaSoftPanel
                     _channelViewManager.ApplyChannelConfig();
                     RefreshMeasureChannelItems();
                     _scopeTask.Start();
-                    _funcTask.Start();
+                    this._functionTask.Start();
+                    this._measureTask.Start();
                 }
             }
             
@@ -340,8 +354,8 @@ namespace DsaSoftPanel
 
         private void button_runPause_Click(object sender, EventArgs e)
         {
-            _globalInfo.RunStatus = !_globalInfo.RunStatus;
-            button_runPause.Text = _globalInfo.RunStatus ? Constants.RunButtonText : Constants.PauseButtonText;
+            _globalInfo.IsRunning = !_globalInfo.IsRunning;
+            button_runPause.Text = _globalInfo.IsRunning ? Constants.RunButtonText : Constants.PauseButtonText;
         }
 
         private void easyChartX_data_AxisViewChanged(object sender, EasyChartXViewEventArgs e)
@@ -426,7 +440,7 @@ namespace DsaSoftPanel
             }
             panel_measure.Visible = _showMeasurePanel;
             panel_function.Visible = _showFunctionPanel;
-            splitContainer_plotArea.Panel2Collapsed = (null == _funcTask || _funcTask.FunctionType == FunctionType.None);
+            splitContainer_plotArea.Panel2Collapsed = (null == this._functionTask || this._functionTask.FunctionType == FunctionType.None);
         }
 
         private void easyChartX_function_CursorPositionChanged(object sender, EasyChartXCursorEventArgs e)
@@ -493,7 +507,7 @@ namespace DsaSoftPanel
             RadioButton functionButton = sender as RadioButton;
             if (null != functionButton && functionButton.Checked)
             {
-                _funcTask.FunctionType = (FunctionType)Enum.Parse(typeof(FunctionType), functionButton.Tag.ToString());
+                this._functionTask.FunctionType = (FunctionType)Enum.Parse(typeof(FunctionType), functionButton.Tag.ToString());
             }
         }
 
@@ -506,7 +520,7 @@ namespace DsaSoftPanel
                     (control as RadioButton).Checked = false;
                 }
             }
-            _funcTask.FunctionType = FunctionType.None;
+            this._functionTask.FunctionType = FunctionType.None;
         }
 
         public void InitFunctionConfigArea(FunctionBase function)
@@ -522,7 +536,7 @@ namespace DsaSoftPanel
 
         private void button_reset_Click(object sender, EventArgs e)
         {
-            _funcTask?.Stop();
+            this._functionTask?.Stop();
             _scopeTask?.Stop();
             ShowBoardConnectForm();
             CheckIfBoardConnected();
@@ -558,11 +572,11 @@ namespace DsaSoftPanel
             MeasureType measureType = (MeasureType) checkBox.Tag;
             if (checkBox.Checked)
             {
-                _funcTask.AddMeasure(measureType);
+                this._measureTask.AddMeasure(measureType);
             }
             else
             {
-                _funcTask.RemoveMeasre(measureType);
+                this._measureTask.RemoveMeasure(measureType);
             }
             InitMeasureResultView();
         }
@@ -570,7 +584,7 @@ namespace DsaSoftPanel
         private void InitMeasureResultView()
         {
             dataGridView_measureValues.Rows.Clear();
-            foreach (MeasureType measureType in _funcTask.MeasureTypes)
+            foreach (MeasureType measureType in this._measureTask.MeasureTypes)
             {
                 dataGridView_measureValues.Rows.Add(measureType.ToString(), "");
             }

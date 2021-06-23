@@ -63,7 +63,7 @@ namespace DsaSoftPanel
             this.label_status2 = new System.Windows.Forms.Label();
             this.label_status3 = new System.Windows.Forms.Label();
             this.label_status4 = new System.Windows.Forms.Label();
-            this.label__ch1 = new System.Windows.Forms.Label();
+            this.label_ch1 = new System.Windows.Forms.Label();
             this.label_ch2 = new System.Windows.Forms.Label();
             this.label_ch3 = new System.Windows.Forms.Label();
             this.label_ch4 = new System.Windows.Forms.Label();
@@ -276,7 +276,7 @@ namespace DsaSoftPanel
             this.flowLayoutPanel_status.Controls.Add(this.label_status2);
             this.flowLayoutPanel_status.Controls.Add(this.label_status3);
             this.flowLayoutPanel_status.Controls.Add(this.label_status4);
-            this.flowLayoutPanel_status.Controls.Add(this.label__ch1);
+            this.flowLayoutPanel_status.Controls.Add(this.label_ch1);
             this.flowLayoutPanel_status.Controls.Add(this.label_ch2);
             this.flowLayoutPanel_status.Controls.Add(this.label_ch3);
             this.flowLayoutPanel_status.Controls.Add(this.label_ch4);
@@ -340,18 +340,18 @@ namespace DsaSoftPanel
             this.label_status4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label_status4.Visible = false;
             // 
-            // label__ch1
+            // label_ch1
             // 
-            this.label__ch1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label__ch1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label__ch1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label__ch1.ForeColor = System.Drawing.Color.Black;
-            this.label__ch1.Location = new System.Drawing.Point(413, 0);
-            this.label__ch1.Name = "label__ch1";
-            this.label__ch1.Size = new System.Drawing.Size(60, 20);
-            this.label__ch1.TabIndex = 4;
-            this.label__ch1.Text = "CH1";
-            this.label__ch1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_ch1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label_ch1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label_ch1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_ch1.ForeColor = System.Drawing.Color.Black;
+            this.label_ch1.Location = new System.Drawing.Point(413, 0);
+            this.label_ch1.Name = "label_ch1";
+            this.label_ch1.Size = new System.Drawing.Size(60, 20);
+            this.label_ch1.TabIndex = 4;
+            this.label_ch1.Text = "CH1";
+            this.label_ch1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label_ch2
             // 
@@ -511,7 +511,7 @@ namespace DsaSoftPanel
             this.splitContainer_measureAndView.Panel2.Controls.Add(this.splitContainer_viewAndConfig);
             this.splitContainer_measureAndView.Panel2MinSize = 50;
             this.splitContainer_measureAndView.Size = new System.Drawing.Size(1200, 565);
-            this.splitContainer_measureAndView.SplitterDistance = 180;
+            this.splitContainer_measureAndView.SplitterDistance = 182;
             this.splitContainer_measureAndView.TabIndex = 5;
             // 
             // splitContainer_buttonAndFunction
@@ -534,7 +534,7 @@ namespace DsaSoftPanel
             this.splitContainer_buttonAndFunction.Panel2.Controls.Add(this.panel_measure);
             this.splitContainer_buttonAndFunction.Panel2.Controls.Add(this.panel_function);
             this.splitContainer_buttonAndFunction.Panel2MinSize = 0;
-            this.splitContainer_buttonAndFunction.Size = new System.Drawing.Size(180, 565);
+            this.splitContainer_buttonAndFunction.Size = new System.Drawing.Size(182, 565);
             this.splitContainer_buttonAndFunction.SplitterDistance = 30;
             this.splitContainer_buttonAndFunction.TabIndex = 0;
             // 
@@ -691,7 +691,7 @@ namespace DsaSoftPanel
             this.tableLayoutPanel_measure.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel_measure.ColumnCount = 2;
             this.tableLayoutPanel_measure.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel_measure.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+            this.tableLayoutPanel_measure.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 42F));
             this.tableLayoutPanel_measure.Controls.Add(this.label_measureRms, 0, 0);
             this.tableLayoutPanel_measure.Controls.Add(this.label_DC, 0, 1);
             this.tableLayoutPanel_measure.Controls.Add(this.label_peakAmp, 0, 2);
@@ -707,7 +707,7 @@ namespace DsaSoftPanel
             this.tableLayoutPanel_measure.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel_measure.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel_measure.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel_measure.Size = new System.Drawing.Size(140, 119);
+            this.tableLayoutPanel_measure.Size = new System.Drawing.Size(139, 119);
             this.tableLayoutPanel_measure.TabIndex = 7;
             // 
             // label_measureRms
@@ -765,45 +765,41 @@ namespace DsaSoftPanel
             // txCheckBox_rms
             // 
             this.txCheckBox_rms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txCheckBox_rms.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txCheckBox_rms.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txCheckBox_rms.Location = new System.Drawing.Point(115, 4);
             this.txCheckBox_rms.MinimumSize = new System.Drawing.Size(20, 20);
             this.txCheckBox_rms.Name = "txCheckBox_rms";
-            this.txCheckBox_rms.Size = new System.Drawing.Size(28, 22);
+            this.txCheckBox_rms.Size = new System.Drawing.Size(21, 22);
             this.txCheckBox_rms.TabIndex = 1;
             this.txCheckBox_rms.UseVisualStyleBackColor = false;
             this.txCheckBox_rms.CheckedChanged += new System.EventHandler(this.SelectMeasureType);
             // 
             // txCheckBox_DC
             // 
-            this.txCheckBox_DC.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txCheckBox_DC.Location = new System.Drawing.Point(115, 33);
             this.txCheckBox_DC.MinimumSize = new System.Drawing.Size(20, 20);
             this.txCheckBox_DC.Name = "txCheckBox_DC";
-            this.txCheckBox_DC.Size = new System.Drawing.Size(28, 22);
+            this.txCheckBox_DC.Size = new System.Drawing.Size(21, 22);
             this.txCheckBox_DC.TabIndex = 2;
             this.txCheckBox_DC.UseVisualStyleBackColor = true;
             this.txCheckBox_DC.CheckedChanged += new System.EventHandler(this.SelectMeasureType);
             // 
             // txCheckBox_peakAmp
             // 
-            this.txCheckBox_peakAmp.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txCheckBox_peakAmp.Location = new System.Drawing.Point(115, 62);
             this.txCheckBox_peakAmp.MinimumSize = new System.Drawing.Size(20, 20);
             this.txCheckBox_peakAmp.Name = "txCheckBox_peakAmp";
-            this.txCheckBox_peakAmp.Size = new System.Drawing.Size(28, 22);
+            this.txCheckBox_peakAmp.Size = new System.Drawing.Size(21, 22);
             this.txCheckBox_peakAmp.TabIndex = 3;
             this.txCheckBox_peakAmp.UseVisualStyleBackColor = true;
             this.txCheckBox_peakAmp.CheckedChanged += new System.EventHandler(this.SelectMeasureType);
             // 
             // txCheckBox_peakFreq
             // 
-            this.txCheckBox_peakFreq.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txCheckBox_peakFreq.Location = new System.Drawing.Point(115, 91);
             this.txCheckBox_peakFreq.MinimumSize = new System.Drawing.Size(20, 20);
             this.txCheckBox_peakFreq.Name = "txCheckBox_peakFreq";
-            this.txCheckBox_peakFreq.Size = new System.Drawing.Size(28, 24);
+            this.txCheckBox_peakFreq.Size = new System.Drawing.Size(21, 24);
             this.txCheckBox_peakFreq.TabIndex = 4;
             this.txCheckBox_peakFreq.UseVisualStyleBackColor = true;
             this.txCheckBox_peakFreq.CheckedChanged += new System.EventHandler(this.SelectMeasureType);
@@ -851,7 +847,7 @@ namespace DsaSoftPanel
             this.tableLayoutPanel_functionSelect.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel_functionSelect.ColumnCount = 2;
             this.tableLayoutPanel_functionSelect.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel_functionSelect.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tableLayoutPanel_functionSelect.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 38F));
             this.tableLayoutPanel_functionSelect.Controls.Add(this.label_filter, 0, 3);
             this.tableLayoutPanel_functionSelect.Controls.Add(this.txRadioButton_filter, 1, 3);
             this.tableLayoutPanel_functionSelect.Controls.Add(this.label_toneAnalyze, 0, 2);
@@ -891,13 +887,12 @@ namespace DsaSoftPanel
             // 
             // txRadioButton_filter
             // 
-            this.txRadioButton_filter.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txRadioButton_filter.Location = new System.Drawing.Point(114, 93);
             this.txRadioButton_filter.MaxRadius = 8;
             this.txRadioButton_filter.MinimumSize = new System.Drawing.Size(22, 22);
             this.txRadioButton_filter.MinRadius = 4;
             this.txRadioButton_filter.Name = "txRadioButton_filter";
-            this.txRadioButton_filter.Size = new System.Drawing.Size(27, 23);
+            this.txRadioButton_filter.Size = new System.Drawing.Size(22, 23);
             this.txRadioButton_filter.TabIndex = 4;
             this.txRadioButton_filter.TabStop = true;
             this.txRadioButton_filter.UseVisualStyleBackColor = true;
@@ -918,13 +913,12 @@ namespace DsaSoftPanel
             // 
             // txRadioButton_toneAnalyze
             // 
-            this.txRadioButton_toneAnalyze.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txRadioButton_toneAnalyze.Location = new System.Drawing.Point(114, 63);
             this.txRadioButton_toneAnalyze.MaxRadius = 8;
             this.txRadioButton_toneAnalyze.MinimumSize = new System.Drawing.Size(22, 22);
             this.txRadioButton_toneAnalyze.MinRadius = 4;
             this.txRadioButton_toneAnalyze.Name = "txRadioButton_toneAnalyze";
-            this.txRadioButton_toneAnalyze.Size = new System.Drawing.Size(27, 23);
+            this.txRadioButton_toneAnalyze.Size = new System.Drawing.Size(22, 23);
             this.txRadioButton_toneAnalyze.TabIndex = 3;
             this.txRadioButton_toneAnalyze.TabStop = true;
             this.txRadioButton_toneAnalyze.UseVisualStyleBackColor = true;
@@ -932,14 +926,12 @@ namespace DsaSoftPanel
             // 
             // txRadioButton_harmonic
             // 
-            this.txRadioButton_harmonic.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txRadioButton_harmonic.Enabled = false;
             this.txRadioButton_harmonic.Location = new System.Drawing.Point(114, 33);
             this.txRadioButton_harmonic.MaxRadius = 8;
             this.txRadioButton_harmonic.MinimumSize = new System.Drawing.Size(22, 22);
             this.txRadioButton_harmonic.MinRadius = 4;
             this.txRadioButton_harmonic.Name = "txRadioButton_harmonic";
-            this.txRadioButton_harmonic.Size = new System.Drawing.Size(27, 23);
+            this.txRadioButton_harmonic.Size = new System.Drawing.Size(22, 23);
             this.txRadioButton_harmonic.TabIndex = 2;
             this.txRadioButton_harmonic.TabStop = true;
             this.txRadioButton_harmonic.UseVisualStyleBackColor = true;
@@ -973,13 +965,12 @@ namespace DsaSoftPanel
             // 
             // txRadioButton_spectrum
             // 
-            this.txRadioButton_spectrum.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txRadioButton_spectrum.Location = new System.Drawing.Point(114, 4);
             this.txRadioButton_spectrum.MaxRadius = 8;
             this.txRadioButton_spectrum.MinimumSize = new System.Drawing.Size(22, 22);
             this.txRadioButton_spectrum.MinRadius = 4;
             this.txRadioButton_spectrum.Name = "txRadioButton_spectrum";
-            this.txRadioButton_spectrum.Size = new System.Drawing.Size(27, 22);
+            this.txRadioButton_spectrum.Size = new System.Drawing.Size(22, 22);
             this.txRadioButton_spectrum.TabIndex = 1;
             this.txRadioButton_spectrum.TabStop = true;
             this.txRadioButton_spectrum.UseVisualStyleBackColor = true;
@@ -1000,13 +991,12 @@ namespace DsaSoftPanel
             // 
             // txRadioButton_squareAnalyze
             // 
-            this.txRadioButton_squareAnalyze.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txRadioButton_squareAnalyze.Location = new System.Drawing.Point(114, 123);
             this.txRadioButton_squareAnalyze.MaxRadius = 8;
             this.txRadioButton_squareAnalyze.MinimumSize = new System.Drawing.Size(22, 22);
             this.txRadioButton_squareAnalyze.MinRadius = 4;
             this.txRadioButton_squareAnalyze.Name = "txRadioButton_squareAnalyze";
-            this.txRadioButton_squareAnalyze.Size = new System.Drawing.Size(27, 23);
+            this.txRadioButton_squareAnalyze.Size = new System.Drawing.Size(22, 23);
             this.txRadioButton_squareAnalyze.TabIndex = 5;
             this.txRadioButton_squareAnalyze.TabStop = true;
             this.txRadioButton_squareAnalyze.UseVisualStyleBackColor = true;
@@ -1027,13 +1017,12 @@ namespace DsaSoftPanel
             // 
             // txRadioButton_phaseShift
             // 
-            this.txRadioButton_phaseShift.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txRadioButton_phaseShift.Location = new System.Drawing.Point(114, 153);
             this.txRadioButton_phaseShift.MaxRadius = 8;
             this.txRadioButton_phaseShift.MinimumSize = new System.Drawing.Size(22, 22);
             this.txRadioButton_phaseShift.MinRadius = 4;
             this.txRadioButton_phaseShift.Name = "txRadioButton_phaseShift";
-            this.txRadioButton_phaseShift.Size = new System.Drawing.Size(27, 24);
+            this.txRadioButton_phaseShift.Size = new System.Drawing.Size(22, 24);
             this.txRadioButton_phaseShift.TabIndex = 6;
             this.txRadioButton_phaseShift.TabStop = true;
             this.txRadioButton_phaseShift.UseVisualStyleBackColor = true;
@@ -1054,8 +1043,8 @@ namespace DsaSoftPanel
             // splitContainer_viewAndConfig.Panel2
             // 
             this.splitContainer_viewAndConfig.Panel2.Controls.Add(this.splitContainer_channelAndCommon);
-            this.splitContainer_viewAndConfig.Size = new System.Drawing.Size(1014, 563);
-            this.splitContainer_viewAndConfig.SplitterDistance = 805;
+            this.splitContainer_viewAndConfig.Size = new System.Drawing.Size(1012, 563);
+            this.splitContainer_viewAndConfig.SplitterDistance = 803;
             this.splitContainer_viewAndConfig.TabIndex = 0;
             // 
             // tableLayoutPanel_chartView
@@ -1074,7 +1063,7 @@ namespace DsaSoftPanel
             this.tableLayoutPanel_chartView.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel_chartView.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 563F));
             this.tableLayoutPanel_chartView.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 563F));
-            this.tableLayoutPanel_chartView.Size = new System.Drawing.Size(805, 563);
+            this.tableLayoutPanel_chartView.Size = new System.Drawing.Size(803, 563);
             this.tableLayoutPanel_chartView.TabIndex = 0;
             // 
             // splitContainer_plotArea
@@ -1092,27 +1081,33 @@ namespace DsaSoftPanel
             // splitContainer_plotArea.Panel2
             // 
             this.splitContainer_plotArea.Panel2.Controls.Add(this.tableLayoutPanel_functionPanel);
-            this.splitContainer_plotArea.Size = new System.Drawing.Size(799, 557);
+            this.splitContainer_plotArea.Size = new System.Drawing.Size(797, 557);
             this.splitContainer_plotArea.SplitterDistance = 272;
             this.splitContainer_plotArea.TabIndex = 0;
             // 
             // easyChartX_data
             // 
+            this.easyChartX_data.AutoClear = true;
             this.easyChartX_data.AxisX.AutoScale = true;
             this.easyChartX_data.AxisX.AutoZoomReset = false;
             this.easyChartX_data.AxisX.Color = System.Drawing.Color.DarkGray;
             this.easyChartX_data.AxisX.InitWithScaleView = false;
             this.easyChartX_data.AxisX.IsLogarithmic = false;
+            this.easyChartX_data.AxisX.LabelAngle = 0;
             this.easyChartX_data.AxisX.LabelEnabled = true;
-            this.easyChartX_data.AxisX.LabelFormat = "0.##ms";
+            this.easyChartX_data.AxisX.LabelFormat = "0.###ms";
             this.easyChartX_data.AxisX.MajorGridColor = System.Drawing.Color.DarkGray;
+            this.easyChartX_data.AxisX.MajorGridCount = -1;
             this.easyChartX_data.AxisX.MajorGridEnabled = true;
             this.easyChartX_data.AxisX.MajorGridType = SeeSharpTools.JY.GUI.EasyChartXAxis.GridStyle.Dash;
-            this.easyChartX_data.AxisX.Maximum = 1000D;
+            this.easyChartX_data.AxisX.MaxGridCountPerPixel = 0.012D;
+            this.easyChartX_data.AxisX.Maximum = 100D;
+            this.easyChartX_data.AxisX.MinGridCountPerPixel = 0.004D;
             this.easyChartX_data.AxisX.Minimum = 0D;
             this.easyChartX_data.AxisX.MinorGridColor = System.Drawing.Color.DimGray;
             this.easyChartX_data.AxisX.MinorGridEnabled = true;
             this.easyChartX_data.AxisX.MinorGridType = SeeSharpTools.JY.GUI.EasyChartXAxis.GridStyle.DashDotDot;
+            this.easyChartX_data.AxisX.TickWidth = 0.2F;
             this.easyChartX_data.AxisX.Title = "";
             this.easyChartX_data.AxisX.TitleOrientation = SeeSharpTools.JY.GUI.EasyChartXAxis.AxisTextOrientation.Auto;
             this.easyChartX_data.AxisX.TitlePosition = SeeSharpTools.JY.GUI.EasyChartXAxis.AxisTextPosition.Center;
@@ -1123,16 +1118,21 @@ namespace DsaSoftPanel
             this.easyChartX_data.AxisX2.Color = System.Drawing.Color.Black;
             this.easyChartX_data.AxisX2.InitWithScaleView = false;
             this.easyChartX_data.AxisX2.IsLogarithmic = false;
+            this.easyChartX_data.AxisX2.LabelAngle = 0;
             this.easyChartX_data.AxisX2.LabelEnabled = true;
             this.easyChartX_data.AxisX2.LabelFormat = null;
             this.easyChartX_data.AxisX2.MajorGridColor = System.Drawing.Color.Black;
+            this.easyChartX_data.AxisX2.MajorGridCount = -1;
             this.easyChartX_data.AxisX2.MajorGridEnabled = true;
             this.easyChartX_data.AxisX2.MajorGridType = SeeSharpTools.JY.GUI.EasyChartXAxis.GridStyle.Solid;
+            this.easyChartX_data.AxisX2.MaxGridCountPerPixel = 0.012D;
             this.easyChartX_data.AxisX2.Maximum = 1000D;
+            this.easyChartX_data.AxisX2.MinGridCountPerPixel = 0.004D;
             this.easyChartX_data.AxisX2.Minimum = 0D;
             this.easyChartX_data.AxisX2.MinorGridColor = System.Drawing.Color.Black;
             this.easyChartX_data.AxisX2.MinorGridEnabled = false;
             this.easyChartX_data.AxisX2.MinorGridType = SeeSharpTools.JY.GUI.EasyChartXAxis.GridStyle.Solid;
+            this.easyChartX_data.AxisX2.TickWidth = 1F;
             this.easyChartX_data.AxisX2.Title = "";
             this.easyChartX_data.AxisX2.TitleOrientation = SeeSharpTools.JY.GUI.EasyChartXAxis.AxisTextOrientation.Auto;
             this.easyChartX_data.AxisX2.TitlePosition = SeeSharpTools.JY.GUI.EasyChartXAxis.AxisTextPosition.Center;
@@ -1143,16 +1143,21 @@ namespace DsaSoftPanel
             this.easyChartX_data.AxisY.Color = System.Drawing.Color.DarkGray;
             this.easyChartX_data.AxisY.InitWithScaleView = false;
             this.easyChartX_data.AxisY.IsLogarithmic = false;
+            this.easyChartX_data.AxisY.LabelAngle = 0;
             this.easyChartX_data.AxisY.LabelEnabled = true;
-            this.easyChartX_data.AxisY.LabelFormat = "0.##";
+            this.easyChartX_data.AxisY.LabelFormat = "0.###";
             this.easyChartX_data.AxisY.MajorGridColor = System.Drawing.Color.DarkGray;
+            this.easyChartX_data.AxisY.MajorGridCount = 6;
             this.easyChartX_data.AxisY.MajorGridEnabled = true;
             this.easyChartX_data.AxisY.MajorGridType = SeeSharpTools.JY.GUI.EasyChartXAxis.GridStyle.DashDot;
-            this.easyChartX_data.AxisY.Maximum = 5D;
-            this.easyChartX_data.AxisY.Minimum = -5D;
+            this.easyChartX_data.AxisY.MaxGridCountPerPixel = 0.012D;
+            this.easyChartX_data.AxisY.Maximum = 10D;
+            this.easyChartX_data.AxisY.MinGridCountPerPixel = 0.004D;
+            this.easyChartX_data.AxisY.Minimum = -10D;
             this.easyChartX_data.AxisY.MinorGridColor = System.Drawing.Color.DimGray;
             this.easyChartX_data.AxisY.MinorGridEnabled = true;
             this.easyChartX_data.AxisY.MinorGridType = SeeSharpTools.JY.GUI.EasyChartXAxis.GridStyle.DashDotDot;
+            this.easyChartX_data.AxisY.TickWidth = 0.2F;
             this.easyChartX_data.AxisY.Title = "";
             this.easyChartX_data.AxisY.TitleOrientation = SeeSharpTools.JY.GUI.EasyChartXAxis.AxisTextOrientation.Auto;
             this.easyChartX_data.AxisY.TitlePosition = SeeSharpTools.JY.GUI.EasyChartXAxis.AxisTextPosition.Center;
@@ -1163,16 +1168,21 @@ namespace DsaSoftPanel
             this.easyChartX_data.AxisY2.Color = System.Drawing.Color.Black;
             this.easyChartX_data.AxisY2.InitWithScaleView = false;
             this.easyChartX_data.AxisY2.IsLogarithmic = false;
+            this.easyChartX_data.AxisY2.LabelAngle = 0;
             this.easyChartX_data.AxisY2.LabelEnabled = true;
             this.easyChartX_data.AxisY2.LabelFormat = null;
             this.easyChartX_data.AxisY2.MajorGridColor = System.Drawing.Color.Black;
+            this.easyChartX_data.AxisY2.MajorGridCount = 6;
             this.easyChartX_data.AxisY2.MajorGridEnabled = true;
             this.easyChartX_data.AxisY2.MajorGridType = SeeSharpTools.JY.GUI.EasyChartXAxis.GridStyle.Solid;
+            this.easyChartX_data.AxisY2.MaxGridCountPerPixel = 0.012D;
             this.easyChartX_data.AxisY2.Maximum = 3.5D;
+            this.easyChartX_data.AxisY2.MinGridCountPerPixel = 0.004D;
             this.easyChartX_data.AxisY2.Minimum = 0D;
             this.easyChartX_data.AxisY2.MinorGridColor = System.Drawing.Color.Black;
             this.easyChartX_data.AxisY2.MinorGridEnabled = false;
             this.easyChartX_data.AxisY2.MinorGridType = SeeSharpTools.JY.GUI.EasyChartXAxis.GridStyle.Solid;
+            this.easyChartX_data.AxisY2.TickWidth = 1F;
             this.easyChartX_data.AxisY2.Title = "";
             this.easyChartX_data.AxisY2.TitleOrientation = SeeSharpTools.JY.GUI.EasyChartXAxis.AxisTextOrientation.Auto;
             this.easyChartX_data.AxisY2.TitlePosition = SeeSharpTools.JY.GUI.EasyChartXAxis.AxisTextPosition.Center;
@@ -1180,16 +1190,14 @@ namespace DsaSoftPanel
             this.easyChartX_data.AxisY2.ViewMinimum = 0D;
             this.easyChartX_data.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.easyChartX_data.ChartAreaBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.easyChartX_data.CheckInfinity = false;
-            this.easyChartX_data.CheckNaN = false;
-            this.easyChartX_data.CheckNegtiveOrZero = false;
             this.easyChartX_data.Cumulitive = false;
             this.easyChartX_data.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.easyChartX_data.Fitting = SeeSharpTools.JY.GUI.EasyChartX.FitType.Range;
             this.easyChartX_data.Font = new System.Drawing.Font("Consolas", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.easyChartX_data.ForeColor = System.Drawing.Color.Silver;
             this.easyChartX_data.GradientStyle = SeeSharpTools.JY.GUI.EasyChartX.ChartGradientStyle.None;
             this.easyChartX_data.LegendBackColor = System.Drawing.Color.Transparent;
+            this.easyChartX_data.LegendFont = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.easyChartX_data.LegendForeColor = System.Drawing.Color.Black;
             this.easyChartX_data.LegendVisible = false;
             easyChartXSeries1.Color = System.Drawing.Color.Yellow;
             easyChartXSeries1.Marker = SeeSharpTools.JY.GUI.EasyChartXSeries.MarkerType.None;
@@ -1203,7 +1211,7 @@ namespace DsaSoftPanel
             easyChartXSeries2.Marker = SeeSharpTools.JY.GUI.EasyChartXSeries.MarkerType.None;
             easyChartXSeries2.Name = "CH2";
             easyChartXSeries2.Type = SeeSharpTools.JY.GUI.EasyChartXSeries.LineType.FastLine;
-            easyChartXSeries2.Visible = true;
+            easyChartXSeries2.Visible = false;
             easyChartXSeries2.Width = SeeSharpTools.JY.GUI.EasyChartXSeries.LineWidth.Thin;
             easyChartXSeries2.XPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
             easyChartXSeries2.YPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
@@ -1211,7 +1219,7 @@ namespace DsaSoftPanel
             easyChartXSeries3.Marker = SeeSharpTools.JY.GUI.EasyChartXSeries.MarkerType.None;
             easyChartXSeries3.Name = "CH3";
             easyChartXSeries3.Type = SeeSharpTools.JY.GUI.EasyChartXSeries.LineType.FastLine;
-            easyChartXSeries3.Visible = true;
+            easyChartXSeries3.Visible = false;
             easyChartXSeries3.Width = SeeSharpTools.JY.GUI.EasyChartXSeries.LineWidth.Thin;
             easyChartXSeries3.XPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
             easyChartXSeries3.YPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
@@ -1219,7 +1227,7 @@ namespace DsaSoftPanel
             easyChartXSeries4.Marker = SeeSharpTools.JY.GUI.EasyChartXSeries.MarkerType.None;
             easyChartXSeries4.Name = "CH4";
             easyChartXSeries4.Type = SeeSharpTools.JY.GUI.EasyChartXSeries.LineType.FastLine;
-            easyChartXSeries4.Visible = true;
+            easyChartXSeries4.Visible = false;
             easyChartXSeries4.Width = SeeSharpTools.JY.GUI.EasyChartXSeries.LineWidth.Thin;
             easyChartXSeries4.XPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
             easyChartXSeries4.YPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
@@ -1265,9 +1273,23 @@ namespace DsaSoftPanel
             this.easyChartX_data.LineSeries.Add(easyChartXSeries8);
             this.easyChartX_data.Location = new System.Drawing.Point(0, 0);
             this.easyChartX_data.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.easyChartX_data.Miscellaneous.CheckInfinity = false;
+            this.easyChartX_data.Miscellaneous.CheckNaN = false;
+            this.easyChartX_data.Miscellaneous.CheckNegtiveOrZero = false;
+            this.easyChartX_data.Miscellaneous.DataStorage = SeeSharpTools.JY.GUI.DataStorageType.NoClone;
+            this.easyChartX_data.Miscellaneous.DirectionChartCount = 3;
+            this.easyChartX_data.Miscellaneous.Fitting = SeeSharpTools.JY.GUI.EasyChartX.FitType.Range;
+            this.easyChartX_data.Miscellaneous.MarkerSize = 7;
+            this.easyChartX_data.Miscellaneous.MaxSeriesCount = 32;
+            this.easyChartX_data.Miscellaneous.MaxSeriesPointCount = 4000;
+            this.easyChartX_data.Miscellaneous.ShowFunctionMenu = false;
+            this.easyChartX_data.Miscellaneous.SplitLayoutColumnInterval = 0F;
+            this.easyChartX_data.Miscellaneous.SplitLayoutDirection = SeeSharpTools.JY.GUI.EasyChartXUtility.LayoutDirection.LeftToRight;
+            this.easyChartX_data.Miscellaneous.SplitLayoutRowInterval = 0F;
+            this.easyChartX_data.Miscellaneous.SplitViewAutoLayout = true;
             this.easyChartX_data.Name = "easyChartX_data";
-            this.easyChartX_data.SeriesCount = 4;
-            this.easyChartX_data.Size = new System.Drawing.Size(797, 270);
+            this.easyChartX_data.SeriesCount = 0;
+            this.easyChartX_data.Size = new System.Drawing.Size(795, 270);
             this.easyChartX_data.SplitView = false;
             this.easyChartX_data.TabIndex = 0;
             this.easyChartX_data.XCursor.AutoInterval = true;
@@ -1286,7 +1308,6 @@ namespace DsaSoftPanel
             // 
             // tableLayoutPanel_functionPanel
             // 
-            this.tableLayoutPanel_functionPanel.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel_functionPanel.ColumnCount = 1;
             this.tableLayoutPanel_functionPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel_functionPanel.Controls.Add(this.tableLayoutPanel_functionValues, 0, 1);
@@ -1297,7 +1318,7 @@ namespace DsaSoftPanel
             this.tableLayoutPanel_functionPanel.RowCount = 2;
             this.tableLayoutPanel_functionPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel_functionPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel_functionPanel.Size = new System.Drawing.Size(797, 279);
+            this.tableLayoutPanel_functionPanel.Size = new System.Drawing.Size(795, 279);
             this.tableLayoutPanel_functionPanel.TabIndex = 0;
             // 
             // tableLayoutPanel_functionValues
@@ -1308,7 +1329,7 @@ namespace DsaSoftPanel
             this.tableLayoutPanel_functionValues.Controls.Add(this.label_YValueLabel, 0, 0);
             this.tableLayoutPanel_functionValues.Controls.Add(this.label_XValueLabel, 0, 0);
             this.tableLayoutPanel_functionValues.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel_functionValues.Location = new System.Drawing.Point(4, 251);
+            this.tableLayoutPanel_functionValues.Location = new System.Drawing.Point(3, 252);
             this.tableLayoutPanel_functionValues.Name = "tableLayoutPanel_functionValues";
             this.tableLayoutPanel_functionValues.RowCount = 1;
             this.tableLayoutPanel_functionValues.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -1345,7 +1366,7 @@ namespace DsaSoftPanel
             // 
             this.splitContainer_functionDataAndDetail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.splitContainer_functionDataAndDetail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer_functionDataAndDetail.Location = new System.Drawing.Point(4, 4);
+            this.splitContainer_functionDataAndDetail.Location = new System.Drawing.Point(3, 3);
             this.splitContainer_functionDataAndDetail.Name = "splitContainer_functionDataAndDetail";
             // 
             // splitContainer_functionDataAndDetail.Panel1
@@ -1355,27 +1376,33 @@ namespace DsaSoftPanel
             // splitContainer_functionDataAndDetail.Panel2
             // 
             this.splitContainer_functionDataAndDetail.Panel2.Controls.Add(this.dataGridView_functionDetail);
-            this.splitContainer_functionDataAndDetail.Size = new System.Drawing.Size(791, 240);
+            this.splitContainer_functionDataAndDetail.Size = new System.Drawing.Size(791, 243);
             this.splitContainer_functionDataAndDetail.SplitterDistance = 475;
             this.splitContainer_functionDataAndDetail.TabIndex = 5;
             // 
             // easyChartX_function
             // 
+            this.easyChartX_function.AutoClear = true;
             this.easyChartX_function.AxisX.AutoScale = true;
             this.easyChartX_function.AxisX.AutoZoomReset = false;
             this.easyChartX_function.AxisX.Color = System.Drawing.Color.DarkGray;
             this.easyChartX_function.AxisX.InitWithScaleView = true;
             this.easyChartX_function.AxisX.IsLogarithmic = false;
+            this.easyChartX_function.AxisX.LabelAngle = 0;
             this.easyChartX_function.AxisX.LabelEnabled = true;
             this.easyChartX_function.AxisX.LabelFormat = "0.#";
             this.easyChartX_function.AxisX.MajorGridColor = System.Drawing.Color.DarkGray;
+            this.easyChartX_function.AxisX.MajorGridCount = -1;
             this.easyChartX_function.AxisX.MajorGridEnabled = true;
             this.easyChartX_function.AxisX.MajorGridType = SeeSharpTools.JY.GUI.EasyChartXAxis.GridStyle.Dash;
+            this.easyChartX_function.AxisX.MaxGridCountPerPixel = 0.012D;
             this.easyChartX_function.AxisX.Maximum = 1000D;
+            this.easyChartX_function.AxisX.MinGridCountPerPixel = 0.004D;
             this.easyChartX_function.AxisX.Minimum = 0D;
             this.easyChartX_function.AxisX.MinorGridColor = System.Drawing.Color.DimGray;
             this.easyChartX_function.AxisX.MinorGridEnabled = true;
             this.easyChartX_function.AxisX.MinorGridType = SeeSharpTools.JY.GUI.EasyChartXAxis.GridStyle.DashDotDot;
+            this.easyChartX_function.AxisX.TickWidth = 1F;
             this.easyChartX_function.AxisX.Title = "XAxisTitle";
             this.easyChartX_function.AxisX.TitleOrientation = SeeSharpTools.JY.GUI.EasyChartXAxis.AxisTextOrientation.Auto;
             this.easyChartX_function.AxisX.TitlePosition = SeeSharpTools.JY.GUI.EasyChartXAxis.AxisTextPosition.Center;
@@ -1386,16 +1413,21 @@ namespace DsaSoftPanel
             this.easyChartX_function.AxisX2.Color = System.Drawing.Color.Black;
             this.easyChartX_function.AxisX2.InitWithScaleView = false;
             this.easyChartX_function.AxisX2.IsLogarithmic = false;
+            this.easyChartX_function.AxisX2.LabelAngle = 0;
             this.easyChartX_function.AxisX2.LabelEnabled = true;
             this.easyChartX_function.AxisX2.LabelFormat = null;
             this.easyChartX_function.AxisX2.MajorGridColor = System.Drawing.Color.Black;
+            this.easyChartX_function.AxisX2.MajorGridCount = -1;
             this.easyChartX_function.AxisX2.MajorGridEnabled = true;
             this.easyChartX_function.AxisX2.MajorGridType = SeeSharpTools.JY.GUI.EasyChartXAxis.GridStyle.Solid;
+            this.easyChartX_function.AxisX2.MaxGridCountPerPixel = 0.012D;
             this.easyChartX_function.AxisX2.Maximum = 1000D;
+            this.easyChartX_function.AxisX2.MinGridCountPerPixel = 0.004D;
             this.easyChartX_function.AxisX2.Minimum = 0D;
             this.easyChartX_function.AxisX2.MinorGridColor = System.Drawing.Color.Black;
             this.easyChartX_function.AxisX2.MinorGridEnabled = false;
             this.easyChartX_function.AxisX2.MinorGridType = SeeSharpTools.JY.GUI.EasyChartXAxis.GridStyle.Solid;
+            this.easyChartX_function.AxisX2.TickWidth = 1F;
             this.easyChartX_function.AxisX2.Title = "";
             this.easyChartX_function.AxisX2.TitleOrientation = SeeSharpTools.JY.GUI.EasyChartXAxis.AxisTextOrientation.Auto;
             this.easyChartX_function.AxisX2.TitlePosition = SeeSharpTools.JY.GUI.EasyChartXAxis.AxisTextPosition.Center;
@@ -1406,16 +1438,21 @@ namespace DsaSoftPanel
             this.easyChartX_function.AxisY.Color = System.Drawing.Color.DarkGray;
             this.easyChartX_function.AxisY.InitWithScaleView = false;
             this.easyChartX_function.AxisY.IsLogarithmic = false;
+            this.easyChartX_function.AxisY.LabelAngle = 0;
             this.easyChartX_function.AxisY.LabelEnabled = true;
             this.easyChartX_function.AxisY.LabelFormat = null;
             this.easyChartX_function.AxisY.MajorGridColor = System.Drawing.Color.DarkGray;
+            this.easyChartX_function.AxisY.MajorGridCount = 6;
             this.easyChartX_function.AxisY.MajorGridEnabled = true;
             this.easyChartX_function.AxisY.MajorGridType = SeeSharpTools.JY.GUI.EasyChartXAxis.GridStyle.Dash;
+            this.easyChartX_function.AxisY.MaxGridCountPerPixel = 0.012D;
             this.easyChartX_function.AxisY.Maximum = 3.5D;
+            this.easyChartX_function.AxisY.MinGridCountPerPixel = 0.004D;
             this.easyChartX_function.AxisY.Minimum = 0D;
             this.easyChartX_function.AxisY.MinorGridColor = System.Drawing.Color.DimGray;
             this.easyChartX_function.AxisY.MinorGridEnabled = true;
             this.easyChartX_function.AxisY.MinorGridType = SeeSharpTools.JY.GUI.EasyChartXAxis.GridStyle.DashDotDot;
+            this.easyChartX_function.AxisY.TickWidth = 1F;
             this.easyChartX_function.AxisY.Title = "YAxisTitle";
             this.easyChartX_function.AxisY.TitleOrientation = SeeSharpTools.JY.GUI.EasyChartXAxis.AxisTextOrientation.Auto;
             this.easyChartX_function.AxisY.TitlePosition = SeeSharpTools.JY.GUI.EasyChartXAxis.AxisTextPosition.Center;
@@ -1426,16 +1463,21 @@ namespace DsaSoftPanel
             this.easyChartX_function.AxisY2.Color = System.Drawing.Color.Black;
             this.easyChartX_function.AxisY2.InitWithScaleView = false;
             this.easyChartX_function.AxisY2.IsLogarithmic = false;
+            this.easyChartX_function.AxisY2.LabelAngle = 0;
             this.easyChartX_function.AxisY2.LabelEnabled = true;
             this.easyChartX_function.AxisY2.LabelFormat = null;
             this.easyChartX_function.AxisY2.MajorGridColor = System.Drawing.Color.Black;
+            this.easyChartX_function.AxisY2.MajorGridCount = 6;
             this.easyChartX_function.AxisY2.MajorGridEnabled = true;
             this.easyChartX_function.AxisY2.MajorGridType = SeeSharpTools.JY.GUI.EasyChartXAxis.GridStyle.Solid;
+            this.easyChartX_function.AxisY2.MaxGridCountPerPixel = 0.012D;
             this.easyChartX_function.AxisY2.Maximum = 3.5D;
+            this.easyChartX_function.AxisY2.MinGridCountPerPixel = 0.004D;
             this.easyChartX_function.AxisY2.Minimum = 0D;
             this.easyChartX_function.AxisY2.MinorGridColor = System.Drawing.Color.Black;
             this.easyChartX_function.AxisY2.MinorGridEnabled = false;
             this.easyChartX_function.AxisY2.MinorGridType = SeeSharpTools.JY.GUI.EasyChartXAxis.GridStyle.Solid;
+            this.easyChartX_function.AxisY2.TickWidth = 1F;
             this.easyChartX_function.AxisY2.Title = "";
             this.easyChartX_function.AxisY2.TitleOrientation = SeeSharpTools.JY.GUI.EasyChartXAxis.AxisTextOrientation.Auto;
             this.easyChartX_function.AxisY2.TitlePosition = SeeSharpTools.JY.GUI.EasyChartXAxis.AxisTextPosition.Center;
@@ -1443,16 +1485,14 @@ namespace DsaSoftPanel
             this.easyChartX_function.AxisY2.ViewMinimum = 0D;
             this.easyChartX_function.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.easyChartX_function.ChartAreaBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.easyChartX_function.CheckInfinity = true;
-            this.easyChartX_function.CheckNaN = false;
-            this.easyChartX_function.CheckNegtiveOrZero = false;
             this.easyChartX_function.Cumulitive = false;
             this.easyChartX_function.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.easyChartX_function.Fitting = SeeSharpTools.JY.GUI.EasyChartX.FitType.Range;
             this.easyChartX_function.Font = new System.Drawing.Font("Consolas", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.easyChartX_function.ForeColor = System.Drawing.Color.Silver;
             this.easyChartX_function.GradientStyle = SeeSharpTools.JY.GUI.EasyChartX.ChartGradientStyle.None;
             this.easyChartX_function.LegendBackColor = System.Drawing.Color.Transparent;
+            this.easyChartX_function.LegendFont = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.easyChartX_function.LegendForeColor = System.Drawing.Color.Black;
             this.easyChartX_function.LegendVisible = false;
             easyChartXSeries9.Color = System.Drawing.Color.Yellow;
             easyChartXSeries9.Marker = SeeSharpTools.JY.GUI.EasyChartXSeries.MarkerType.None;
@@ -1466,7 +1506,7 @@ namespace DsaSoftPanel
             easyChartXSeries10.Marker = SeeSharpTools.JY.GUI.EasyChartXSeries.MarkerType.None;
             easyChartXSeries10.Name = "CH2";
             easyChartXSeries10.Type = SeeSharpTools.JY.GUI.EasyChartXSeries.LineType.FastLine;
-            easyChartXSeries10.Visible = true;
+            easyChartXSeries10.Visible = false;
             easyChartXSeries10.Width = SeeSharpTools.JY.GUI.EasyChartXSeries.LineWidth.Thin;
             easyChartXSeries10.XPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
             easyChartXSeries10.YPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
@@ -1474,7 +1514,7 @@ namespace DsaSoftPanel
             easyChartXSeries11.Marker = SeeSharpTools.JY.GUI.EasyChartXSeries.MarkerType.None;
             easyChartXSeries11.Name = "CH3";
             easyChartXSeries11.Type = SeeSharpTools.JY.GUI.EasyChartXSeries.LineType.FastLine;
-            easyChartXSeries11.Visible = true;
+            easyChartXSeries11.Visible = false;
             easyChartXSeries11.Width = SeeSharpTools.JY.GUI.EasyChartXSeries.LineWidth.Thin;
             easyChartXSeries11.XPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
             easyChartXSeries11.YPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
@@ -1482,7 +1522,7 @@ namespace DsaSoftPanel
             easyChartXSeries12.Marker = SeeSharpTools.JY.GUI.EasyChartXSeries.MarkerType.None;
             easyChartXSeries12.Name = "CH4";
             easyChartXSeries12.Type = SeeSharpTools.JY.GUI.EasyChartXSeries.LineType.FastLine;
-            easyChartXSeries12.Visible = true;
+            easyChartXSeries12.Visible = false;
             easyChartXSeries12.Width = SeeSharpTools.JY.GUI.EasyChartXSeries.LineWidth.Thin;
             easyChartXSeries12.XPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
             easyChartXSeries12.YPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
@@ -1528,9 +1568,23 @@ namespace DsaSoftPanel
             this.easyChartX_function.LineSeries.Add(easyChartXSeries16);
             this.easyChartX_function.Location = new System.Drawing.Point(0, 0);
             this.easyChartX_function.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.easyChartX_function.Miscellaneous.CheckInfinity = true;
+            this.easyChartX_function.Miscellaneous.CheckNaN = false;
+            this.easyChartX_function.Miscellaneous.CheckNegtiveOrZero = false;
+            this.easyChartX_function.Miscellaneous.DataStorage = SeeSharpTools.JY.GUI.DataStorageType.Clone;
+            this.easyChartX_function.Miscellaneous.DirectionChartCount = 3;
+            this.easyChartX_function.Miscellaneous.Fitting = SeeSharpTools.JY.GUI.EasyChartX.FitType.Range;
+            this.easyChartX_function.Miscellaneous.MarkerSize = 7;
+            this.easyChartX_function.Miscellaneous.MaxSeriesCount = 32;
+            this.easyChartX_function.Miscellaneous.MaxSeriesPointCount = 4000;
+            this.easyChartX_function.Miscellaneous.ShowFunctionMenu = true;
+            this.easyChartX_function.Miscellaneous.SplitLayoutColumnInterval = 0F;
+            this.easyChartX_function.Miscellaneous.SplitLayoutDirection = SeeSharpTools.JY.GUI.EasyChartXUtility.LayoutDirection.LeftToRight;
+            this.easyChartX_function.Miscellaneous.SplitLayoutRowInterval = 0F;
+            this.easyChartX_function.Miscellaneous.SplitViewAutoLayout = true;
             this.easyChartX_function.Name = "easyChartX_function";
-            this.easyChartX_function.SeriesCount = 4;
-            this.easyChartX_function.Size = new System.Drawing.Size(473, 238);
+            this.easyChartX_function.SeriesCount = 0;
+            this.easyChartX_function.Size = new System.Drawing.Size(473, 241);
             this.easyChartX_function.SplitView = false;
             this.easyChartX_function.TabIndex = 4;
             this.easyChartX_function.XCursor.AutoInterval = true;
@@ -1575,7 +1629,7 @@ namespace DsaSoftPanel
             this.dataGridView_functionDetail.RowHeadersVisible = false;
             this.dataGridView_functionDetail.RowTemplate.Height = 23;
             this.dataGridView_functionDetail.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView_functionDetail.Size = new System.Drawing.Size(310, 238);
+            this.dataGridView_functionDetail.Size = new System.Drawing.Size(310, 241);
             this.dataGridView_functionDetail.TabIndex = 0;
             // 
             // Column_Parameter
@@ -2068,7 +2122,7 @@ namespace DsaSoftPanel
         internal System.Windows.Forms.Label label_status2;
         internal System.Windows.Forms.Label label_status3;
         internal System.Windows.Forms.Label label_status4;
-        internal System.Windows.Forms.Label label__ch1;
+        internal System.Windows.Forms.Label label_ch1;
         internal System.Windows.Forms.Label label_ch2;
         internal System.Windows.Forms.Label label_ch3;
         internal System.Windows.Forms.Label label_ch4;

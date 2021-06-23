@@ -21,7 +21,7 @@ namespace DsaSoftPanel.FunctionUtility
         private readonly SquareAnalyzeConfigForm _configForm;
         private readonly SquarewaveMeasurements _squareMeasurement;
 
-        public SquareAnalyzeFunction(List<double> dataBuf) : base(dataBuf)
+        public SquareAnalyzeFunction(List<double[]> dataBuf) : base(dataBuf)
         {
             this._configForm = new SquareAnalyzeConfigForm();
             this._squareMeasurement = new SquarewaveMeasurements();
@@ -38,11 +38,10 @@ namespace DsaSoftPanel.FunctionUtility
             }
             else
             {
-                int samplesInChart = GlobalInfo.SamplesInChart;
-                _squareMeasurement.SetWaveform(DataBuf.GetRange(samplesInChart * signalIndex, samplesInChart).ToArray());
-                DetailValues[0] = _squareMeasurement.GetHighStateLevel().ToString();
-                DetailValues[1] = _squareMeasurement.GetLowStateLevel().ToString();
-                DetailValues[2] = (GlobalInfo.SampleRate / _squareMeasurement.GetPeriod()).ToString();
+                _squareMeasurement.SetWaveform(this.DataBuf[signalIndex]);
+                DetailValues[0] = GetShowValue(_squareMeasurement.GetHighStateLevel());
+                DetailValues[1] = GetShowValue(_squareMeasurement.GetLowStateLevel());
+                DetailValues[2] = GetShowValue(GlobalInfo.SampleRate / _squareMeasurement.GetPeriod());
             }
         }
 

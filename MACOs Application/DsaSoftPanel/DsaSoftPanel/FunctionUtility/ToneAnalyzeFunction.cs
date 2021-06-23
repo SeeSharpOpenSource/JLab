@@ -20,7 +20,7 @@ namespace DsaSoftPanel.FunctionUtility
 
         public override string[] DetailValues { get; protected set; }
 
-        public ToneAnalyzeFunction(List<double> dataBuf) : base(dataBuf)
+        public ToneAnalyzeFunction(List<double[]> dataBuf) : base(dataBuf)
         {
             DetailValues = new string[DetailParameters.Length];
         }
@@ -36,13 +36,13 @@ namespace DsaSoftPanel.FunctionUtility
             for (int i = 0; i < channelCount; i++)
             {
                 ToneAnalysisResult result = HarmonicAnalyzer.ToneAnalysis(
-                    DataBuf.GetRange(i*sampleCount, sampleCount).ToArray(), 1.0/GlobalInfo.SampleRate);
-                DetailValues[0] += $"{result.THD:f6} ";
-                DetailValues[1] += $"{result.THDplusN:f6} ";
-                DetailValues[2] += $"{result.SINAD:f6} ";
-                DetailValues[3] += $"{result.SNR:f6} ";
-                DetailValues[4] += $"{result.NoiseFloor:f6} ";
-                DetailValues[5] += $"{result.ENOB:f6} ";
+                    this.DataBuf[i], 1.0/GlobalInfo.SampleRate);
+                DetailValues[0] += GetShowValue(result.THD);
+                DetailValues[1] += GetShowValue(result.THDplusN);
+                DetailValues[2] += GetShowValue(result.SINAD);
+                DetailValues[3] += GetShowValue(result.SNR);
+                DetailValues[4] += GetShowValue(result.NoiseFloor);
+                DetailValues[5] += GetShowValue(result.ENOB);
             }
         }
 

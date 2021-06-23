@@ -20,7 +20,7 @@ namespace DsaSoftPanel.FunctionUtility
 
         private readonly PhaseShiftConfigForm _configForm = new PhaseShiftConfigForm();
 
-        public PhaseShiftFunction(List<double> dataBuf) : base(dataBuf)
+        public PhaseShiftFunction(List<double[]> dataBuf) : base(dataBuf)
         {
             DetailValues = new string[DetailParameters.Length];
         }
@@ -29,12 +29,11 @@ namespace DsaSoftPanel.FunctionUtility
         {
             int signal1Index, signal2Index;
             _configForm.GetChannelIndex(out signal1Index, out signal2Index);
-            int samplesPerView = GlobalInfo.SamplesInChart;
             if (signal2Index >= 0 && signal1Index >= 0 && signal1Index != signal2Index)
             {
-                double[] signal1 = DataBuf.GetRange(signal1Index*samplesPerView, samplesPerView).ToArray();
-                double[] signal2 = DataBuf.GetRange(signal2Index*samplesPerView, samplesPerView).ToArray();
-                DetailValues[0] = Phase.CalPhaseShift(signal1, signal2).ToString();
+                double[] signal1 = this.DataBuf[signal1Index];
+                double[] signal2 = this.DataBuf[signal2Index];
+                DetailValues[0] = GetShowValue(Phase.CalPhaseShift(signal1, signal2));
             }
             else
             {
