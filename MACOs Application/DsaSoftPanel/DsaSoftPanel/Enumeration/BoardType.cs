@@ -4,6 +4,8 @@
     {
         JYPCI69527,
 
+        JYPCI69527L,
+
         JYPXI69527,
 
         JYPXIe69529,
