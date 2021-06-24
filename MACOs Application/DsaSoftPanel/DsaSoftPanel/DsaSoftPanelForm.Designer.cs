@@ -31,28 +31,28 @@ namespace DsaSoftPanel
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DsaSoftPanelForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            SeeSharpTools.JY.GUI.EasyChartXSeries easyChartXSeries49 = new SeeSharpTools.JY.GUI.EasyChartXSeries();
-            SeeSharpTools.JY.GUI.EasyChartXSeries easyChartXSeries50 = new SeeSharpTools.JY.GUI.EasyChartXSeries();
-            SeeSharpTools.JY.GUI.EasyChartXSeries easyChartXSeries51 = new SeeSharpTools.JY.GUI.EasyChartXSeries();
-            SeeSharpTools.JY.GUI.EasyChartXSeries easyChartXSeries52 = new SeeSharpTools.JY.GUI.EasyChartXSeries();
-            SeeSharpTools.JY.GUI.EasyChartXSeries easyChartXSeries53 = new SeeSharpTools.JY.GUI.EasyChartXSeries();
-            SeeSharpTools.JY.GUI.EasyChartXSeries easyChartXSeries54 = new SeeSharpTools.JY.GUI.EasyChartXSeries();
-            SeeSharpTools.JY.GUI.EasyChartXSeries easyChartXSeries55 = new SeeSharpTools.JY.GUI.EasyChartXSeries();
-            SeeSharpTools.JY.GUI.EasyChartXSeries easyChartXSeries56 = new SeeSharpTools.JY.GUI.EasyChartXSeries();
-            SeeSharpTools.JY.GUI.EasyChartXSeries easyChartXSeries57 = new SeeSharpTools.JY.GUI.EasyChartXSeries();
-            SeeSharpTools.JY.GUI.EasyChartXSeries easyChartXSeries58 = new SeeSharpTools.JY.GUI.EasyChartXSeries();
-            SeeSharpTools.JY.GUI.EasyChartXSeries easyChartXSeries59 = new SeeSharpTools.JY.GUI.EasyChartXSeries();
-            SeeSharpTools.JY.GUI.EasyChartXSeries easyChartXSeries60 = new SeeSharpTools.JY.GUI.EasyChartXSeries();
-            SeeSharpTools.JY.GUI.EasyChartXSeries easyChartXSeries61 = new SeeSharpTools.JY.GUI.EasyChartXSeries();
-            SeeSharpTools.JY.GUI.EasyChartXSeries easyChartXSeries62 = new SeeSharpTools.JY.GUI.EasyChartXSeries();
-            SeeSharpTools.JY.GUI.EasyChartXSeries easyChartXSeries63 = new SeeSharpTools.JY.GUI.EasyChartXSeries();
-            SeeSharpTools.JY.GUI.EasyChartXSeries easyChartXSeries64 = new SeeSharpTools.JY.GUI.EasyChartXSeries();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            SeeSharpTools.JY.GUI.EasyChartXSeries easyChartXSeries33 = new SeeSharpTools.JY.GUI.EasyChartXSeries();
+            SeeSharpTools.JY.GUI.EasyChartXSeries easyChartXSeries34 = new SeeSharpTools.JY.GUI.EasyChartXSeries();
+            SeeSharpTools.JY.GUI.EasyChartXSeries easyChartXSeries35 = new SeeSharpTools.JY.GUI.EasyChartXSeries();
+            SeeSharpTools.JY.GUI.EasyChartXSeries easyChartXSeries36 = new SeeSharpTools.JY.GUI.EasyChartXSeries();
+            SeeSharpTools.JY.GUI.EasyChartXSeries easyChartXSeries37 = new SeeSharpTools.JY.GUI.EasyChartXSeries();
+            SeeSharpTools.JY.GUI.EasyChartXSeries easyChartXSeries38 = new SeeSharpTools.JY.GUI.EasyChartXSeries();
+            SeeSharpTools.JY.GUI.EasyChartXSeries easyChartXSeries39 = new SeeSharpTools.JY.GUI.EasyChartXSeries();
+            SeeSharpTools.JY.GUI.EasyChartXSeries easyChartXSeries40 = new SeeSharpTools.JY.GUI.EasyChartXSeries();
+            SeeSharpTools.JY.GUI.EasyChartXSeries easyChartXSeries41 = new SeeSharpTools.JY.GUI.EasyChartXSeries();
+            SeeSharpTools.JY.GUI.EasyChartXSeries easyChartXSeries42 = new SeeSharpTools.JY.GUI.EasyChartXSeries();
+            SeeSharpTools.JY.GUI.EasyChartXSeries easyChartXSeries43 = new SeeSharpTools.JY.GUI.EasyChartXSeries();
+            SeeSharpTools.JY.GUI.EasyChartXSeries easyChartXSeries44 = new SeeSharpTools.JY.GUI.EasyChartXSeries();
+            SeeSharpTools.JY.GUI.EasyChartXSeries easyChartXSeries45 = new SeeSharpTools.JY.GUI.EasyChartXSeries();
+            SeeSharpTools.JY.GUI.EasyChartXSeries easyChartXSeries46 = new SeeSharpTools.JY.GUI.EasyChartXSeries();
+            SeeSharpTools.JY.GUI.EasyChartXSeries easyChartXSeries47 = new SeeSharpTools.JY.GUI.EasyChartXSeries();
+            SeeSharpTools.JY.GUI.EasyChartXSeries easyChartXSeries48 = new SeeSharpTools.JY.GUI.EasyChartXSeries();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.flowLayoutPanel_menuButton = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonSwitch_Switch = new SeeSharpTools.JY.GUI.ButtonSwitch();
             this.button_clear = new System.Windows.Forms.Button();
@@ -638,14 +638,14 @@ namespace DsaSoftPanel
             this.dataGridView_measureValues.AllowUserToResizeRows = false;
             this.dataGridView_measureValues.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dataGridView_measureValues.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_measureValues.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_measureValues.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.dataGridView_measureValues.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_measureValues.ColumnHeadersVisible = false;
             this.dataGridView_measureValues.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -665,10 +665,10 @@ namespace DsaSoftPanel
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Silver;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Silver;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle14;
             this.dataGridViewTextBoxColumn1.HeaderText = "Parameter Name";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
@@ -677,10 +677,10 @@ namespace DsaSoftPanel
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.Silver;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Silver;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle15;
             this.dataGridViewTextBoxColumn2.HeaderText = "Value";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
@@ -692,7 +692,7 @@ namespace DsaSoftPanel
             this.tableLayoutPanel_measure.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel_measure.ColumnCount = 2;
             this.tableLayoutPanel_measure.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel_measure.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 44F));
+            this.tableLayoutPanel_measure.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 45F));
             this.tableLayoutPanel_measure.Controls.Add(this.label_measureRms, 0, 0);
             this.tableLayoutPanel_measure.Controls.Add(this.label_DC, 0, 1);
             this.tableLayoutPanel_measure.Controls.Add(this.label_peakAmp, 0, 2);
@@ -848,7 +848,7 @@ namespace DsaSoftPanel
             this.tableLayoutPanel_functionSelect.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel_functionSelect.ColumnCount = 2;
             this.tableLayoutPanel_functionSelect.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel_functionSelect.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel_functionSelect.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41F));
             this.tableLayoutPanel_functionSelect.Controls.Add(this.label_filter, 0, 3);
             this.tableLayoutPanel_functionSelect.Controls.Add(this.txRadioButton_filter, 1, 3);
             this.tableLayoutPanel_functionSelect.Controls.Add(this.label_toneAnalyze, 0, 2);
@@ -1045,7 +1045,7 @@ namespace DsaSoftPanel
             // 
             this.splitContainer_viewAndConfig.Panel2.Controls.Add(this.splitContainer_channelAndCommon);
             this.splitContainer_viewAndConfig.Size = new System.Drawing.Size(1012, 563);
-            this.splitContainer_viewAndConfig.SplitterDistance = 803;
+            this.splitContainer_viewAndConfig.SplitterDistance = 780;
             this.splitContainer_viewAndConfig.TabIndex = 0;
             // 
             // tableLayoutPanel_chartView
@@ -1064,7 +1064,7 @@ namespace DsaSoftPanel
             this.tableLayoutPanel_chartView.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel_chartView.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 563F));
             this.tableLayoutPanel_chartView.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 563F));
-            this.tableLayoutPanel_chartView.Size = new System.Drawing.Size(803, 563);
+            this.tableLayoutPanel_chartView.Size = new System.Drawing.Size(780, 563);
             this.tableLayoutPanel_chartView.TabIndex = 0;
             // 
             // splitContainer_plotArea
@@ -1082,7 +1082,7 @@ namespace DsaSoftPanel
             // splitContainer_plotArea.Panel2
             // 
             this.splitContainer_plotArea.Panel2.Controls.Add(this.tableLayoutPanel_functionPanel);
-            this.splitContainer_plotArea.Size = new System.Drawing.Size(797, 557);
+            this.splitContainer_plotArea.Size = new System.Drawing.Size(774, 557);
             this.splitContainer_plotArea.SplitterDistance = 272;
             this.splitContainer_plotArea.TabIndex = 0;
             // 
@@ -1200,78 +1200,78 @@ namespace DsaSoftPanel
             this.easyChartX_data.LegendFont = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.easyChartX_data.LegendForeColor = System.Drawing.Color.Black;
             this.easyChartX_data.LegendVisible = false;
-            easyChartXSeries49.Color = System.Drawing.Color.Yellow;
-            easyChartXSeries49.Marker = SeeSharpTools.JY.GUI.EasyChartXSeries.MarkerType.None;
-            easyChartXSeries49.Name = "CH1";
-            easyChartXSeries49.Type = SeeSharpTools.JY.GUI.EasyChartXSeries.LineType.FastLine;
-            easyChartXSeries49.Visible = true;
-            easyChartXSeries49.Width = SeeSharpTools.JY.GUI.EasyChartXSeries.LineWidth.Thin;
-            easyChartXSeries49.XPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
-            easyChartXSeries49.YPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
-            easyChartXSeries50.Color = System.Drawing.Color.Cyan;
-            easyChartXSeries50.Marker = SeeSharpTools.JY.GUI.EasyChartXSeries.MarkerType.None;
-            easyChartXSeries50.Name = "CH2";
-            easyChartXSeries50.Type = SeeSharpTools.JY.GUI.EasyChartXSeries.LineType.FastLine;
-            easyChartXSeries50.Visible = false;
-            easyChartXSeries50.Width = SeeSharpTools.JY.GUI.EasyChartXSeries.LineWidth.Thin;
-            easyChartXSeries50.XPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
-            easyChartXSeries50.YPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
-            easyChartXSeries51.Color = System.Drawing.Color.DarkOrange;
-            easyChartXSeries51.Marker = SeeSharpTools.JY.GUI.EasyChartXSeries.MarkerType.None;
-            easyChartXSeries51.Name = "CH3";
-            easyChartXSeries51.Type = SeeSharpTools.JY.GUI.EasyChartXSeries.LineType.FastLine;
-            easyChartXSeries51.Visible = false;
-            easyChartXSeries51.Width = SeeSharpTools.JY.GUI.EasyChartXSeries.LineWidth.Thin;
-            easyChartXSeries51.XPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
-            easyChartXSeries51.YPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
-            easyChartXSeries52.Color = System.Drawing.Color.PaleVioletRed;
-            easyChartXSeries52.Marker = SeeSharpTools.JY.GUI.EasyChartXSeries.MarkerType.None;
-            easyChartXSeries52.Name = "CH4";
-            easyChartXSeries52.Type = SeeSharpTools.JY.GUI.EasyChartXSeries.LineType.FastLine;
-            easyChartXSeries52.Visible = false;
-            easyChartXSeries52.Width = SeeSharpTools.JY.GUI.EasyChartXSeries.LineWidth.Thin;
-            easyChartXSeries52.XPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
-            easyChartXSeries52.YPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
-            easyChartXSeries53.Color = System.Drawing.Color.BlueViolet;
-            easyChartXSeries53.Marker = SeeSharpTools.JY.GUI.EasyChartXSeries.MarkerType.None;
-            easyChartXSeries53.Name = "CH5";
-            easyChartXSeries53.Type = SeeSharpTools.JY.GUI.EasyChartXSeries.LineType.FastLine;
-            easyChartXSeries53.Visible = false;
-            easyChartXSeries53.Width = SeeSharpTools.JY.GUI.EasyChartXSeries.LineWidth.Thin;
-            easyChartXSeries53.XPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
-            easyChartXSeries53.YPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
-            easyChartXSeries54.Color = System.Drawing.Color.Blue;
-            easyChartXSeries54.Marker = SeeSharpTools.JY.GUI.EasyChartXSeries.MarkerType.None;
-            easyChartXSeries54.Name = "CH6";
-            easyChartXSeries54.Type = SeeSharpTools.JY.GUI.EasyChartXSeries.LineType.FastLine;
-            easyChartXSeries54.Visible = false;
-            easyChartXSeries54.Width = SeeSharpTools.JY.GUI.EasyChartXSeries.LineWidth.Thin;
-            easyChartXSeries54.XPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
-            easyChartXSeries54.YPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
-            easyChartXSeries55.Color = System.Drawing.Color.LimeGreen;
-            easyChartXSeries55.Marker = SeeSharpTools.JY.GUI.EasyChartXSeries.MarkerType.None;
-            easyChartXSeries55.Name = "CH7";
-            easyChartXSeries55.Type = SeeSharpTools.JY.GUI.EasyChartXSeries.LineType.FastLine;
-            easyChartXSeries55.Visible = false;
-            easyChartXSeries55.Width = SeeSharpTools.JY.GUI.EasyChartXSeries.LineWidth.Thin;
-            easyChartXSeries55.XPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
-            easyChartXSeries55.YPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
-            easyChartXSeries56.Color = System.Drawing.Color.Magenta;
-            easyChartXSeries56.Marker = SeeSharpTools.JY.GUI.EasyChartXSeries.MarkerType.None;
-            easyChartXSeries56.Name = "CH8";
-            easyChartXSeries56.Type = SeeSharpTools.JY.GUI.EasyChartXSeries.LineType.FastLine;
-            easyChartXSeries56.Visible = false;
-            easyChartXSeries56.Width = SeeSharpTools.JY.GUI.EasyChartXSeries.LineWidth.Thin;
-            easyChartXSeries56.XPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
-            easyChartXSeries56.YPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
-            this.easyChartX_data.LineSeries.Add(easyChartXSeries49);
-            this.easyChartX_data.LineSeries.Add(easyChartXSeries50);
-            this.easyChartX_data.LineSeries.Add(easyChartXSeries51);
-            this.easyChartX_data.LineSeries.Add(easyChartXSeries52);
-            this.easyChartX_data.LineSeries.Add(easyChartXSeries53);
-            this.easyChartX_data.LineSeries.Add(easyChartXSeries54);
-            this.easyChartX_data.LineSeries.Add(easyChartXSeries55);
-            this.easyChartX_data.LineSeries.Add(easyChartXSeries56);
+            easyChartXSeries33.Color = System.Drawing.Color.Yellow;
+            easyChartXSeries33.Marker = SeeSharpTools.JY.GUI.EasyChartXSeries.MarkerType.None;
+            easyChartXSeries33.Name = "CH1";
+            easyChartXSeries33.Type = SeeSharpTools.JY.GUI.EasyChartXSeries.LineType.FastLine;
+            easyChartXSeries33.Visible = true;
+            easyChartXSeries33.Width = SeeSharpTools.JY.GUI.EasyChartXSeries.LineWidth.Thin;
+            easyChartXSeries33.XPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
+            easyChartXSeries33.YPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
+            easyChartXSeries34.Color = System.Drawing.Color.Cyan;
+            easyChartXSeries34.Marker = SeeSharpTools.JY.GUI.EasyChartXSeries.MarkerType.None;
+            easyChartXSeries34.Name = "CH2";
+            easyChartXSeries34.Type = SeeSharpTools.JY.GUI.EasyChartXSeries.LineType.FastLine;
+            easyChartXSeries34.Visible = false;
+            easyChartXSeries34.Width = SeeSharpTools.JY.GUI.EasyChartXSeries.LineWidth.Thin;
+            easyChartXSeries34.XPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
+            easyChartXSeries34.YPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
+            easyChartXSeries35.Color = System.Drawing.Color.DarkOrange;
+            easyChartXSeries35.Marker = SeeSharpTools.JY.GUI.EasyChartXSeries.MarkerType.None;
+            easyChartXSeries35.Name = "CH3";
+            easyChartXSeries35.Type = SeeSharpTools.JY.GUI.EasyChartXSeries.LineType.FastLine;
+            easyChartXSeries35.Visible = false;
+            easyChartXSeries35.Width = SeeSharpTools.JY.GUI.EasyChartXSeries.LineWidth.Thin;
+            easyChartXSeries35.XPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
+            easyChartXSeries35.YPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
+            easyChartXSeries36.Color = System.Drawing.Color.PaleVioletRed;
+            easyChartXSeries36.Marker = SeeSharpTools.JY.GUI.EasyChartXSeries.MarkerType.None;
+            easyChartXSeries36.Name = "CH4";
+            easyChartXSeries36.Type = SeeSharpTools.JY.GUI.EasyChartXSeries.LineType.FastLine;
+            easyChartXSeries36.Visible = false;
+            easyChartXSeries36.Width = SeeSharpTools.JY.GUI.EasyChartXSeries.LineWidth.Thin;
+            easyChartXSeries36.XPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
+            easyChartXSeries36.YPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
+            easyChartXSeries37.Color = System.Drawing.Color.BlueViolet;
+            easyChartXSeries37.Marker = SeeSharpTools.JY.GUI.EasyChartXSeries.MarkerType.None;
+            easyChartXSeries37.Name = "CH5";
+            easyChartXSeries37.Type = SeeSharpTools.JY.GUI.EasyChartXSeries.LineType.FastLine;
+            easyChartXSeries37.Visible = false;
+            easyChartXSeries37.Width = SeeSharpTools.JY.GUI.EasyChartXSeries.LineWidth.Thin;
+            easyChartXSeries37.XPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
+            easyChartXSeries37.YPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
+            easyChartXSeries38.Color = System.Drawing.Color.Blue;
+            easyChartXSeries38.Marker = SeeSharpTools.JY.GUI.EasyChartXSeries.MarkerType.None;
+            easyChartXSeries38.Name = "CH6";
+            easyChartXSeries38.Type = SeeSharpTools.JY.GUI.EasyChartXSeries.LineType.FastLine;
+            easyChartXSeries38.Visible = false;
+            easyChartXSeries38.Width = SeeSharpTools.JY.GUI.EasyChartXSeries.LineWidth.Thin;
+            easyChartXSeries38.XPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
+            easyChartXSeries38.YPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
+            easyChartXSeries39.Color = System.Drawing.Color.LimeGreen;
+            easyChartXSeries39.Marker = SeeSharpTools.JY.GUI.EasyChartXSeries.MarkerType.None;
+            easyChartXSeries39.Name = "CH7";
+            easyChartXSeries39.Type = SeeSharpTools.JY.GUI.EasyChartXSeries.LineType.FastLine;
+            easyChartXSeries39.Visible = false;
+            easyChartXSeries39.Width = SeeSharpTools.JY.GUI.EasyChartXSeries.LineWidth.Thin;
+            easyChartXSeries39.XPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
+            easyChartXSeries39.YPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
+            easyChartXSeries40.Color = System.Drawing.Color.Magenta;
+            easyChartXSeries40.Marker = SeeSharpTools.JY.GUI.EasyChartXSeries.MarkerType.None;
+            easyChartXSeries40.Name = "CH8";
+            easyChartXSeries40.Type = SeeSharpTools.JY.GUI.EasyChartXSeries.LineType.FastLine;
+            easyChartXSeries40.Visible = false;
+            easyChartXSeries40.Width = SeeSharpTools.JY.GUI.EasyChartXSeries.LineWidth.Thin;
+            easyChartXSeries40.XPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
+            easyChartXSeries40.YPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
+            this.easyChartX_data.LineSeries.Add(easyChartXSeries33);
+            this.easyChartX_data.LineSeries.Add(easyChartXSeries34);
+            this.easyChartX_data.LineSeries.Add(easyChartXSeries35);
+            this.easyChartX_data.LineSeries.Add(easyChartXSeries36);
+            this.easyChartX_data.LineSeries.Add(easyChartXSeries37);
+            this.easyChartX_data.LineSeries.Add(easyChartXSeries38);
+            this.easyChartX_data.LineSeries.Add(easyChartXSeries39);
+            this.easyChartX_data.LineSeries.Add(easyChartXSeries40);
             this.easyChartX_data.Location = new System.Drawing.Point(0, 0);
             this.easyChartX_data.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.easyChartX_data.Miscellaneous.CheckInfinity = false;
@@ -1290,7 +1290,7 @@ namespace DsaSoftPanel
             this.easyChartX_data.Miscellaneous.SplitViewAutoLayout = true;
             this.easyChartX_data.Name = "easyChartX_data";
             this.easyChartX_data.SeriesCount = 0;
-            this.easyChartX_data.Size = new System.Drawing.Size(795, 270);
+            this.easyChartX_data.Size = new System.Drawing.Size(772, 270);
             this.easyChartX_data.SplitView = false;
             this.easyChartX_data.TabIndex = 0;
             this.easyChartX_data.XCursor.AutoInterval = true;
@@ -1319,7 +1319,7 @@ namespace DsaSoftPanel
             this.tableLayoutPanel_functionPanel.RowCount = 2;
             this.tableLayoutPanel_functionPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel_functionPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel_functionPanel.Size = new System.Drawing.Size(795, 279);
+            this.tableLayoutPanel_functionPanel.Size = new System.Drawing.Size(772, 279);
             this.tableLayoutPanel_functionPanel.TabIndex = 0;
             // 
             // tableLayoutPanel_functionValues
@@ -1495,78 +1495,78 @@ namespace DsaSoftPanel
             this.easyChartX_function.LegendFont = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.easyChartX_function.LegendForeColor = System.Drawing.Color.Black;
             this.easyChartX_function.LegendVisible = false;
-            easyChartXSeries57.Color = System.Drawing.Color.Yellow;
-            easyChartXSeries57.Marker = SeeSharpTools.JY.GUI.EasyChartXSeries.MarkerType.None;
-            easyChartXSeries57.Name = "CH1";
-            easyChartXSeries57.Type = SeeSharpTools.JY.GUI.EasyChartXSeries.LineType.FastLine;
-            easyChartXSeries57.Visible = true;
-            easyChartXSeries57.Width = SeeSharpTools.JY.GUI.EasyChartXSeries.LineWidth.Thin;
-            easyChartXSeries57.XPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
-            easyChartXSeries57.YPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
-            easyChartXSeries58.Color = System.Drawing.Color.Cyan;
-            easyChartXSeries58.Marker = SeeSharpTools.JY.GUI.EasyChartXSeries.MarkerType.None;
-            easyChartXSeries58.Name = "CH2";
-            easyChartXSeries58.Type = SeeSharpTools.JY.GUI.EasyChartXSeries.LineType.FastLine;
-            easyChartXSeries58.Visible = false;
-            easyChartXSeries58.Width = SeeSharpTools.JY.GUI.EasyChartXSeries.LineWidth.Thin;
-            easyChartXSeries58.XPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
-            easyChartXSeries58.YPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
-            easyChartXSeries59.Color = System.Drawing.Color.DarkOrange;
-            easyChartXSeries59.Marker = SeeSharpTools.JY.GUI.EasyChartXSeries.MarkerType.None;
-            easyChartXSeries59.Name = "CH3";
-            easyChartXSeries59.Type = SeeSharpTools.JY.GUI.EasyChartXSeries.LineType.FastLine;
-            easyChartXSeries59.Visible = false;
-            easyChartXSeries59.Width = SeeSharpTools.JY.GUI.EasyChartXSeries.LineWidth.Thin;
-            easyChartXSeries59.XPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
-            easyChartXSeries59.YPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
-            easyChartXSeries60.Color = System.Drawing.Color.PaleVioletRed;
-            easyChartXSeries60.Marker = SeeSharpTools.JY.GUI.EasyChartXSeries.MarkerType.None;
-            easyChartXSeries60.Name = "CH4";
-            easyChartXSeries60.Type = SeeSharpTools.JY.GUI.EasyChartXSeries.LineType.FastLine;
-            easyChartXSeries60.Visible = false;
-            easyChartXSeries60.Width = SeeSharpTools.JY.GUI.EasyChartXSeries.LineWidth.Thin;
-            easyChartXSeries60.XPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
-            easyChartXSeries60.YPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
-            easyChartXSeries61.Color = System.Drawing.Color.BlueViolet;
-            easyChartXSeries61.Marker = SeeSharpTools.JY.GUI.EasyChartXSeries.MarkerType.None;
-            easyChartXSeries61.Name = "CH5";
-            easyChartXSeries61.Type = SeeSharpTools.JY.GUI.EasyChartXSeries.LineType.FastLine;
-            easyChartXSeries61.Visible = false;
-            easyChartXSeries61.Width = SeeSharpTools.JY.GUI.EasyChartXSeries.LineWidth.Thin;
-            easyChartXSeries61.XPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
-            easyChartXSeries61.YPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
-            easyChartXSeries62.Color = System.Drawing.Color.Blue;
-            easyChartXSeries62.Marker = SeeSharpTools.JY.GUI.EasyChartXSeries.MarkerType.None;
-            easyChartXSeries62.Name = "CH6";
-            easyChartXSeries62.Type = SeeSharpTools.JY.GUI.EasyChartXSeries.LineType.FastLine;
-            easyChartXSeries62.Visible = false;
-            easyChartXSeries62.Width = SeeSharpTools.JY.GUI.EasyChartXSeries.LineWidth.Thin;
-            easyChartXSeries62.XPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
-            easyChartXSeries62.YPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
-            easyChartXSeries63.Color = System.Drawing.Color.LimeGreen;
-            easyChartXSeries63.Marker = SeeSharpTools.JY.GUI.EasyChartXSeries.MarkerType.None;
-            easyChartXSeries63.Name = "CH7";
-            easyChartXSeries63.Type = SeeSharpTools.JY.GUI.EasyChartXSeries.LineType.FastLine;
-            easyChartXSeries63.Visible = false;
-            easyChartXSeries63.Width = SeeSharpTools.JY.GUI.EasyChartXSeries.LineWidth.Thin;
-            easyChartXSeries63.XPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
-            easyChartXSeries63.YPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
-            easyChartXSeries64.Color = System.Drawing.Color.Magenta;
-            easyChartXSeries64.Marker = SeeSharpTools.JY.GUI.EasyChartXSeries.MarkerType.None;
-            easyChartXSeries64.Name = "CH8";
-            easyChartXSeries64.Type = SeeSharpTools.JY.GUI.EasyChartXSeries.LineType.FastLine;
-            easyChartXSeries64.Visible = false;
-            easyChartXSeries64.Width = SeeSharpTools.JY.GUI.EasyChartXSeries.LineWidth.Thin;
-            easyChartXSeries64.XPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
-            easyChartXSeries64.YPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
-            this.easyChartX_function.LineSeries.Add(easyChartXSeries57);
-            this.easyChartX_function.LineSeries.Add(easyChartXSeries58);
-            this.easyChartX_function.LineSeries.Add(easyChartXSeries59);
-            this.easyChartX_function.LineSeries.Add(easyChartXSeries60);
-            this.easyChartX_function.LineSeries.Add(easyChartXSeries61);
-            this.easyChartX_function.LineSeries.Add(easyChartXSeries62);
-            this.easyChartX_function.LineSeries.Add(easyChartXSeries63);
-            this.easyChartX_function.LineSeries.Add(easyChartXSeries64);
+            easyChartXSeries41.Color = System.Drawing.Color.Yellow;
+            easyChartXSeries41.Marker = SeeSharpTools.JY.GUI.EasyChartXSeries.MarkerType.None;
+            easyChartXSeries41.Name = "CH1";
+            easyChartXSeries41.Type = SeeSharpTools.JY.GUI.EasyChartXSeries.LineType.FastLine;
+            easyChartXSeries41.Visible = true;
+            easyChartXSeries41.Width = SeeSharpTools.JY.GUI.EasyChartXSeries.LineWidth.Thin;
+            easyChartXSeries41.XPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
+            easyChartXSeries41.YPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
+            easyChartXSeries42.Color = System.Drawing.Color.Cyan;
+            easyChartXSeries42.Marker = SeeSharpTools.JY.GUI.EasyChartXSeries.MarkerType.None;
+            easyChartXSeries42.Name = "CH2";
+            easyChartXSeries42.Type = SeeSharpTools.JY.GUI.EasyChartXSeries.LineType.FastLine;
+            easyChartXSeries42.Visible = false;
+            easyChartXSeries42.Width = SeeSharpTools.JY.GUI.EasyChartXSeries.LineWidth.Thin;
+            easyChartXSeries42.XPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
+            easyChartXSeries42.YPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
+            easyChartXSeries43.Color = System.Drawing.Color.DarkOrange;
+            easyChartXSeries43.Marker = SeeSharpTools.JY.GUI.EasyChartXSeries.MarkerType.None;
+            easyChartXSeries43.Name = "CH3";
+            easyChartXSeries43.Type = SeeSharpTools.JY.GUI.EasyChartXSeries.LineType.FastLine;
+            easyChartXSeries43.Visible = false;
+            easyChartXSeries43.Width = SeeSharpTools.JY.GUI.EasyChartXSeries.LineWidth.Thin;
+            easyChartXSeries43.XPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
+            easyChartXSeries43.YPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
+            easyChartXSeries44.Color = System.Drawing.Color.PaleVioletRed;
+            easyChartXSeries44.Marker = SeeSharpTools.JY.GUI.EasyChartXSeries.MarkerType.None;
+            easyChartXSeries44.Name = "CH4";
+            easyChartXSeries44.Type = SeeSharpTools.JY.GUI.EasyChartXSeries.LineType.FastLine;
+            easyChartXSeries44.Visible = false;
+            easyChartXSeries44.Width = SeeSharpTools.JY.GUI.EasyChartXSeries.LineWidth.Thin;
+            easyChartXSeries44.XPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
+            easyChartXSeries44.YPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
+            easyChartXSeries45.Color = System.Drawing.Color.BlueViolet;
+            easyChartXSeries45.Marker = SeeSharpTools.JY.GUI.EasyChartXSeries.MarkerType.None;
+            easyChartXSeries45.Name = "CH5";
+            easyChartXSeries45.Type = SeeSharpTools.JY.GUI.EasyChartXSeries.LineType.FastLine;
+            easyChartXSeries45.Visible = false;
+            easyChartXSeries45.Width = SeeSharpTools.JY.GUI.EasyChartXSeries.LineWidth.Thin;
+            easyChartXSeries45.XPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
+            easyChartXSeries45.YPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
+            easyChartXSeries46.Color = System.Drawing.Color.Blue;
+            easyChartXSeries46.Marker = SeeSharpTools.JY.GUI.EasyChartXSeries.MarkerType.None;
+            easyChartXSeries46.Name = "CH6";
+            easyChartXSeries46.Type = SeeSharpTools.JY.GUI.EasyChartXSeries.LineType.FastLine;
+            easyChartXSeries46.Visible = false;
+            easyChartXSeries46.Width = SeeSharpTools.JY.GUI.EasyChartXSeries.LineWidth.Thin;
+            easyChartXSeries46.XPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
+            easyChartXSeries46.YPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
+            easyChartXSeries47.Color = System.Drawing.Color.LimeGreen;
+            easyChartXSeries47.Marker = SeeSharpTools.JY.GUI.EasyChartXSeries.MarkerType.None;
+            easyChartXSeries47.Name = "CH7";
+            easyChartXSeries47.Type = SeeSharpTools.JY.GUI.EasyChartXSeries.LineType.FastLine;
+            easyChartXSeries47.Visible = false;
+            easyChartXSeries47.Width = SeeSharpTools.JY.GUI.EasyChartXSeries.LineWidth.Thin;
+            easyChartXSeries47.XPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
+            easyChartXSeries47.YPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
+            easyChartXSeries48.Color = System.Drawing.Color.Magenta;
+            easyChartXSeries48.Marker = SeeSharpTools.JY.GUI.EasyChartXSeries.MarkerType.None;
+            easyChartXSeries48.Name = "CH8";
+            easyChartXSeries48.Type = SeeSharpTools.JY.GUI.EasyChartXSeries.LineType.FastLine;
+            easyChartXSeries48.Visible = false;
+            easyChartXSeries48.Width = SeeSharpTools.JY.GUI.EasyChartXSeries.LineWidth.Thin;
+            easyChartXSeries48.XPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
+            easyChartXSeries48.YPlotAxis = SeeSharpTools.JY.GUI.EasyChartXAxis.PlotAxis.Primary;
+            this.easyChartX_function.LineSeries.Add(easyChartXSeries41);
+            this.easyChartX_function.LineSeries.Add(easyChartXSeries42);
+            this.easyChartX_function.LineSeries.Add(easyChartXSeries43);
+            this.easyChartX_function.LineSeries.Add(easyChartXSeries44);
+            this.easyChartX_function.LineSeries.Add(easyChartXSeries45);
+            this.easyChartX_function.LineSeries.Add(easyChartXSeries46);
+            this.easyChartX_function.LineSeries.Add(easyChartXSeries47);
+            this.easyChartX_function.LineSeries.Add(easyChartXSeries48);
             this.easyChartX_function.Location = new System.Drawing.Point(0, 0);
             this.easyChartX_function.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.easyChartX_function.Miscellaneous.CheckInfinity = true;
@@ -1609,14 +1609,14 @@ namespace DsaSoftPanel
             this.dataGridView_functionDetail.AllowUserToResizeRows = false;
             this.dataGridView_functionDetail.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dataGridView_functionDetail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_functionDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_functionDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.dataGridView_functionDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_functionDetail.ColumnHeadersVisible = false;
             this.dataGridView_functionDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1636,10 +1636,10 @@ namespace DsaSoftPanel
             // Column_Parameter
             // 
             this.Column_Parameter.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.Silver;
-            this.Column_Parameter.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.Silver;
+            this.Column_Parameter.DefaultCellStyle = dataGridViewCellStyle17;
             this.Column_Parameter.HeaderText = "Parameter Name";
             this.Column_Parameter.Name = "Column_Parameter";
             this.Column_Parameter.ReadOnly = true;
@@ -1648,10 +1648,10 @@ namespace DsaSoftPanel
             // Column_Value
             // 
             this.Column_Value.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.Silver;
-            this.Column_Value.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Silver;
+            this.Column_Value.DefaultCellStyle = dataGridViewCellStyle18;
             this.Column_Value.HeaderText = "Value";
             this.Column_Value.Name = "Column_Value";
             this.Column_Value.ReadOnly = true;
@@ -1672,7 +1672,7 @@ namespace DsaSoftPanel
             // 
             this.splitContainer_channelAndCommon.Panel2.Controls.Add(this.panel_commonConfig);
             this.splitContainer_channelAndCommon.Panel2MinSize = 200;
-            this.splitContainer_channelAndCommon.Size = new System.Drawing.Size(205, 563);
+            this.splitContainer_channelAndCommon.Size = new System.Drawing.Size(228, 563);
             this.splitContainer_channelAndCommon.SplitterDistance = 224;
             this.splitContainer_channelAndCommon.TabIndex = 0;
             // 
@@ -1689,7 +1689,7 @@ namespace DsaSoftPanel
             this.txTabControl_channel.Location = new System.Drawing.Point(0, 0);
             this.txTabControl_channel.Name = "txTabControl_channel";
             this.txTabControl_channel.SelectedIndex = 0;
-            this.txTabControl_channel.Size = new System.Drawing.Size(203, 222);
+            this.txTabControl_channel.Size = new System.Drawing.Size(226, 222);
             this.txTabControl_channel.TabCornerRadius = 3;
             this.txTabControl_channel.TabIndex = 2;
             // 
@@ -1704,7 +1704,7 @@ namespace DsaSoftPanel
             this.tabPagech1.Location = new System.Drawing.Point(4, 29);
             this.tabPagech1.Name = "tabPagech1";
             this.tabPagech1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagech1.Size = new System.Drawing.Size(195, 189);
+            this.tabPagech1.Size = new System.Drawing.Size(218, 189);
             this.tabPagech1.TabIndex = 0;
             this.tabPagech1.Text = "CH1";
             this.tabPagech1.UseVisualStyleBackColor = true;
@@ -1722,7 +1722,7 @@ namespace DsaSoftPanel
             this.metroComboBox_unit.ItemHeight = 19;
             this.metroComboBox_unit.Location = new System.Drawing.Point(90, 90);
             this.metroComboBox_unit.Name = "metroComboBox_unit";
-            this.metroComboBox_unit.Size = new System.Drawing.Size(89, 25);
+            this.metroComboBox_unit.Size = new System.Drawing.Size(106, 25);
             this.metroComboBox_unit.Style = MetroFramework.MetroColorStyle.Silver;
             this.metroComboBox_unit.StyleManager = null;
             this.metroComboBox_unit.TabIndex = 12;
@@ -1741,7 +1741,7 @@ namespace DsaSoftPanel
             this.metroComboBox_coupling.ItemHeight = 19;
             this.metroComboBox_coupling.Location = new System.Drawing.Point(90, 55);
             this.metroComboBox_coupling.Name = "metroComboBox_coupling";
-            this.metroComboBox_coupling.Size = new System.Drawing.Size(89, 25);
+            this.metroComboBox_coupling.Size = new System.Drawing.Size(106, 25);
             this.metroComboBox_coupling.Style = MetroFramework.MetroColorStyle.Silver;
             this.metroComboBox_coupling.StyleManager = null;
             this.metroComboBox_coupling.TabIndex = 11;
@@ -1774,7 +1774,7 @@ namespace DsaSoftPanel
             "456"});
             this.metroComboBox_probe.Location = new System.Drawing.Point(90, 19);
             this.metroComboBox_probe.Name = "metroComboBox_probe";
-            this.metroComboBox_probe.Size = new System.Drawing.Size(89, 25);
+            this.metroComboBox_probe.Size = new System.Drawing.Size(106, 25);
             this.metroComboBox_probe.Style = MetroFramework.MetroColorStyle.Silver;
             this.metroComboBox_probe.StyleManager = null;
             this.metroComboBox_probe.TabIndex = 0;
@@ -1815,7 +1815,7 @@ namespace DsaSoftPanel
             this.panel_commonConfig.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_commonConfig.Location = new System.Drawing.Point(0, 0);
             this.panel_commonConfig.Name = "panel_commonConfig";
-            this.panel_commonConfig.Size = new System.Drawing.Size(203, 333);
+            this.panel_commonConfig.Size = new System.Drawing.Size(226, 333);
             this.panel_commonConfig.TabIndex = 0;
             // 
             // button_sendSoftTrigger
@@ -1826,7 +1826,7 @@ namespace DsaSoftPanel
             this.button_sendSoftTrigger.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_sendSoftTrigger.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_sendSoftTrigger.ForeColor = System.Drawing.Color.Silver;
-            this.button_sendSoftTrigger.Location = new System.Drawing.Point(22, 302);
+            this.button_sendSoftTrigger.Location = new System.Drawing.Point(33, 302);
             this.button_sendSoftTrigger.Name = "button_sendSoftTrigger";
             this.button_sendSoftTrigger.Size = new System.Drawing.Size(163, 24);
             this.button_sendSoftTrigger.TabIndex = 22;
@@ -1842,7 +1842,7 @@ namespace DsaSoftPanel
             this.button_triggerConfig.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_triggerConfig.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_triggerConfig.ForeColor = System.Drawing.Color.Silver;
-            this.button_triggerConfig.Location = new System.Drawing.Point(22, 272);
+            this.button_triggerConfig.Location = new System.Drawing.Point(33, 272);
             this.button_triggerConfig.Name = "button_triggerConfig";
             this.button_triggerConfig.Size = new System.Drawing.Size(163, 24);
             this.button_triggerConfig.TabIndex = 21;
@@ -1862,7 +1862,7 @@ namespace DsaSoftPanel
             0,
             0,
             65536});
-            this.numericUpDown_chartRange.Location = new System.Drawing.Point(12, 242);
+            this.numericUpDown_chartRange.Location = new System.Drawing.Point(13, 238);
             this.numericUpDown_chartRange.Maximum = new decimal(new int[] {
             50,
             0,
@@ -1898,7 +1898,7 @@ namespace DsaSoftPanel
             this.knobControl_chartRange.ImeMode = System.Windows.Forms.ImeMode.On;
             this.knobControl_chartRange.IsTextShow = true;
             this.knobControl_chartRange.KnobColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.knobControl_chartRange.Location = new System.Drawing.Point(50, 147);
+            this.knobControl_chartRange.Location = new System.Drawing.Point(61, 147);
             this.knobControl_chartRange.Max = 50D;
             this.knobControl_chartRange.Min = 0D;
             this.knobControl_chartRange.Name = "knobControl_chartRange";
@@ -1916,7 +1916,7 @@ namespace DsaSoftPanel
             this.numericUpDown_viewTime.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.numericUpDown_viewTime.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDown_viewTime.ForeColor = System.Drawing.Color.Silver;
-            this.numericUpDown_viewTime.Location = new System.Drawing.Point(12, 113);
+            this.numericUpDown_viewTime.Location = new System.Drawing.Point(12, 110);
             this.numericUpDown_viewTime.Maximum = new decimal(new int[] {
             5000,
             0,
@@ -1952,7 +1952,7 @@ namespace DsaSoftPanel
             this.knobControl_viewTime.ImeMode = System.Windows.Forms.ImeMode.On;
             this.knobControl_viewTime.IsTextShow = true;
             this.knobControl_viewTime.KnobColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.knobControl_viewTime.Location = new System.Drawing.Point(50, 18);
+            this.knobControl_viewTime.Location = new System.Drawing.Point(61, 18);
             this.knobControl_viewTime.Max = 1000D;
             this.knobControl_viewTime.Min = 0D;
             this.knobControl_viewTime.Name = "knobControl_viewTime";

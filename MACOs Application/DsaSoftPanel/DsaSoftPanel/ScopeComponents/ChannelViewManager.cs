@@ -302,7 +302,7 @@ namespace DsaSoftPanel.ScopeComponents
             metroComboBoxCoupling.ItemHeight = 19;
             metroComboBoxCoupling.Location = new Point(90, 55);
             metroComboBoxCoupling.Name = "metroComboBox_coupling";
-            metroComboBoxCoupling.Size = new Size(89, 25);
+            metroComboBoxCoupling.Size = new Size(106, 25);
             metroComboBoxCoupling.Style = MetroFramework.MetroColorStyle.Silver;
             metroComboBoxCoupling.StyleManager = null;
             metroComboBoxCoupling.TabIndex = 11;
@@ -345,7 +345,7 @@ namespace DsaSoftPanel.ScopeComponents
             metroComboBoxProbe.Items.AddRange(Enum.GetNames(typeof(Probe)));
             metroComboBoxProbe.Location = new System.Drawing.Point(90, 19);
             metroComboBoxProbe.Name = "metroComboBox_probe";
-            metroComboBoxProbe.Size = new System.Drawing.Size(89, 25);
+            metroComboBoxProbe.Size = new System.Drawing.Size(106, 25);
             metroComboBoxProbe.Style = MetroFramework.MetroColorStyle.Silver;
             metroComboBoxProbe.StyleManager = null;
             metroComboBoxProbe.TabIndex = 0;
@@ -388,7 +388,7 @@ namespace DsaSoftPanel.ScopeComponents
             metroComboBoxUnit.ItemHeight = 19;
             metroComboBoxUnit.Location = new System.Drawing.Point(90, 90);
             metroComboBoxUnit.Name = "metroComboBox_unit";
-            metroComboBoxUnit.Size = new System.Drawing.Size(89, 25);
+            metroComboBoxUnit.Size = new System.Drawing.Size(106, 25);
             metroComboBoxUnit.Style = MetroFramework.MetroColorStyle.Silver;
             metroComboBoxUnit.StyleManager = null;
             metroComboBoxUnit.TabIndex = 12;
