@@ -68,5 +68,7 @@
         /// 获取板卡支持的所有数字触发沿，如果不支持则返回null
         /// </summary>
         string[] GetDigitalTriggerEdge();
+
+        void SendSoftTrigger();
     }
 }

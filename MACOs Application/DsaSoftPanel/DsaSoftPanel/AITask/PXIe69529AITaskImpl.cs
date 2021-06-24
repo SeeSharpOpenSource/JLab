@@ -172,5 +172,10 @@ namespace DsaSoftPanel.AITask
         {
             return Enum.GetNames(typeof(AIDigitalTriggerEdge));
         }
+
+        public void SendSoftTrigger()
+        {
+            AITask.SendSoftTrigger();
+        }
     }
 }

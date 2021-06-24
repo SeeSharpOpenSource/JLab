@@ -470,6 +470,11 @@ namespace DsaSoftPanel
             triggerConfigForm.ShowDialog(this);
         }
 
+        private void button_sendSoftTrigger_Click(object sender, EventArgs e)
+        {
+            this._globalInfo.AITask?.SendSoftTrigger();
+        }
+
         private string _functionXValueFormat = "{0}";
         private string _functionYValueFormat = "{0}";
         public void InitFunctionResultArea(FunctionBase function)
@@ -637,5 +642,6 @@ namespace DsaSoftPanel
                 metroComboBox_measureChannel.SelectedIndex = 0;
             }
         }
+
     }
 }

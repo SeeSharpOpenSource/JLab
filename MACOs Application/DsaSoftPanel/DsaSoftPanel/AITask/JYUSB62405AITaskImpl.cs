@@ -164,5 +164,10 @@ namespace DsaSoftPanel.AITask
         {
             return Enum.GetNames(typeof(AITriggerEdge));
         }
+
+        public void SendSoftTrigger()
+        {
+            // ignore
+        }
     }
 }
