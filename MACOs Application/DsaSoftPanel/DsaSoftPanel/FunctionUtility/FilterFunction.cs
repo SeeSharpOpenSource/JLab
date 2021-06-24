@@ -47,10 +47,9 @@ namespace DsaSoftPanel.FunctionUtility
 
         protected override void PlotData()
         {
-            int samplesPerView = GlobalInfo.SamplesInChart;
             int channelCount = GlobalInfo.EnableChannelCount;
             double df = 1000.0/GlobalInfo.SampleRate;
-            double start = -1*samplesPerView*df/2;
+            double start = 0;
             GlobalInfo.FunctionPlot.Invoke(_filteredDatas, start, df, _filteredDatas.Count/channelCount);
         }
 
