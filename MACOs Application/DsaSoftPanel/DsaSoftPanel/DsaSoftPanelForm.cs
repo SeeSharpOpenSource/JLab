@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DsaSoftPanel.Common;
 using DsaSoftPanel.Enumeration;
 using DsaSoftPanel.FunctionUtility;
 using DsaSoftPanel.ScopeComponents;
@@ -278,7 +279,13 @@ namespace DsaSoftPanel
 
         internal void ShowErrorMsg(string text, string caption = "Error")
         {
-            MessageBox.Show(text, caption);
+            if (InvokeRequired)
+            {
+                BeginInvoke(new Action<string, string>(ShowErrorMsg), text, caption);
+                return;
+            }
+            ErrorInfoForm errorInfoForm = new ErrorInfoForm(caption, text);
+            errorInfoForm.ShowDialog(this);
             buttonSwitch_Switch.Value = false;
         }
 

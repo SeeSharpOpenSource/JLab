@@ -13,8 +13,6 @@ namespace DsaSoftPanel
     {
         private delegate void ShowErrMethod(string text, string caption);
 
-        private ShowErrMethod _showErrMethod;
-
         private SoftPanelGlobalInfo _globalInfo;
         private DsaSoftPanelForm _parentForm;
         private Task _readAndPlotTask;
@@ -46,7 +44,6 @@ namespace DsaSoftPanel
         public OscilloscopeTask(DsaSoftPanelForm parentForm)
         {
             _globalInfo = SoftPanelGlobalInfo.GetInstance();
-            _showErrMethod = parentForm.ShowErrorMsg;
             this._parentForm = parentForm;
         }
 
@@ -142,7 +139,7 @@ namespace DsaSoftPanel
                     {
                         Stop();
                         _globalInfo.Status = TaskStatus.Error;
-                        _parentForm.Invoke(_showErrMethod, ex.Message, "Task Error");
+                        _parentForm.ShowErrorMsg(ex.Message, "Task Error");
                     }
                 }
             }
@@ -219,7 +216,6 @@ namespace DsaSoftPanel
                 await transposeTask;
             }
         }
-        
 
         private int GetTimeOut()
         {

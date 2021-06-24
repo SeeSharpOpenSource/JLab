@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using DsaSoftPanel.AITask;
+using DsaSoftPanel.Common;
 using DsaSoftPanel.Enumeration;
 
 namespace DsaSoftPanel
@@ -75,7 +76,7 @@ namespace DsaSoftPanel
             {
                 led_status.Value = false;
                 _globalInfo.BoardConnected = false;
-                MessageBox.Show(ex.Message);
+                new ErrorInfoForm("Error", ex.Message).ShowDialog(this);
             }
         }
 
