@@ -80,7 +80,7 @@ namespace DsaSoftPanel.TaskComponents
                 {
                     Thread.Sleep(Constants.FuncWaitTime);
                     // function变更时联动修改主界面的配置
-                    UpdateMainformViewIfNecessray();
+                    UpdateFunctionViewIfNecessary();
                     // 清空数据buffer并拷贝最新的数据
                     bool isUpdateSuccess = UpdateDataCache();
                     if (!isUpdateSuccess)
@@ -104,7 +104,7 @@ namespace DsaSoftPanel.TaskComponents
             }
         }
 
-        private void UpdateMainformViewIfNecessray()
+        private void UpdateFunctionViewIfNecessary()
         {
             // 如果当前函数类型不匹配则重新创建新的function
             if ((null == this._function && FunctionType != FunctionType.None) ||

@@ -205,15 +205,19 @@ namespace DsaSoftPanel
                     _statusLock.Exit();
                 }
             }
-            Task transposeTask = null;
-            transposeTask = Task.Run((Action)TransposeDataToCache);
-            _globalInfo.SamplesInChart = _samplesPerView;
-            _parentForm.Invoke(_globalInfo.WaveformPlot, this._aiData, _xStart, _xIncrement, _globalInfo.SamplesInChart);
-            if (viewChanged)
+            // 不暂停状态下需要更新数据和函数缓存
+            if (_globalInfo.IsRunning)
             {
-                _parentForm.Invoke(new Action(_parentForm.RefreshStatusLabel));
+                Task transposeTask = null;
+                transposeTask = Task.Run((Action)TransposeDataToCache);
+                _globalInfo.SamplesInChart = _samplesPerView;
+                _parentForm.Invoke(_globalInfo.WaveformPlot, this._aiData, _xStart, _xIncrement, _globalInfo.SamplesInChart);
+                if (viewChanged)
+                {
+                    _parentForm.Invoke(new Action(_parentForm.RefreshStatusLabel));
+                }
+                await transposeTask;
             }
-            await transposeTask;
         }
         
 
