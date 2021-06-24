@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
 using System.Threading;
-using DsaSoftPanel.Enumeration;
+using System.Threading.Tasks;
 using SeeSharpTools.JY.ArrayUtility;
+using TaskStatus = DsaSoftPanel.Enumeration.TaskStatus;
 
 namespace DsaSoftPanel
 {
@@ -14,8 +17,7 @@ namespace DsaSoftPanel
 
         private SoftPanelGlobalInfo _globalInfo;
         private DsaSoftPanelForm _parentForm;
-        private Thread _taskThread;
-        private AutoResetEvent _waitEvent = new AutoResetEvent(false);
+        private Task _readAndPlotTask;
         private int _plotSize;
 
         private SpinLock _statusLock = new SpinLock(false);
@@ -45,10 +47,7 @@ namespace DsaSoftPanel
         {
             _globalInfo = SoftPanelGlobalInfo.GetInstance();
             _showErrMethod = parentForm.ShowErrorMsg;
-            _taskThread = new Thread(TaskWork);
-            _taskThread.IsBackground = true;
             this._parentForm = parentForm;
-            _taskThread.Start();
         }
 
         public void Start()
@@ -60,6 +59,7 @@ namespace DsaSoftPanel
                 {
                     _statusLock.Enter(ref getLock);
                     RefreshRunTimeParameters();
+                    this._globalInfo.ReadDataBuffer.Reset(this._globalInfo.SampleRate, this._globalInfo.EnableChannelCount);
                     _globalInfo.AITask.Start();
                 }
                 finally
@@ -67,9 +67,11 @@ namespace DsaSoftPanel
                     _statusLock.Exit();
                 }
                 TaskRunning = true;
-                _waitEvent.Set();
+                Thread.MemoryBarrier();
+                this._readAndPlotTask = new Task(TaskWork);
+                this._readAndPlotTask.Start();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 TaskRunning = false;
                 throw;
@@ -85,13 +87,17 @@ namespace DsaSoftPanel
             if (null == _aiData || _aiData.GetLength(0) != _samplesPerView || _aiData.GetLength(1) != _channelCount)
             {
                 _plotSize = _samplesPerView*_channelCount;
+                if (this._plotSize > Constants.MaxPointsPerView)
+                {
+                    this._plotSize = Constants.MaxPointsPerView/this._channelCount*this._channelCount;
+                    this._samplesPerView = this._plotSize/this._channelCount;
+                }
                 _aiData = new double[_samplesPerView, _channelCount];
-                _globalInfo.AdaptDispBuf(_plotSize);
             }
             _timeOut = GetTimeOut();
         }
 
-        public void Stop()
+        public async Task Stop()
         {
             if (null == _globalInfo?.AITask)
             {
@@ -101,12 +107,16 @@ namespace DsaSoftPanel
             try
             {
                 TaskRunning = false;
+                if (null != this._readAndPlotTask)
+                {
+                    await this._readAndPlotTask;
+                    _globalInfo.AITask.Stop();
+                }
                 // 如果使能Trigger，且没有被触发必须直接stop，因为此时ReadData仍然有_stautsLock，申请时会导致死锁。
                 if (!_globalInfo.AITask.TriggerEnabled || _globalInfo.Status != TaskStatus.Trigger)
                 {
                     _statusLock.Enter(ref getLock);
                 }
-                _globalInfo.AITask.Stop();
                 _globalInfo.Status = TaskStatus.Idle;
             }
             finally
@@ -120,7 +130,7 @@ namespace DsaSoftPanel
 
         private void TaskWork()
         {
-            while (true)
+            while (TaskRunning)
             {
                 try
                 {
@@ -134,37 +144,59 @@ namespace DsaSoftPanel
                         _globalInfo.Status = TaskStatus.Error;
                         _parentForm.Invoke(_showErrMethod, ex.Message, "Task Error");
                     }
-                    // not need
-//                    if (ex is ThreadAbortException)
-//                    {
-//                        break;
-//                    }
                 }
             }
         }
 
-        private void ReadAndPlot()
+        private void TransposeDataToCache()
+        {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+            bool getLock = false;
+            try
+            {
+                getLock = _globalInfo.BufferLock.TryEnterWriteLock(Constants.BufferWriteTimeout);
+                if (!getLock)
+                {
+                    return;
+                }
+                this._globalInfo.ReadDataBuffer.UpdateDataBuffer(this._aiData);
+            }
+            finally
+            {
+                if (getLock)
+                {
+                    _globalInfo.BufferLock.ExitWriteLock();
+                }
+            }
+            stopwatch.Stop();
+            Console.WriteLine(stopwatch.ElapsedMilliseconds);
+        }
+
+        private async void ReadAndPlot()
         {
             bool viewChanged = false;
             bool getLock = false;
             try
             {
                 _statusLock.Enter(ref getLock);
-                if (!TaskRunning)
-                {
-                    _statusLock.Exit();
-                    _waitEvent.WaitOne();
-                    getLock = false;
-                    _statusLock.Enter(ref getLock);
-                    _globalInfo.Status = _globalInfo.AITask.TriggerEnabled ? TaskStatus.Trigger : TaskStatus.Running;
-                }
                 if (_samplesPerView != _globalInfo.SamplesPerView)
                 {
                     RefreshRunTimeParameters();
                     viewChanged = true;
                 }
+
                 _globalInfo.AITask.ReadData(ref _aiData, _samplesPerView, _timeOut);
                 _globalInfo.Status = TaskStatus.Running;
+            }
+            catch (Exception ex)
+            {
+                // 如果是超时错误则继续执行
+                if (ex.Message.Contains("TimeOut"))
+                {
+                    return;
+                }
+                throw;
             }
             finally
             {
@@ -173,65 +205,23 @@ namespace DsaSoftPanel
                     _statusLock.Exit();
                 }
             }
-
-            if (_globalInfo.IsRunning)
-            {
-                if (_globalInfo.EnableChannelCount == 1)
-                {
-                    //ignore
-                }
-                getLock = false;
-                try
-                {
-                    _globalInfo.BufferLock.Enter(ref getLock);
-                    FillDataCache();
-                    _globalInfo.SamplesInChart = _samplesPerView;
-                }
-                finally
-                {
-                    if (getLock)
-                    {
-                        _globalInfo.BufferLock.Exit();
-                    }
-                }
-                _parentForm.Invoke(_globalInfo.WaveformPlot, this._aiData, _xStart, _xIncrement, _globalInfo.SamplesInChart);
-            }
+            Task transposeTask = null;
+            transposeTask = Task.Run((Action)TransposeDataToCache);
+            _globalInfo.SamplesInChart = _samplesPerView;
+            _parentForm.Invoke(_globalInfo.WaveformPlot, this._aiData, _xStart, _xIncrement, _globalInfo.SamplesInChart);
             if (viewChanged)
             {
                 _parentForm.Invoke(new Action(_parentForm.RefreshStatusLabel));
             }
+            await transposeTask;
         }
-
-        private void FillDataCache()
-        {
-            int dataGain;
-            int pointIndex = 0;
-            for (int i = 0; i < _aiData.GetLength(1); i++)
-            {
-                dataGain = (int)_globalInfo.Channels[i].Probe * (int)_globalInfo.Channels[i].Unit;
-                // for performance
-                if (1 == dataGain)
-                {
-                    for (int j = 0; j < _aiData.GetLength(0); j++)
-                    {
-                        _globalInfo.DispBuf[pointIndex++] = _aiData[j, i];
-                    }
-                }
-                else
-                {
-                    for (int j = 0; j < _aiData.GetLength(0); j++)
-                    {
-                        _globalInfo.DispBuf[pointIndex++] = _aiData[j, i] * dataGain;
-                    }
-                }
-            }
-        }
+        
 
         private int GetTimeOut()
         {
-            // TODO 暂时统一配置为-1
+            // TODO 暂时统一配置为1000
 //            return (int)(_samplesPerView / _globalInfo.AITask.GetSampleRate() * Constants.TimeOutRatio * 1000) + 100;
-            return -1;
+            return 1500;
         }
     }
 }

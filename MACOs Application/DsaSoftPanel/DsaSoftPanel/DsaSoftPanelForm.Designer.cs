@@ -121,8 +121,6 @@ namespace DsaSoftPanel
             this.splitContainer_functionDataAndDetail = new System.Windows.Forms.SplitContainer();
             this.easyChartX_function = new SeeSharpTools.JY.GUI.EasyChartX();
             this.dataGridView_functionDetail = new System.Windows.Forms.DataGridView();
-            this.Column_Parameter = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.splitContainer_channelAndCommon = new System.Windows.Forms.SplitContainer();
             this.txTabControl_channel = new TX.Framework.WindowUI.Controls.TXTabControl();
             this.tabPagech1 = new System.Windows.Forms.TabPage();
@@ -147,6 +145,9 @@ namespace DsaSoftPanel
             this.button_close = new System.Windows.Forms.Button();
             this.button_minimize = new System.Windows.Forms.Button();
             this.button_maximize = new System.Windows.Forms.Button();
+            this.button_sendSoftTrigger = new System.Windows.Forms.Button();
+            this.Column_Parameter = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.flowLayoutPanel_menuButton.SuspendLayout();
             this.flowLayoutPanel_status.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer_measureAndView)).BeginInit();
@@ -691,7 +692,7 @@ namespace DsaSoftPanel
             this.tableLayoutPanel_measure.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel_measure.ColumnCount = 2;
             this.tableLayoutPanel_measure.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel_measure.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 42F));
+            this.tableLayoutPanel_measure.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 43F));
             this.tableLayoutPanel_measure.Controls.Add(this.label_measureRms, 0, 0);
             this.tableLayoutPanel_measure.Controls.Add(this.label_DC, 0, 1);
             this.tableLayoutPanel_measure.Controls.Add(this.label_peakAmp, 0, 2);
@@ -847,7 +848,7 @@ namespace DsaSoftPanel
             this.tableLayoutPanel_functionSelect.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel_functionSelect.ColumnCount = 2;
             this.tableLayoutPanel_functionSelect.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel_functionSelect.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+            this.tableLayoutPanel_functionSelect.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 39F));
             this.tableLayoutPanel_functionSelect.Controls.Add(this.label_filter, 0, 3);
             this.tableLayoutPanel_functionSelect.Controls.Add(this.txRadioButton_filter, 1, 3);
             this.tableLayoutPanel_functionSelect.Controls.Add(this.label_toneAnalyze, 0, 2);
@@ -1632,29 +1633,6 @@ namespace DsaSoftPanel
             this.dataGridView_functionDetail.Size = new System.Drawing.Size(310, 241);
             this.dataGridView_functionDetail.TabIndex = 0;
             // 
-            // Column_Parameter
-            // 
-            this.Column_Parameter.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Silver;
-            this.Column_Parameter.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Column_Parameter.HeaderText = "Parameter Name";
-            this.Column_Parameter.Name = "Column_Parameter";
-            this.Column_Parameter.ReadOnly = true;
-            this.Column_Parameter.Width = 116;
-            // 
-            // Column_Value
-            // 
-            this.Column_Value.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Silver;
-            this.Column_Value.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Column_Value.HeaderText = "Value";
-            this.Column_Value.Name = "Column_Value";
-            this.Column_Value.ReadOnly = true;
-            // 
             // splitContainer_channelAndCommon
             // 
             this.splitContainer_channelAndCommon.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -1803,6 +1781,7 @@ namespace DsaSoftPanel
             // 
             // panel_commonConfig
             // 
+            this.panel_commonConfig.Controls.Add(this.button_sendSoftTrigger);
             this.panel_commonConfig.Controls.Add(this.button_triggerConfig);
             this.panel_commonConfig.Controls.Add(this.numericUpDown_chartRange);
             this.panel_commonConfig.Controls.Add(this.label_chartRange);
@@ -1824,9 +1803,9 @@ namespace DsaSoftPanel
             this.button_triggerConfig.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_triggerConfig.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_triggerConfig.ForeColor = System.Drawing.Color.Silver;
-            this.button_triggerConfig.Location = new System.Drawing.Point(50, 289);
+            this.button_triggerConfig.Location = new System.Drawing.Point(39, 272);
             this.button_triggerConfig.Name = "button_triggerConfig";
-            this.button_triggerConfig.Size = new System.Drawing.Size(93, 24);
+            this.button_triggerConfig.Size = new System.Drawing.Size(128, 24);
             this.button_triggerConfig.TabIndex = 21;
             this.button_triggerConfig.Text = "TRIGGER";
             this.button_triggerConfig.UseVisualStyleBackColor = false;
@@ -2044,6 +2023,44 @@ namespace DsaSoftPanel
             this.button_maximize.UseVisualStyleBackColor = false;
             this.button_maximize.Click += new System.EventHandler(this.button_maximize_Click);
             // 
+            // button_sendSoftTrigger
+            // 
+            this.button_sendSoftTrigger.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button_sendSoftTrigger.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button_sendSoftTrigger.FlatAppearance.BorderSize = 0;
+            this.button_sendSoftTrigger.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_sendSoftTrigger.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_sendSoftTrigger.ForeColor = System.Drawing.Color.Silver;
+            this.button_sendSoftTrigger.Location = new System.Drawing.Point(39, 302);
+            this.button_sendSoftTrigger.Name = "button_sendSoftTrigger";
+            this.button_sendSoftTrigger.Size = new System.Drawing.Size(128, 24);
+            this.button_sendSoftTrigger.TabIndex = 22;
+            this.button_sendSoftTrigger.Text = "SOFT TRIGGER";
+            this.button_sendSoftTrigger.UseVisualStyleBackColor = false;
+            // 
+            // Column_Parameter
+            // 
+            this.Column_Parameter.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Silver;
+            this.Column_Parameter.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Column_Parameter.HeaderText = "Parameter Name";
+            this.Column_Parameter.Name = "Column_Parameter";
+            this.Column_Parameter.ReadOnly = true;
+            this.Column_Parameter.Width = 140;
+            // 
+            // Column_Value
+            // 
+            this.Column_Value.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Silver;
+            this.Column_Value.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Column_Value.HeaderText = "Value";
+            this.Column_Value.Name = "Column_Value";
+            this.Column_Value.ReadOnly = true;
+            // 
             // DsaSoftPanelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -2176,8 +2193,6 @@ namespace DsaSoftPanel
         internal Label label_spectrumFunction;
         internal Label label_harmonicFunction;
         internal Label label_toneAnalyze;
-        private DataGridViewTextBoxColumn Column_Parameter;
-        private DataGridViewTextBoxColumn Column_Value;
         internal Button button_stopfunction;
         internal Label label_filter;
         private Panel panel_functionConfig;
@@ -2209,5 +2224,8 @@ namespace DsaSoftPanel
         private TX.Framework.WindowUI.Controls.TXCheckBox txCheckBox_DC;
         private TX.Framework.WindowUI.Controls.TXCheckBox txCheckBox_peakAmp;
         private TX.Framework.WindowUI.Controls.TXCheckBox txCheckBox_peakFreq;
+        internal Button button_sendSoftTrigger;
+        private DataGridViewTextBoxColumn Column_Parameter;
+        private DataGridViewTextBoxColumn Column_Value;
     }
 }

@@ -9,10 +9,9 @@ using DsaSoftPanel.FunctionUtility;
 
 namespace DsaSoftPanel.TaskComponents
 {
-    class FunctionTask
+    public class FunctionTask : TaskBase
     {
         private Task _functionTask;
-        private readonly SoftPanelGlobalInfo _globalInfo;
         private readonly DsaSoftPanelForm _parentForm;
         private CancellationTokenSource _cancellation;
 
@@ -24,41 +23,29 @@ namespace DsaSoftPanel.TaskComponents
             set
             {
                 Thread.VolatileWrite(ref _functionType, (int) value);
-                // 如果当前函数类型不匹配则重新创建新的function
-                if ((null == _function && FunctionType != FunctionType.None) ||
-                    (null != _function && !_function.IsTypeFit(FunctionType)))
-                {
-                    _function = FunctionBase.CreateFunction(FunctionType, _dataBuf);
-                    _parentForm.InitFunctionResultArea(_function);
-                    _parentForm.InitFunctionConfigArea(_function);
-                    RefreshFunctionConfigArea();
-                }
             }
         }
 
-        private FunctionBase _function;
+        private volatile FunctionBase _function;
 
         public FunctionTask(DsaSoftPanelForm parentForm)
         {
-            _globalInfo = SoftPanelGlobalInfo.GetInstance();
-            this._dataBuf = new List<double[]>(8);
             this._parentForm = parentForm;
             this.FunctionType = FunctionType.None;
         }
 
         public void Start()
         {
-            Stop();
-//            _function = FunctionBase.CreateFunction(FunctionType);
             _function?.RefreshConfigForm();
+            this.InitialDataBufferCache();
+            _cancellation = new CancellationTokenSource();
             this._functionTask = new Task(FunctionExecutionTask, this._cancellation.Token);
-            _cancellation = new CancellationTokenSource(50);
             this._functionTask.Start();
             _channelRangeHigh = new double[8];
             _channelRangeLow = new double[8];
         }
 
-        public void Stop()
+        public async Task Stop()
         {
             if (null == this._functionTask || this._functionTask.IsCanceled)
             {
@@ -67,9 +54,9 @@ namespace DsaSoftPanel.TaskComponents
             try
             {
                 this._cancellation.Cancel();
-                if (!this._functionTask.Wait(1000))
+                if (null != this._functionTask)
                 {
-                    this._functionTask.Dispose();
+                    await this._functionTask;
                 }
                 this._functionTask = null;
             }
@@ -91,48 +78,20 @@ namespace DsaSoftPanel.TaskComponents
             {
                 while (!this._cancellation.IsCancellationRequested)
                 {
+                    Thread.Sleep(Constants.FuncWaitTime);
+                    // function变更时联动修改主界面的配置
+                    UpdateMainformViewIfNecessray();
                     // 清空数据buffer并拷贝最新的数据
-                    this._dataBuf.Clear();
-                    bool getLock = false;
-                    try
+                    bool isUpdateSuccess = UpdateDataCache();
+                    if (!isUpdateSuccess)
                     {
-                        getLock = _globalInfo.BufferLock.TryEnterReadLock(Constants.BufferReadTimeout);
-                        if (!getLock)
-                        {
-                            continue;
-                        }
-
-                        this._dataBuf.AddRange(_globalInfo.DispBuf);
-                    }
-                    finally
-                    {
-                        if (getLock)
-                        {
-                            _globalInfo.BufferLock.ExitReadLock();
-                        }
-                    }
-
-                    int samplesInChart = _globalInfo.SamplesInChart;
-                    if (samplesInChart <= 0)
-                    {
-                        Thread.Sleep(Constants.FuncWaitTime);
                         continue;
                     }
-
                     if (_globalInfo.EnableRange)
                     {
                         ShowDataRange();
                     }
-
-                    int measureIndex = _parentForm.GetMeasureIndex();
-                    if (measureIndex >= 0)
-                    {
-                        string[] result = _measure?.Execute(this._dataBuf[measureIndex]);
-                        _parentForm.RefreshMeasureResult(result);
-                    }
-
                     _function?.ExecuteAndShow();
-                    Thread.Sleep(Constants.FuncWaitTime);
                 }
             }
             catch (ThreadAbortException)
@@ -145,43 +104,47 @@ namespace DsaSoftPanel.TaskComponents
             }
         }
 
+        private void UpdateMainformViewIfNecessray()
+        {
+            // 如果当前函数类型不匹配则重新创建新的function
+            if ((null == this._function && FunctionType != FunctionType.None) ||
+                (null != this._function && !this._function.IsTypeFit(FunctionType)))
+            {
+                this._globalInfo.MainForm.Invoke(new Action(() =>
+                {
+                    this._function = FunctionBase.CreateFunction(FunctionType, this.DataCache);
+                    this._parentForm.InitFunctionResultArea(this._function);
+                    this._parentForm.InitFunctionConfigArea(this._function);
+                    RefreshFunctionConfigArea();
+                }));
+            }
+        }
+
         private double[] _channelRangeHigh;
         private double[] _channelRangeLow;
 
         private void ShowDataRange()
         {
-            if (_dataBuf.Count == 0)
+            for (int i = 0; i < this.DataCache.Count; i++)
             {
-                return;
+                double[] readData = this.DataCache[i];
+                double max = readData[0];
+                double min = readData[0];
+                foreach (double element in readData)
+                {
+                    if (element > max)
+                    {
+                        max = element;
+                    }
+                    else if (element < min)
+                    {
+                        min = element;
+                    }
+                }
+                this._channelRangeHigh[i] = max;
+                this._channelRangeLow[i] = min;
             }
-            for (int i = 0; i < _channelRangeHigh.Length; i++)
-            {
-                _channelRangeHigh[i] = double.MinValue;
-                _channelRangeLow[i] = double.MaxValue;
-            }
-            int samplesPerView = _dataBuf.Count/_globalInfo.EnableChannelCount;
-            Parallel.For(0, samplesPerView, CalcMaxAndMin);
-            _parentForm.Invoke(_globalInfo.ShowRange, _channelRangeHigh, _channelRangeLow);
-
-            Parallel.For(0, samplesPerView, );
-        }
-
-        private void CalcMaxAndMin(int sampleIndex)
-        {
-            // int samplesPerView = _dataBuf.Count / _globalInfo.EnableChannelCount;
-            // int pointIndex = sampleIndex;
-            // for (int i = 0; i < _globalInfo.EnableChannelCount; i++)
-            // {
-            //     if (_dataBuf[pointIndex] > _channelRangeHigh[i])
-            //     {
-            //         _channelRangeHigh[i] = _dataBuf[pointIndex];
-            //     }
-            //     else if (_dataBuf[pointIndex] < _channelRangeLow[i])
-            //     {
-            //         _channelRangeLow[i] = _dataBuf[pointIndex];
-            //     }
-            //     pointIndex += samplesPerView;
-            // }
+            _parentForm.BeginInvoke(_globalInfo.ShowRange, _channelRangeHigh, _channelRangeLow);
         }
     }
 }

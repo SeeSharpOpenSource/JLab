@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Forms;
+using DsaSoftPanel.Common;
 using DsaSoftPanel.FunctionUtility.FunctionConfigView;
 using SeeSharpTools.JY.GUI;
 using SeeSharpTools.JY.DSP.SoundVibration;
@@ -46,8 +47,8 @@ namespace DsaSoftPanel.FunctionUtility
             HarmonicAnalyzer.ToneAnalysis(waveform, dt, out fundmentalFrequency, out thd, ref _harmonicLevel,
                 harmonicLevel);
 
-            DetailValues[0] = GetShowValue(thd);
-            DetailValues[1] = GetShowValue(fundmentalFrequency);
+            DetailValues[0] = Utility.GetShowValue(thd);
+            DetailValues[1] = Utility.GetShowValue(fundmentalFrequency);
         }
 
         protected override void PlotData()

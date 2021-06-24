@@ -109,9 +109,5 @@ namespace DsaSoftPanel.FunctionUtility
         public abstract void ConfigChart(EasyChartX chart);
 
 
-        protected static string GetShowValue(double value)
-        {
-            return !double.IsNaN(value) ? value.ToString(Constants.NumericFormat) : Constants.NotAvailable;
-        }
     }
 }

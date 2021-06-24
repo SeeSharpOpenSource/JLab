@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using DsaSoftPanel.Enumeration;
 using DsaSoftPanel.FunctionUtility;
@@ -13,6 +14,7 @@ using DsaSoftPanel.ScopeComponents;
 using DsaSoftPanel.TaskComponents;
 using MetroFramework.Forms;
 using SeeSharpTools.JY.GUI;
+using TaskStatus = DsaSoftPanel.Enumeration.TaskStatus;
 
 namespace DsaSoftPanel
 {
@@ -159,7 +161,7 @@ namespace DsaSoftPanel
             return string.Format(sampleRateFormat, string.Format(valueFormat, formatedValue), sampleRateUnit);
         }
 
-        private void buttonSwitch_Switch_ValueChanged(object sender, EventArgs e)
+        private async void buttonSwitch_Switch_ValueChanged(object sender, EventArgs e)
         {
             if (buttonSwitch_Switch.Value)
             {
@@ -167,19 +169,19 @@ namespace DsaSoftPanel
             }
             else
             {
-                _scopeTask.Stop();
-                this._functionTask.Stop();
-                this._measureTask.Stop();
+                await _scopeTask.Stop();
+                await this._functionTask.Stop();
+                await this._measureTask.Stop();
             }
         }
 
-        private void ApplyConfigAndStartTask()
+        private async void ApplyConfigAndStartTask()
         {
             try
             {
                 // TODO to config
                 numericUpDown_chartRange_ValueChanged(null, null);
-                bool isChannelConfigured = SyncConfigAndRestartTask();
+                bool isChannelConfigured = await SyncConfigAndRestartTask();
                 if (!isChannelConfigured)
                 {
                     buttonSwitch_Switch.Value = false;
@@ -226,42 +228,51 @@ namespace DsaSoftPanel
 
         private void OscilloscopeSoftPanelForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            _scopeTask?.Stop();
-            this._functionTask?.Stop();
-            this._measureTask?.Stop();
-            _globalInfo.AITask.Stop();
+            if (this._globalInfo.Status == TaskStatus.Running)
+            {
+                e.Cancel = true;
+                Task.Run(() =>
+                {
+                    Task stopScopeTask = this._scopeTask.Stop();
+                    Task stopFunctionTask = this._functionTask.Stop();
+                    Task stopMeasureTask = this._measureTask.Stop();
+                    Task.WaitAll(new Task[] {stopMeasureTask, stopFunctionTask, stopScopeTask});
+                    Thread.Sleep(500);
+                    this.Invoke(new Action(this.Close));
+                });
+            }
         }
 
-        private bool SyncConfigAndRestartTask()
+        private async Task<bool> SyncConfigAndRestartTask()
         {
             bool isNeedRestartTask, isNeedRefreshView, channelEnabled;
             _channelViewManager.SyncChannelConfig(out isNeedRestartTask, out isNeedRefreshView, out channelEnabled);
             if (!channelEnabled)
             {
-                _scopeTask.Stop();
+                await this._scopeTask.Stop();
                 Clear();
-                this._functionTask.Stop();
-                this._measureTask?.Stop();
+                await this._functionTask.Stop();
+                await this._measureTask.Stop();
             }
             else
             {
-                if (isNeedRestartTask || !_scopeTask.TaskRunning)
+                if (isNeedRestartTask || !this._scopeTask.TaskRunning)
                 {
-                    _scopeTask.Stop();
-                    this._functionTask.Stop();
-                    this._measureTask.Stop();
+                    await this._scopeTask.Stop();
+                    await this._functionTask.Stop();
+                    await this._measureTask.Stop();
+
                     Clear();
-                    Thread.Sleep(100);
-                    _globalInfo.AITask.ClearChannels();
+                    Thread.Sleep(Constants.RestartDelayTime);
+                    this._globalInfo.AITask.ClearChannels();
                     ApplyCommonConfig();
-                    _channelViewManager.ApplyChannelConfig();
+                    this._channelViewManager.ApplyChannelConfig();
                     RefreshMeasureChannelItems();
-                    _scopeTask.Start();
+                    this._scopeTask.Start();
                     this._functionTask.Start();
                     this._measureTask.Start();
                 }
             }
-            
             return channelEnabled;
         }
 

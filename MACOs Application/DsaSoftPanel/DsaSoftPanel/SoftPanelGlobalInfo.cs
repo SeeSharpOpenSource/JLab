@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading;
+using DsaSoftPanel.Data;
 using DsaSoftPanel.Enumeration;
 using DsaSoftPanel.ScopeComponents;
 using DsaSoftPanel.TaskComponents;
@@ -16,8 +17,7 @@ namespace DsaSoftPanel
             BoardConnected = false;
             _runStatus = 1;
             EnableRange = true;
-            this._dispBuf = new List<double>(Constants.DefaultDisplayBufSize);
-            AdaptDispBuf(Constants.DefaultDisplayBufSize);
+            this.ReadDataBuffer = new ReadDataBuffer();
         }
 
         public delegate void PlotDataMethod(IList<double> data, double start, double increment, int sampleSize);
@@ -39,7 +39,13 @@ namespace DsaSoftPanel
 
         public int SampleRate => (int)(AITask?.GetSampleRate() ?? 0);
 
-        public int EnableChannelCount => AITask.GetChannelCount();
+        private int _channelCount;
+
+        public int EnableChannelCount
+        {
+            get { return this._channelCount; }
+            set { Thread.VolatileWrite(ref this._channelCount, value);}
+        }
 
         public bool BoardConnected { get; set; }
 
@@ -67,6 +73,11 @@ namespace DsaSoftPanel
 
         public ReaderWriterLockSlim BufferLock = new ReaderWriterLockSlim();
 
+        /// <summary>
+        /// 数据读取缓存
+        /// </summary>
+        public ReadDataBuffer ReadDataBuffer { get; }
+
         public List<ChannelConfig> Channels = new List<ChannelConfig>(Constants.MaxChannelCount);
 
         private int _status = (int) TaskStatus.Idle;
@@ -84,7 +95,6 @@ namespace DsaSoftPanel
             }
         }
 
-        private List<double> _dispBuf;
 
         public Action ApplyConfigInRunTime { get; set; }
 
@@ -100,20 +110,5 @@ namespace DsaSoftPanel
         }
 
         public bool EnableRange { get; set; }
-
-        public void AdaptDispBuf(int bufCount)
-        {
-            // 如果需要的数据小于默认大小，buffer又大于8倍，需要重新匹配buffer大小
-            if (bufCount > _dispBuf.Capacity || _dispBuf.Capacity > 8*bufCount)
-            {
-                _dispBuf.Clear();
-                _dispBuf.Capacity = bufCount*2;
-            }
-            // 如果buffer太小则自动填充到目标大小
-            if (bufCount > _dispBuf.Count)
-            {
-                _dispBuf.AddRange(new double[bufCount - _dispBuf.Count]);
-            }
-        }
     }
 }

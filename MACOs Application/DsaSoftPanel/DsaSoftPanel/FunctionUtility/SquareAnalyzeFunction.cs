@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Forms;
+using DsaSoftPanel.Common;
 using DsaSoftPanel.FunctionUtility.FunctionConfigView;
 using SeeSharpTools.JY.DSP.Utility;
 using SeeSharpTools.JY.GUI;
@@ -39,9 +40,9 @@ namespace DsaSoftPanel.FunctionUtility
             else
             {
                 _squareMeasurement.SetWaveform(this.DataBuf[signalIndex]);
-                DetailValues[0] = GetShowValue(_squareMeasurement.GetHighStateLevel());
-                DetailValues[1] = GetShowValue(_squareMeasurement.GetLowStateLevel());
-                DetailValues[2] = GetShowValue(GlobalInfo.SampleRate / _squareMeasurement.GetPeriod());
+                DetailValues[0] = Utility.GetShowValue(_squareMeasurement.GetHighStateLevel());
+                DetailValues[1] = Utility.GetShowValue(_squareMeasurement.GetLowStateLevel());
+                DetailValues[2] = Utility.GetShowValue(GlobalInfo.SampleRate / _squareMeasurement.GetPeriod());
             }
         }
 

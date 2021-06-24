@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using DsaSoftPanel.Common;
 using SeeSharpTools.JY.DSP.SoundVibration;
 using SeeSharpTools.JY.DSP.Utility;
 using SeeSharpTools.JY.GUI;
@@ -28,7 +29,6 @@ namespace DsaSoftPanel.FunctionUtility
         protected override void Execute()
         {
             int channelCount = GlobalInfo.Channels.Count(item => item.Enabled);
-            int sampleCount = GlobalInfo.SamplesInChart;
             for (int i = 0; i < DetailValues.Length; i++)
             {
                 DetailValues[i] = "";
@@ -37,12 +37,12 @@ namespace DsaSoftPanel.FunctionUtility
             {
                 ToneAnalysisResult result = HarmonicAnalyzer.ToneAnalysis(
                     this.DataBuf[i], 1.0/GlobalInfo.SampleRate);
-                DetailValues[0] += GetShowValue(result.THD);
-                DetailValues[1] += GetShowValue(result.THDplusN);
-                DetailValues[2] += GetShowValue(result.SINAD);
-                DetailValues[3] += GetShowValue(result.SNR);
-                DetailValues[4] += GetShowValue(result.NoiseFloor);
-                DetailValues[5] += GetShowValue(result.ENOB);
+                DetailValues[0] += Utility.GetShowValue(result.THD);
+                DetailValues[1] += Utility.GetShowValue(result.THDplusN);
+                DetailValues[2] += Utility.GetShowValue(result.SINAD);
+                DetailValues[3] += Utility.GetShowValue(result.SNR);
+                DetailValues[4] += Utility.GetShowValue(result.NoiseFloor);
+                DetailValues[5] += Utility.GetShowValue(result.ENOB);
             }
         }
 

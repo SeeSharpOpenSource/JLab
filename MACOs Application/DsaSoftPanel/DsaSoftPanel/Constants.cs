@@ -55,5 +55,7 @@ namespace DsaSoftPanel
 
         public const int BufferReadTimeout = 500;
         public const int BufferWriteTimeout = 100;
+
+        public const int MaxPointsPerView = 10000000;
     }
 }

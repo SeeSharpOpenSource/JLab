@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Forms;
+using DsaSoftPanel.Common;
 using DsaSoftPanel.FunctionUtility.FunctionConfigView;
 using SeeSharpTools.JY.DSP.Utility;
 using SeeSharpTools.JY.GUI;
@@ -33,7 +34,7 @@ namespace DsaSoftPanel.FunctionUtility
             {
                 double[] signal1 = this.DataBuf[signal1Index];
                 double[] signal2 = this.DataBuf[signal2Index];
-                DetailValues[0] = GetShowValue(Phase.CalPhaseShift(signal1, signal2));
+                DetailValues[0] = Utility.GetShowValue(Phase.CalPhaseShift(signal1, signal2));
             }
             else
             {
