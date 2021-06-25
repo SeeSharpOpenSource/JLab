@@ -10,7 +10,7 @@ namespace DsaSoftPanel.FunctionUtility
     public class HarmonicFunction : FunctionBase
     {
         public override string ChartXTitle => "Harmonic Level";
-        public override string ChartYTitle => "Voltage(V/mV)";
+        public override string ChartYTitle => "Component Level(V^2)";
         public override string XValueLabelFormat => "HarmonicLevel: {0}";
         public override string YValueLabelFormat => "Voltage: {0:F3}V/mV";
         public override bool HasDetailedData => true;
