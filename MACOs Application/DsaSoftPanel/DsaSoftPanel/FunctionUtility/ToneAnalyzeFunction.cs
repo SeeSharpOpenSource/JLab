@@ -28,12 +28,11 @@ namespace DsaSoftPanel.FunctionUtility
 
         protected override void Execute()
         {
-            int channelCount = GlobalInfo.Channels.Count(item => item.Enabled);
             for (int i = 0; i < DetailValues.Length; i++)
             {
                 DetailValues[i] = "";
             }
-            for (int i = 0; i < channelCount; i++)
+            for (int i = 0; i < this.DataBuf.Count; i++)
             {
                 ToneAnalysisResult result = HarmonicAnalyzer.ToneAnalysis(
                     this.DataBuf[i], 1.0/GlobalInfo.SampleRate);

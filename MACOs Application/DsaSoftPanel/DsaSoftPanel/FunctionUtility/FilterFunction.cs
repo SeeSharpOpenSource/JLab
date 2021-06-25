@@ -32,11 +32,6 @@ namespace DsaSoftPanel.FunctionUtility
         protected override void Execute()
         {
             _filteredDatas.Clear();
-            int samplesPerView = GlobalInfo.SamplesInChart;
-//            if (null == _filteredWave || _filteredWave.Length != samplesPerView)
-//            {
-//                _filteredWave = new double[samplesPerView];
-//            }
             OnlineFirFilter filter = _configForm.Filter;
             for (int i = 0; i < this.DataBuf.Count; i++)
             {
