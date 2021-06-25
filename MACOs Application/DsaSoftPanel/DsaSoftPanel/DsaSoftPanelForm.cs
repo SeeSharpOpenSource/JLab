@@ -161,10 +161,15 @@ namespace DsaSoftPanel
             if (buttonSwitch_Switch.Value)
             {
                 ApplyConfigAndStartTask();
+                this.button_triggerConfig.Enabled = false;
+                this.button_sendSoftTrigger.Enabled =
+                    this._globalInfo.AITask.TriggerType.Equals("SoftWare", StringComparison.OrdinalIgnoreCase);
             }
             else
             {
                 await StopTask();
+                this.button_triggerConfig.Enabled = true;
+                this.button_sendSoftTrigger.Enabled = false;
             }
         }
 
