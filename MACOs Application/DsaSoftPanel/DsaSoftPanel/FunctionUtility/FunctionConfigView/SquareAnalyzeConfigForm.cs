@@ -45,10 +45,7 @@ namespace DsaSoftPanel.FunctionUtility.FunctionConfigView
             {
                 metroComboBox_signal1.Items.Add(channel.ChannelName);
             }
-            if (channels.Count > 0 && (!metroComboBox_signal1.Items.Contains(signal1) || string.IsNullOrEmpty(signal1)))
-            {
-                metroComboBox_signal1.SelectedIndex = 0;
-            }
+            metroComboBox_signal1.SelectedIndex = 0;
         }
     }
 }

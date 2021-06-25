@@ -41,8 +41,6 @@ namespace DsaSoftPanel.FunctionUtility.FunctionConfigView
             {
                 return;
             }
-            string signal1 = metroComboBox_signal1.Text;
-            string signal2 = metroComboBox_signal2.Text;
             metroComboBox_signal1.Items.Clear();
             metroComboBox_signal2.Items.Clear();
             foreach (ChannelConfig channel in channels)
@@ -50,15 +48,8 @@ namespace DsaSoftPanel.FunctionUtility.FunctionConfigView
                 metroComboBox_signal1.Items.Add(channel.ChannelName);
                 metroComboBox_signal2.Items.Add(channel.ChannelName);
             }
-            if (channels.Count > 0 && (!metroComboBox_signal1.Items.Contains(signal1) || string.IsNullOrEmpty(signal1)))
-            {
-                metroComboBox_signal1.SelectedIndex = 0;
-            }
-
-            if (channels.Count > 0 && (string.IsNullOrEmpty(signal2) || !metroComboBox_signal2.Items.Contains(signal2)))
-            {
-                metroComboBox_signal2.SelectedIndex = 0;
-            }
+            metroComboBox_signal1.SelectedIndex = 0;
+            this.metroComboBox_signal2.SelectedIndex = channels.Count >= 2 ? 1 : 0;
         }
     }
 }
