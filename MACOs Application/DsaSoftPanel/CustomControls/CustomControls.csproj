@@ -49,6 +49,7 @@
     <Compile Include="NumericBox.Designer.cs">
       <DependentUpon>NumericBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="NumericBoxEventArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

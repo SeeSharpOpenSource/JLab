@@ -14,6 +14,8 @@ namespace CustomControls
         private SolidBrush _buttonBrush;
         private Point[] _trianglePoints = new Point[3];
 
+        public event Action<object, NumericBoxEventArgs> ValueChanged;
+
         public NumericBox()
         {
             _innerOperation = true;
@@ -71,12 +73,15 @@ namespace CustomControls
             get { return _value; }
             set
             {
-                if (value < _minimum || value > _maximum)
+                if (value < _minimum || value > _maximum || Math.Abs(this._value - value) < Increment)
                 {
                     return;
                 }
+
+                double originalValue = this._value;
                 this._value = value;
                 ShowValue();
+                OnValueChanged(originalValue, _value);
             }
         }
 
@@ -155,6 +160,15 @@ namespace CustomControls
         private void textBox_value_SizeChanged(object sender, EventArgs e)
         {
             RefreshControlSize();
+        }
+
+        protected void OnValueChanged(double originalValue, double newValue)
+        {
+            this.ValueChanged?.Invoke(this, new NumericBoxEventArgs()
+            {
+                OriginalValue = originalValue,
+                NewValue = newValue
+            });
         }
 
         private void RefreshControlSize()
