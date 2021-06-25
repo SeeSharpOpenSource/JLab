@@ -68,6 +68,7 @@ namespace DsaSoftPanel.TaskComponents
             {
                 return;
             }
+
             try
             {
                 this._cancellation.Cancel();
@@ -75,11 +76,20 @@ namespace DsaSoftPanel.TaskComponents
                 {
                     await _measureTask;
                 }
+
                 this._measureTask = null;
+            }
+            catch (ThreadAbortException)
+            {
+                // ignore
             }
             catch (Exception ex)
             {
-                //ignore
+                Task.Run(async () =>
+                {
+                    await this._parentForm.StopTask();
+                    this._parentForm.ShowErrorMsg(ex.Message);
+                });
             }
         }
 

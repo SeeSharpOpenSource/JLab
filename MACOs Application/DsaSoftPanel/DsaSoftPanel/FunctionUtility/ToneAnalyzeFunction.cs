@@ -37,12 +37,12 @@ namespace DsaSoftPanel.FunctionUtility
             {
                 ToneAnalysisResult result = HarmonicAnalyzer.ToneAnalysis(
                     this.DataBuf[i], 1.0/GlobalInfo.SampleRate);
-                DetailValues[0] += Utility.GetShowValue(result.THD);
-                DetailValues[1] += Utility.GetShowValue(result.THDplusN);
-                DetailValues[2] += Utility.GetShowValue(result.SINAD);
-                DetailValues[3] += Utility.GetShowValue(result.SNR);
-                DetailValues[4] += Utility.GetShowValue(result.NoiseFloor);
-                DetailValues[5] += Utility.GetShowValue(result.ENOB);
+                DetailValues[0] += Utility.GetShowValue(result.THD, i);
+                DetailValues[1] += Utility.GetShowValue(result.THDplusN, i);
+                DetailValues[2] += Utility.GetShowValue(result.SINAD, i);
+                DetailValues[3] += Utility.GetShowValue(result.SNR, i);
+                DetailValues[4] += Utility.GetShowValue(result.NoiseFloor, i);
+                DetailValues[5] += Utility.GetShowValue(result.ENOB, i);
             }
         }
 

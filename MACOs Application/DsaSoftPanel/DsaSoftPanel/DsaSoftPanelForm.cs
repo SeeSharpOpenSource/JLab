@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,7 +8,6 @@ using DsaSoftPanel.Enumeration;
 using DsaSoftPanel.FunctionUtility;
 using DsaSoftPanel.ScopeComponents;
 using DsaSoftPanel.TaskComponents;
-using MetroFramework.Forms;
 using SeeSharpTools.JY.GUI;
 using TaskStatus = DsaSoftPanel.Enumeration.TaskStatus;
 
@@ -170,10 +164,15 @@ namespace DsaSoftPanel
             }
             else
             {
-                await _scopeTask.Stop();
-                await this._functionTask.Stop();
-                await this._measureTask.Stop();
+                await StopTask();
             }
+        }
+
+        public async Task StopTask()
+        {
+            await this._scopeTask.Stop();
+            await this._functionTask.Stop();
+            await this._measureTask.Stop();
         }
 
         private async void ApplyConfigAndStartTask()
@@ -259,9 +258,7 @@ namespace DsaSoftPanel
             {
                 if (isNeedRestartTask || !this._scopeTask.TaskRunning)
                 {
-                    await this._scopeTask.Stop();
-                    await this._functionTask.Stop();
-                    await this._measureTask.Stop();
+                    await StopTask();
 
                     Clear();
                     Thread.Sleep(Constants.RestartDelayTime);

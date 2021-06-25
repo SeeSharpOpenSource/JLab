@@ -34,11 +34,11 @@ namespace DsaSoftPanel.FunctionUtility
             {
                 double[] signal1 = this.DataBuf[signal1Index];
                 double[] signal2 = this.DataBuf[signal2Index];
-                DetailValues[0] = Utility.GetShowValue(Phase.CalPhaseShift(signal1, signal2));
+                DetailValues[0] = Utility.GetShowValue(Phase.CalPhaseShift(signal1, signal2), 0);
             }
             else
             {
-                DetailValues[0] = Constants.NotAvailable;
+                DetailValues[0] = Utility.GetShowValue(Constants.NotAvailable, 0);
             }
         }
 

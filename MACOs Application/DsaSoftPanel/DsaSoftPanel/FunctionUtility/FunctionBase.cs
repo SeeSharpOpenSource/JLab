@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using System.Windows.Forms;
 using DsaSoftPanel.Enumeration;
 using SeeSharpTools.JY.GUI;
@@ -107,7 +108,5 @@ namespace DsaSoftPanel.FunctionUtility
         }
 
         public abstract void ConfigChart(EasyChartX chart);
-
-
     }
 }

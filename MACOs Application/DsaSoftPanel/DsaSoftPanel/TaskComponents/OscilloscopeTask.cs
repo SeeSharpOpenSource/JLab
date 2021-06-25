@@ -125,7 +125,7 @@ namespace DsaSoftPanel
             }
         }
 
-        private void TaskWork()
+        private async void TaskWork()
         {
             while (TaskRunning)
             {
@@ -133,13 +133,20 @@ namespace DsaSoftPanel
                 {
                     ReadAndPlot();
                 }
+                catch (ThreadAbortException)
+                {
+                    // ignore
+                }
                 catch (Exception ex)
                 {
                     if (TaskRunning)
                     {
-                        Stop();
-                        _globalInfo.Status = TaskStatus.Error;
-                        _parentForm.ShowErrorMsg(ex.Message, "Task Error");
+                        Task.Run(async () =>
+                        {
+                            await Stop();
+                            _globalInfo.Status = TaskStatus.Error;
+                            _parentForm.ShowErrorMsg(ex.Message, "Task Error");
+                        });
                     }
                 }
             }

@@ -36,6 +36,8 @@ namespace DsaSoftPanel.FunctionUtility
             _configForm.GetChannelIndex(out index);
             if (index < 0)
             {
+                DetailValues[0] = Utility.GetShowValue(Constants.NotAvailable, 0);
+                DetailValues[1] = Utility.GetShowValue(Constants.NotAvailable, 0);
                 return;
             }
             int harmonicLevel = _configForm.GetHarmonicLevel();
@@ -47,8 +49,8 @@ namespace DsaSoftPanel.FunctionUtility
             HarmonicAnalyzer.ToneAnalysis(waveform, dt, out fundmentalFrequency, out thd, ref _harmonicLevel,
                 harmonicLevel);
 
-            DetailValues[0] = Utility.GetShowValue(thd);
-            DetailValues[1] = Utility.GetShowValue(fundmentalFrequency);
+            DetailValues[0] = Utility.GetShowValue(thd, 0);
+            DetailValues[1] = Utility.GetShowValue(fundmentalFrequency, 0);
         }
 
         protected override void PlotData()

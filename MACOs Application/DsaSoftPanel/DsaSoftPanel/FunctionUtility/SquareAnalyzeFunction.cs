@@ -35,14 +35,16 @@ namespace DsaSoftPanel.FunctionUtility
             _configForm.GetChannelIndex(out signalIndex);
             if (signalIndex < 0)
             {
-                DetailValues[0] = Constants.NotAvailable;
+                DetailValues[0] = Utility.GetShowValue(Constants.NotAvailable, 0);
+                DetailValues[1] = Utility.GetShowValue(Constants.NotAvailable, 0);
+                DetailValues[2] = Utility.GetShowValue(Constants.NotAvailable, 0);
             }
             else
             {
                 _squareMeasurement.SetWaveform(this.DataBuf[signalIndex]);
-                DetailValues[0] = Utility.GetShowValue(_squareMeasurement.GetHighStateLevel());
-                DetailValues[1] = Utility.GetShowValue(_squareMeasurement.GetLowStateLevel());
-                DetailValues[2] = Utility.GetShowValue(GlobalInfo.SampleRate / _squareMeasurement.GetPeriod());
+                DetailValues[0] = Utility.GetShowValue(this._squareMeasurement.GetHighStateLevel(), 0);
+                DetailValues[1] = Utility.GetShowValue(this._squareMeasurement.GetLowStateLevel(), 0);
+                DetailValues[2] = Utility.GetShowValue(this.GlobalInfo.SampleRate / this._squareMeasurement.GetPeriod(), 0);
             }
         }
 

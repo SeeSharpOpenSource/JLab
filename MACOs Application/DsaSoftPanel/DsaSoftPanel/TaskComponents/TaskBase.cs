@@ -47,7 +47,6 @@ namespace DsaSoftPanel.TaskComponents
             }
             try
             {
-                this._lastUsedVersion = long.MinValue;
                 ReadDataBuffer readDataBuffer = this._globalInfo.ReadDataBuffer;
                 int samplesPerView = readDataBuffer.SamplesPerView;
                 // 数据缓存中没有有效的数据或者当前数据已经执行过计算则判定更新失败

@@ -38,7 +38,7 @@ namespace DsaSoftPanel.FunctionUtility
 //                _filteredWave = new double[samplesPerView];
 //            }
             OnlineFirFilter filter = _configForm.Filter;
-            for (int i = 0; i < GlobalInfo.EnableChannelCount; i++)
+            for (int i = 0; i < this.DataBuf.Count; i++)
             {
                 double[] showData = this.DataBuf[i];
                 _filteredDatas.AddRange(filter.ProcessSamples(showData));

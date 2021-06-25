@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using DsaSoftPanel.FunctionUtility.FunctionConfigView;
@@ -38,7 +39,7 @@ namespace DsaSoftPanel.FunctionUtility
             this._spectrumCollection.Clear();
             int dataStartIndex = 0;
             int samplesPerView = this.GlobalInfo.SamplesPerView;
-            for (int i = 0; i < GlobalInfo.EnableChannelCount; i++)
+            for (int i = 0; i < this.DataBuf.Count; i++)
             {
                 double[] showData = this.DataBuf[i];
                 double para = this._configForm.WindowPara;
