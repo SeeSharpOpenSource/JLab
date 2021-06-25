@@ -125,7 +125,7 @@ namespace DsaSoftPanel
             }
         }
 
-        private async void TaskWork()
+        private void TaskWork()
         {
             while (TaskRunning)
             {

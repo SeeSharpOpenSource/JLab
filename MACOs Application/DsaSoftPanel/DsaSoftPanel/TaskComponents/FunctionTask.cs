@@ -62,11 +62,8 @@ namespace DsaSoftPanel.TaskComponents
             }
             catch (Exception ex)
             {
-                Task.Run(async() =>
-                {
-                    await this._parentForm.StopTask();
-                    this._parentForm.ShowErrorMsg(ex.Message);
-                });
+                await this._parentForm.StopTask();
+                this._parentForm.ShowErrorMsg(ex.Message);
             }
         }
 

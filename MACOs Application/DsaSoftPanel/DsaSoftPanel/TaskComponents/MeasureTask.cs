@@ -79,17 +79,10 @@ namespace DsaSoftPanel.TaskComponents
 
                 this._measureTask = null;
             }
-            catch (ThreadAbortException)
-            {
-                // ignore
-            }
             catch (Exception ex)
             {
-                Task.Run(async () =>
-                {
-                    await this._parentForm.StopTask();
-                    this._parentForm.ShowErrorMsg(ex.Message);
-                });
+                await this._parentForm.StopTask();
+                this._parentForm.ShowErrorMsg(ex.Message);
             }
         }
 
@@ -121,6 +114,11 @@ namespace DsaSoftPanel.TaskComponents
             }
             catch (Exception ex)
             {
+                Task.Run(async () =>
+                {
+                    await this._parentForm.StopTask();
+                    this._parentForm.ShowErrorMsg(ex.Message);
+                });
             }
         }
 
