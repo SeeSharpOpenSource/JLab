@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CustomControls;
 using DsaSoftPanel.Common;
 using DsaSoftPanel.Enumeration;
 using DsaSoftPanel.FunctionUtility;
@@ -330,22 +331,22 @@ namespace DsaSoftPanel
             RefreshViewTime((int) knobControl_viewTime.Value);
         }
 
-        private void numericUpDown_viewTime_ValueChanged(object sender, EventArgs e)
+        private void numericUpDown_viewTime_ValueChanged(object sender, NumericBoxEventArgs e)
         {
-            RefreshViewTime((int) numericUpDown_viewTime.Value);
+            RefreshViewTime((int) this.numericUpBox_viewTime.Value);
         }
 
         private void RefreshViewTime(int value)
         {
             int realViewTime = (value >= Constants.MinViewTime) ? value : Constants.MinViewTime;
             knobControl_viewTime.Value = realViewTime;
-            numericUpDown_viewTime.Value = realViewTime;
+            numericUpBox_viewTime.Value = realViewTime;
             _globalInfo.SamplesPerView = GetSamplesPerView();
         }
 
         private int GetSamplesPerView()
         {
-            return (int) ((double) numericUpDown_viewTime.Value*_globalInfo.AITask.GetSampleRate()/1000);
+            return (int) ((double)numericUpBox_viewTime.Value*_globalInfo.AITask.GetSampleRate()/1000);
         }
 
         private void knobControl_chartRange_ValueChanged(object Sender)
@@ -353,16 +354,16 @@ namespace DsaSoftPanel
             RefreshChartRange(knobControl_chartRange.Value);
         }
 
-        private void numericUpDown_chartRange_ValueChanged(object sender, EventArgs e)
+        private void numericUpDown_chartRange_ValueChanged(object sender, NumericBoxEventArgs e)
         {
-            RefreshChartRange((double) numericUpDown_chartRange.Value);
+            RefreshChartRange((double) this.numericUpBox_chartRange.Value);
         }
 
         private void RefreshChartRange(double value)
         {
             double realChartRange = (value < Constants.MinChartRange) ? Constants.MinChartRange : Math.Round(value, 1);
             knobControl_chartRange.Value = realChartRange;
-            numericUpDown_chartRange.Value = (decimal) realChartRange;
+            numericUpBox_chartRange.Value = realChartRange;
             easyChartX_data.AxisY.Maximum = realChartRange;
             easyChartX_data.AxisY.Minimum = -1*realChartRange;
             foreach (EasyChartXPlotArea plotArea in easyChartX_data.SplitPlotArea)
