@@ -73,7 +73,7 @@ namespace CustomControls
             get { return _value; }
             set
             {
-                if (value < _minimum || value > _maximum || Math.Abs(this._value - value) < Increment)
+                if (value < _minimum || value > _maximum || Math.Abs(this._value - value) < Increment*0.9)
                 {
                     return;
                 }
@@ -285,7 +285,7 @@ namespace CustomControls
             double value;
             if (double.TryParse(textBox_value.Text, out value))
             {
-                this._value = value;
+                this.Value = value;
             }
             ShowValue();
         }
