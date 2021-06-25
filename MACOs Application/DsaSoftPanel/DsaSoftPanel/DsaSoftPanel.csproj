@@ -38,14 +38,21 @@
     <ApplicationIcon>JYTek.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="JY5500">
+      <HintPath>C:\SeeSharp\JYTEK\Hardware\DAQ\JY5500\Bin\JY5500.dll</HintPath>
+    </Reference>
     <Reference Include="JYPCI69527">
       <HintPath>..\Reference\JYPCI69527.dll</HintPath>
     </Reference>
-    <Reference Include="JYPCI69527L">
-      <HintPath>C:\SeeSharp\JYTEK\Hardware\DSA\JYPCI69527L\Bin\JYPCI69527L.dll</HintPath>
+    <Reference Include="JYPCI69527L, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Reference\JYPCI69527L.dll</HintPath>
     </Reference>
     <Reference Include="JYPXI69527">
       <HintPath>..\Reference\JYPXI69527.dll</HintPath>
+    </Reference>
+    <Reference Include="JYPXIe5510">
+      <HintPath>..\Reference\JYPXIe5510.dll</HintPath>
     </Reference>
     <Reference Include="JYPXIe69529">
       <HintPath>..\Reference\JYPXIe69529.dll</HintPath>
@@ -103,6 +110,7 @@
     <Compile Include="AITask\JYPCI69527LAITaskImpl.cs" />
     <Compile Include="AITask\JYPCI69527AITaskImpl.cs" />
     <Compile Include="AITask\JYPXI69527AITaskImpl.cs" />
+    <Compile Include="AITask\JYPXIe5510AITaskImpl.cs" />
     <Compile Include="AITask\JYUSB62405AITaskImpl.cs" />
     <Compile Include="AITask\PXIe69529AITaskImpl.cs" />
     <Compile Include="Common\ErrorInfoForm.cs">

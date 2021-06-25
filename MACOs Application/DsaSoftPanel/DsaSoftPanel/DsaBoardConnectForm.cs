@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using DsaSoftPanel.AITask;
 using DsaSoftPanel.Common;
@@ -24,7 +18,7 @@ namespace DsaSoftPanel
 
         private void DsaBoardConnectForm_Load(object sender, EventArgs e)
         {
-            led_status.Value = _globalInfo.BoardConnected;
+//            led_status.Value = _globalInfo.BoardConnected;
 
             metroComboBox_boardType.Items.Clear();
             metroComboBox_boardType.Items.AddRange(Enum.GetNames(typeof (BoardType)));
@@ -43,40 +37,49 @@ namespace DsaSoftPanel
                 if (_globalInfo.BoardConnected && selectType == _globalInfo.BoardType && _globalInfo.BoardId == boardId)
                 {
                     _globalInfo.MainForm.Show();
-                    Dispose();
+                }
+                else
+                {
+                    switch (selectType)
+                    {
+                        case BoardType.JYPCI69527:
+                            _globalInfo.AITask = new JYPCI69527AITaskImpl(boardId);
+                            break;
+                        case BoardType.JYPXI69527:
+                            _globalInfo.AITask = new JYPXI69527AITaskImpl(boardId);
+                            break;
+                        case BoardType.JYPCI69527L:
+                            _globalInfo.AITask = new JYPCI69527LAITaskImpl(boardId);
+                            break;
+                        case BoardType.JYPXIe69529:
+                            _globalInfo.AITask = new JYPXIe69529AITaskImpl(boardId);
+                            break;
+                        case BoardType.JYUSB62405:
+                            _globalInfo.AITask = new JYUSB62405AITaskImpl(boardId);
+                            break;
+                        case BoardType.JYPXIe5510:
+                            _globalInfo.AITask = new JYPXIe5510AITaskImpl(boardId);
+                            break;
+                        default:
+                            throw new NotSupportedException("Not supported");
+                    }
+                    _globalInfo.BoardConnected = true;
+                    _globalInfo.MainForm.Show();
+                }
+                double sampleRate = numericBox1.Value;
+                if (sampleRate > _globalInfo.AITask.MaxSampleRate)
+                {
+                    ErrorInfoForm.Show(this, "Error Parameter", "采样率超过了板卡支持的最大值。");
+                    _globalInfo.AITask = null;
                     return;
                 }
-                switch (selectType)
-                {
-                    case BoardType.JYPCI69527:
-                        _globalInfo.AITask = new JYPCI69527AITaskImpl(boardId);
-                        break;
-                    case BoardType.JYPCI69527L:
-                        _globalInfo.AITask = new JYPCI69527LAITaskImpl(boardId);
-                        break;
-                    case BoardType.JYPXI69527:
-                        _globalInfo.AITask = new JYPXI69527AITaskImpl(boardId);
-                        break;
-                    case BoardType.JYPXIe69529:
-                        _globalInfo.AITask = new JYPXIe69529AITaskImpl(boardId);
-                        break;
-                    case BoardType.JYUSB62405:
-                        _globalInfo.AITask = new JYUSB62405AITaskImpl(boardId);
-                        break;
-                    default:
-                        throw new NotSupportedException("Not supported");
-                }
-                led_status.Value = true;
-                _globalInfo.AITask.SetSampleRate(_globalInfo.AITask.MaxSampleRate);
-                _globalInfo.BoardConnected = true;
-                _globalInfo.MainForm.Show();
+                _globalInfo.AITask.SetSampleRate(sampleRate);
                 this.Dispose();
             }
             catch (Exception ex)
             {
-                led_status.Value = false;
                 _globalInfo.BoardConnected = false;
-                new ErrorInfoForm("Error", ex.Message).ShowDialog(this);
+                ErrorInfoForm.Show(this, "Error", ex.Message);
             }
         }
 
@@ -101,11 +104,11 @@ namespace DsaSoftPanel
             if (_globalInfo.BoardConnected && metroComboBox_boardType.Text.Equals(_globalInfo.BoardType.ToString()) &&
                 metroComboBox_cardId.Text.Equals(_globalInfo.BoardId.ToString()))
             {
-                led_status.Value = true;
+//                led_status.Value = true;
             }
             else
             {
-                led_status.Value = false;
+//                led_status.Value = false;
             }
         }
     }

@@ -690,7 +690,7 @@ namespace DsaSoftPanel
             this.tableLayoutPanel_measure.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel_measure.ColumnCount = 2;
             this.tableLayoutPanel_measure.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel_measure.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 51F));
+            this.tableLayoutPanel_measure.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 52F));
             this.tableLayoutPanel_measure.Controls.Add(this.label_measureRms, 0, 0);
             this.tableLayoutPanel_measure.Controls.Add(this.label_DC, 0, 1);
             this.tableLayoutPanel_measure.Controls.Add(this.label_peakAmp, 0, 2);
@@ -846,7 +846,7 @@ namespace DsaSoftPanel
             this.tableLayoutPanel_functionSelect.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel_functionSelect.ColumnCount = 2;
             this.tableLayoutPanel_functionSelect.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel_functionSelect.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 47F));
+            this.tableLayoutPanel_functionSelect.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 48F));
             this.tableLayoutPanel_functionSelect.Controls.Add(this.label_filter, 0, 3);
             this.tableLayoutPanel_functionSelect.Controls.Add(this.txRadioButton_filter, 1, 3);
             this.tableLayoutPanel_functionSelect.Controls.Add(this.label_toneAnalyze, 0, 2);
@@ -1144,7 +1144,7 @@ namespace DsaSoftPanel
             this.easyChartX_data.AxisY.IsLogarithmic = false;
             this.easyChartX_data.AxisY.LabelAngle = 0;
             this.easyChartX_data.AxisY.LabelEnabled = true;
-            this.easyChartX_data.AxisY.LabelFormat = "0.###";
+            this.easyChartX_data.AxisY.LabelFormat = "";
             this.easyChartX_data.AxisY.MajorGridColor = System.Drawing.Color.DarkGray;
             this.easyChartX_data.AxisY.MajorGridCount = 6;
             this.easyChartX_data.AxisY.MajorGridEnabled = true;

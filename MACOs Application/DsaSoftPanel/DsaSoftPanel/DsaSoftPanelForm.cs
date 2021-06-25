@@ -132,7 +132,7 @@ namespace DsaSoftPanel
         private string GetSampleRateLabel()
         {
             const string sampleRateFormat = "TD:{0}{1}Sa/s";
-            double sampleRate = _globalInfo.AITask.MaxSampleRate;
+            double sampleRate = _globalInfo.AITask.GetSampleRate();
             string sampleRateUnit = "";
             string valueFormat = "";
             double formatedValue;
@@ -287,8 +287,7 @@ namespace DsaSoftPanel
                 BeginInvoke(new Action<string, string>(ShowErrorMsg), text, caption);
                 return;
             }
-            ErrorInfoForm errorInfoForm = new ErrorInfoForm(caption, text);
-            errorInfoForm.ShowDialog(this);
+            ErrorInfoForm.Show(this, caption, text);
             buttonSwitch_Switch.Value = false;
         }
 

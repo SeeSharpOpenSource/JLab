@@ -10,6 +10,8 @@
 
         JYPXIe69529,
 
-        JYUSB62405
+        JYUSB62405,
+
+        JYPXIe5510
     }
 }

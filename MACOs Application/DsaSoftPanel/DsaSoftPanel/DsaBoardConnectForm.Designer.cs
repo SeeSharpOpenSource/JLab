@@ -30,30 +30,91 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DsaBoardConnectForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label_sampleRate = new System.Windows.Forms.Label();
+            this.numericBox1 = new CustomControls.NumericBox();
+            this.label_cardId = new System.Windows.Forms.Label();
+            this.label_cardType = new System.Windows.Forms.Label();
             this.metroComboBox_cardId = new MetroFramework.Controls.MetroComboBox();
             this.metroComboBox_boardType = new MetroFramework.Controls.MetroComboBox();
             this.button_cancel = new System.Windows.Forms.Button();
             this.button_connect = new System.Windows.Forms.Button();
             this.pictureBox_icon = new System.Windows.Forms.PictureBox();
-            this.led_status = new SeeSharpTools.JY.GUI.LED();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_icon)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label_sampleRate);
+            this.panel1.Controls.Add(this.numericBox1);
+            this.panel1.Controls.Add(this.label_cardId);
+            this.panel1.Controls.Add(this.label_cardType);
             this.panel1.Controls.Add(this.metroComboBox_cardId);
             this.panel1.Controls.Add(this.metroComboBox_boardType);
             this.panel1.Controls.Add(this.button_cancel);
             this.panel1.Controls.Add(this.button_connect);
             this.panel1.Controls.Add(this.pictureBox_icon);
-            this.panel1.Controls.Add(this.led_status);
             this.panel1.Location = new System.Drawing.Point(5, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(354, 114);
+            this.panel1.Size = new System.Drawing.Size(383, 143);
             this.panel1.TabIndex = 0;
+            // 
+            // label_sampleRate
+            // 
+            this.label_sampleRate.AutoSize = true;
+            this.label_sampleRate.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_sampleRate.ForeColor = System.Drawing.Color.Silver;
+            this.label_sampleRate.Location = new System.Drawing.Point(148, 73);
+            this.label_sampleRate.Name = "label_sampleRate";
+            this.label_sampleRate.Size = new System.Drawing.Size(91, 14);
+            this.label_sampleRate.TabIndex = 21;
+            this.label_sampleRate.Text = "SampleRate :";
+            // 
+            // numericBox1
+            // 
+            this.numericBox1.ButtonBorderColor = System.Drawing.Color.DimGray;
+            this.numericBox1.DecimalPlace = 0;
+            this.numericBox1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericBox1.ForeColor = System.Drawing.Color.Silver;
+            this.numericBox1.Increment = 100000D;
+            this.numericBox1.Location = new System.Drawing.Point(246, 68);
+            this.numericBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.numericBox1.Maximum = 50000000D;
+            this.numericBox1.Minimum = 1000D;
+            this.numericBox1.Name = "numericBox1";
+            this.numericBox1.Size = new System.Drawing.Size(123, 24);
+            this.numericBox1.TabIndex = 20;
+            this.numericBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericBox1.TextFont = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericBox1.TriangleColor = System.Drawing.Color.DimGray;
+            this.numericBox1.Value = 200000D;
+            // 
+            // label_cardId
+            // 
+            this.label_cardId.AutoSize = true;
+            this.label_cardId.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_cardId.ForeColor = System.Drawing.Color.Silver;
+            this.label_cardId.Location = new System.Drawing.Point(148, 42);
+            this.label_cardId.Name = "label_cardId";
+            this.label_cardId.Size = new System.Drawing.Size(76, 14);
+            this.label_cardId.TabIndex = 19;
+            this.label_cardId.Text = "Card  ID   :";
+            // 
+            // label_cardType
+            // 
+            this.label_cardType.AutoSize = true;
+            this.label_cardType.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_cardType.ForeColor = System.Drawing.Color.Silver;
+            this.label_cardType.Location = new System.Drawing.Point(148, 11);
+            this.label_cardType.Name = "label_cardType";
+            this.label_cardType.Size = new System.Drawing.Size(76, 14);
+            this.label_cardType.TabIndex = 18;
+            this.label_cardType.Text = "Card Type:";
             // 
             // metroComboBox_cardId
             // 
@@ -75,9 +136,9 @@
             "5",
             "6",
             "7"});
-            this.metroComboBox_cardId.Location = new System.Drawing.Point(209, 37);
+            this.metroComboBox_cardId.Location = new System.Drawing.Point(246, 37);
             this.metroComboBox_cardId.Name = "metroComboBox_cardId";
-            this.metroComboBox_cardId.Size = new System.Drawing.Size(121, 25);
+            this.metroComboBox_cardId.Size = new System.Drawing.Size(123, 25);
             this.metroComboBox_cardId.Style = MetroFramework.MetroColorStyle.Silver;
             this.metroComboBox_cardId.StyleManager = null;
             this.metroComboBox_cardId.TabIndex = 17;
@@ -99,9 +160,9 @@
             "JYPCI69527",
             "JYPXI69527",
             "JYPXIe69529"});
-            this.metroComboBox_boardType.Location = new System.Drawing.Point(209, 6);
+            this.metroComboBox_boardType.Location = new System.Drawing.Point(246, 6);
             this.metroComboBox_boardType.Name = "metroComboBox_boardType";
-            this.metroComboBox_boardType.Size = new System.Drawing.Size(121, 25);
+            this.metroComboBox_boardType.Size = new System.Drawing.Size(123, 25);
             this.metroComboBox_boardType.Style = MetroFramework.MetroColorStyle.Silver;
             this.metroComboBox_boardType.StyleManager = null;
             this.metroComboBox_boardType.TabIndex = 16;
@@ -113,7 +174,7 @@
             this.button_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_cancel.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_cancel.ForeColor = System.Drawing.Color.Silver;
-            this.button_cancel.Location = new System.Drawing.Point(241, 69);
+            this.button_cancel.Location = new System.Drawing.Point(267, 105);
             this.button_cancel.Name = "button_cancel";
             this.button_cancel.Size = new System.Drawing.Size(75, 29);
             this.button_cancel.TabIndex = 11;
@@ -127,7 +188,7 @@
             this.button_connect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_connect.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_connect.ForeColor = System.Drawing.Color.Silver;
-            this.button_connect.Location = new System.Drawing.Point(135, 70);
+            this.button_connect.Location = new System.Drawing.Point(161, 106);
             this.button_connect.Name = "button_connect";
             this.button_connect.Size = new System.Drawing.Size(75, 29);
             this.button_connect.TabIndex = 10;
@@ -137,37 +198,22 @@
             // 
             // pictureBox_icon
             // 
+            this.pictureBox_icon.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_icon.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_icon.Image")));
             this.pictureBox_icon.InitialImage = null;
-            this.pictureBox_icon.Location = new System.Drawing.Point(18, 6);
+            this.pictureBox_icon.Location = new System.Drawing.Point(15, 12);
             this.pictureBox_icon.Name = "pictureBox_icon";
-            this.pictureBox_icon.Size = new System.Drawing.Size(103, 95);
+            this.pictureBox_icon.Size = new System.Drawing.Size(124, 118);
             this.pictureBox_icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_icon.TabIndex = 9;
             this.pictureBox_icon.TabStop = false;
-            // 
-            // led_status
-            // 
-            this.led_status.BlinkColor = System.Drawing.Color.Lime;
-            this.led_status.BlinkInterval = 1000;
-            this.led_status.BlinkOn = false;
-            this.led_status.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.led_status.Interacton = SeeSharpTools.JY.GUI.LED.InteractionStyle.Indicator;
-            this.led_status.Location = new System.Drawing.Point(127, 2);
-            this.led_status.Name = "led_status";
-            this.led_status.OffColor = System.Drawing.Color.Maroon;
-            this.led_status.OnColor = System.Drawing.Color.Lime;
-            this.led_status.Size = new System.Drawing.Size(59, 60);
-            this.led_status.Style = SeeSharpTools.JY.GUI.LED.LedStyle.Rectangular3D;
-            this.led_status.TabIndex = 6;
-            this.led_status.Value = false;
             // 
             // DsaBoardConnectForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
-            this.ClientSize = new System.Drawing.Size(364, 122);
+            this.ClientSize = new System.Drawing.Size(393, 151);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -176,6 +222,7 @@
             this.Text = "ConnectBoard";
             this.Load += new System.EventHandler(this.DsaBoardConnectForm_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_icon)).EndInit();
             this.ResumeLayout(false);
 
@@ -187,9 +234,12 @@
         private System.Windows.Forms.Button button_cancel;
         private System.Windows.Forms.Button button_connect;
         private System.Windows.Forms.PictureBox pictureBox_icon;
-        private SeeSharpTools.JY.GUI.LED led_status;
         private MetroFramework.Controls.MetroComboBox metroComboBox_boardType;
         private MetroFramework.Controls.MetroComboBox metroComboBox_cardId;
+        private System.Windows.Forms.Label label_cardType;
+        private System.Windows.Forms.Label label_cardId;
+        private System.Windows.Forms.Label label_sampleRate;
+        private CustomControls.NumericBox numericBox1;
     }
 }
 

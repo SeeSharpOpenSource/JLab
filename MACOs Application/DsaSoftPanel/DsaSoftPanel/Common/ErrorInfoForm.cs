@@ -4,7 +4,15 @@ namespace DsaSoftPanel.Common
 {
     public partial class ErrorInfoForm : Form
     {
-        public ErrorInfoForm(string title, string message)
+        public static void Show(IWin32Window parent, string title, string message)
+        {
+            using (ErrorInfoForm errorInfoForm = new ErrorInfoForm(title, message))
+            {
+                errorInfoForm.ShowDialog(parent);
+            }
+        }
+
+        private ErrorInfoForm(string title, string message)
         {
             InitializeComponent();
             this.label_title.Text = title;
