@@ -51,7 +51,7 @@
             this.panel1.Location = new System.Drawing.Point(3, 2);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(415, 137);
+            this.panel1.Size = new System.Drawing.Size(387, 137);
             this.panel1.TabIndex = 0;
             // 
             // button_OK
@@ -64,10 +64,10 @@
             this.button_OK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_OK.Font = new System.Drawing.Font("Verdana", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_OK.ForeColor = System.Drawing.Color.Silver;
-            this.button_OK.Location = new System.Drawing.Point(187, 98);
+            this.button_OK.Location = new System.Drawing.Point(167, 98);
             this.button_OK.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button_OK.Name = "button_OK";
-            this.button_OK.Size = new System.Drawing.Size(93, 27);
+            this.button_OK.Size = new System.Drawing.Size(85, 27);
             this.button_OK.TabIndex = 9;
             this.button_OK.Text = "OK";
             this.button_OK.UseVisualStyleBackColor = false;
@@ -83,7 +83,7 @@
             this.label_message.Location = new System.Drawing.Point(98, 37);
             this.label_message.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_message.Name = "label_message";
-            this.label_message.Size = new System.Drawing.Size(302, 58);
+            this.label_message.Size = new System.Drawing.Size(274, 58);
             this.label_message.TabIndex = 8;
             this.label_message.Text = "label1";
             // 
@@ -97,7 +97,7 @@
             this.label_title.Location = new System.Drawing.Point(0, 0);
             this.label_title.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_title.Name = "label_title";
-            this.label_title.Size = new System.Drawing.Size(415, 35);
+            this.label_title.Size = new System.Drawing.Size(387, 35);
             this.label_title.TabIndex = 7;
             this.label_title.Text = "Error";
             this.label_title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -119,7 +119,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
-            this.ClientSize = new System.Drawing.Size(420, 142);
+            this.ClientSize = new System.Drawing.Size(392, 142);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.DimGray;
